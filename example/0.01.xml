@@ -1,4 +1,37 @@
-<book>
-  <page>This is page one.</page>
-  <page>This is page two.</page>
-</book>
+<product>
+	<circularity-id>c-id</circularity-id>
+	<name>Product Name</name>
+	<sku>Product SKU</sku>
+	<brand>Brand Name</brand>
+	<collection>Collection</collection>
+	<product-type>Product Type</product-type>
+	<material>
+		<name>Material Name</name>
+		<percentage>100</percentage>
+		<construction>Material Construction</construction>
+		<recycled_percentage>50</recycled_percentage>
+		<origin_recycling_input>Origin recycling input</origin_recycling_input>
+		<water_properties>Water resistant</water_properties>
+		<elasticity>20</elasticity>
+		<weight unit="g">300</weight>
+		<colour>Blue</colour>
+		<pattern>Striped</pattern>
+		<dyemethod>Disperse</dyemethod>
+		<dyestuff>Dyestuff</dyestuff>
+		<print_method>Print method</print_method>
+		<print_dyestuff>Print dyestuff</print_dyestuff>
+		<finishing>Finishing type</finishing>
+		<chemical_compliance>GRS</chemical_compliance>
+		<component percentage="95">Cotton</component>
+		<component percentage="5">Elasthan</component>
+		<certification>GOTS</certification>
+		<biodegradability></biodegradability>
+		<step>Manu</step>
+	</material>
+	<assembly>
+		<name>Main</name>
+		<material>Material Name 01</material>
+		<material>Material Name 02</material>
+		<instructions>Instruction for disassembly</instructions>
+	</assembly>
+</product>
