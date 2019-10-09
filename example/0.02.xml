@@ -1,0 +1,25 @@
+<product>
+	<name></name>
+	<c-id></c-id>
+	<brand></brand>
+	<sku></sku>
+	<type></type>
+	<material>
+		<name></name>
+		<percentage></percentage>
+		<component percentage=""></component>
+		<weight unit="g"></weight>
+	</material>
+	<step>
+		<type></type>
+		<location>
+			<company></company>
+			<address>
+				<street></street>
+				<postal></postal>
+				<city></city>
+			</address>
+			<country></country>
+		</location>
+	</step>
+</product>

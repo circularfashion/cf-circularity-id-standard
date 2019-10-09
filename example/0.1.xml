@@ -26,7 +26,18 @@
 		<component percentage="5">Elasthan</component>
 		<certification>GOTS</certification>
 		<biodegradability></biodegradability>
-		<step>Manu</step>
+		<step>
+			<type>Manu</type>
+			<location>
+				<company></company>
+				<address>
+					<street></street>
+					<postal></postal>
+					<city></city>
+				</address>
+				<country></country>
+			</location>
+		</step>
 	</material>
 	<assembly>
 		<name>Main</name>
