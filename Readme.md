@@ -35,3 +35,9 @@ or try a failing one!
 ```
 python validate_test.py -f failing_example/0.01.xml --schema-version 0.01
 ```
+
+## research:
+
+automatically generate webforms from `.rng`:
+
+http://debeissat.nicolas.free.fr/RNGtoHTMLform.php
