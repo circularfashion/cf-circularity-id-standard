@@ -1,0 +1,66 @@
+#namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+start =
+  element product {
+    element circularity-id { xsd:token },
+    element name { text },
+    element sku { text }?,
+    element brand { text },
+    element collection { text }?,
+    element product-type { text },
+    element assembly {
+      element name { text },
+      element material {
+        element name { text },
+        element total_weight {
+          attribute unit {
+            list { "kg" | "g" | "oz" | "lb" }
+          },
+          xsd:decimal
+        },
+        element construction { text },
+        (element component {
+           element name { text },
+           element percentage {
+             # percentage total should be 100
+             xsd:boolean
+           },
+           element is_recycled { xsd:boolean },
+           element origin_recycling_input { text }
+         },
+         element step {
+           element type {
+             text
+             # replace with list of choices to validate against
+           },
+           element company_name { text }?,
+           element street { text }?,
+           element postal { text }?,
+           element city { text }?,
+           element additional_information { text }?,
+           element country { text }
+         })+,
+        element water_properties {
+          text
+          # replace with <list></list> ?
+        },
+        element elasticity {
+          attribute type { text },
+          xsd:int
+        },
+        element weight {
+          attribute unit { text },
+          xsd:int
+        },
+        element colour { text },
+        (element pattern { text },
+         # dyemethod/stuff, printmethod/stuff should be grouped so if it has one, it must have both
+         element dyemethod { text },
+         element dyestuff { text },
+         element printmethod { text },
+         element printstuff { text },
+         element finishing { text },
+         element chemical_compliance { text })*
+      }+,
+      element instructions { text }
+    }+
+  }

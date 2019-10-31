@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar 
+    xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+        <element name="product">
+            <element name="circularity-id">
+                <data type="token"></data>
+            </element>
+            <element name="name">
+                <text/>
+            </element>
+            <optional>
+                <element name="sku">
+                    <text/>
+                </element>
+            </optional>
+            <element name="brand">
+                <text/>
+            </element>
+            <optional>
+                <element name="collection">
+                    <text/>
+                </element>
+            </optional>
+            <element name="product-type">
+                <text/>
+            </element>
+            <oneOrMore>
+                <element name="assembly">
+                    <element name="name">
+                        <text/>
+                    </element>
+                    <oneOrMore>
+                        <element name="material">
+                            <element name="name">
+                                <text/>
+                            </element>
+                            <element name="total_weight">
+                                <attribute name="unit">
+                                    <list>
+                                        <choice>
+                                            <value>kg</value>
+                                            <value>g</value>
+                                            <value>oz</value>
+                                            <value>lb</value>
+                                        </choice>
+                                    </list>
+                                </attribute>
+                                <data type="decimal"/>
+                            </element>
+                            <element name="construction">
+                                <text/>
+                            </element>
+                            <oneOrMore>
+                                <element name="component">
+                                    <element name="name">
+                                        <text/>
+                                    </element>
+                                    <element name="percentage">
+                                        <!-- percentage total should be 100 -->
+                                        <data type="decimal"/>
+                                    </element>
+                                    <element name="is_recycled">
+                                        <data type="boolean"/>
+                                    </element>
+                                    <element name="origin_recycling_input">
+                                        <text/>
+                                    </element>
+                                </element>
+                                <element name="step">
+                                    <element name="type">
+                                        <text/><!--replace with list of choices to validate against -->
+                                    </element>
+                                    <optional>
+                                        <element name="company_name">
+                                            <text/>
+                                        </element>
+                                    </optional>
+                                    <optional>
+                                        <element name="street">
+                                            <text/>
+                                        </element>
+                                    </optional>
+                                    <optional>
+                                        <element name="postal">
+                                            <text/>
+                                        </element>
+                                    </optional>
+                                    <optional>
+                                        <element name="city">
+                                            <text/>
+                                        </element>
+                                    </optional>
+                                    <optional>
+                                        <element name="additional_information">
+                                            <text/>
+                                        </element>
+                                    </optional>
+                                    <element name="country">
+                                        <text/>
+                                    </element>
+                                </element>
+                            </oneOrMore>
+                            <element name="water_properties">
+                                <text />
+                                <!-- replace with <list></list> ? -->                 
+                            </element>
+                            <element name="elasticity">
+                                <attribute name="type"></attribute>
+                                <data type="int"></data>
+                            </element>
+                            <element name="weight">
+                                <attribute name="unit"></attribute>
+                                <data type="int"></data>
+                            </element>
+                            <element name="colour">
+                                <text></text>
+                            </element>
+                            <zeroOrMore>
+                                <element name="pattern">
+                                    <text></text>
+                                </element>
+                                <!-- dyemethod/stuff, printmethod/stuff should be grouped so if it has one, it must have both -->
+                                <element name="dyemethod">
+                                    <text/>
+                                </element>
+                                <element name="dyestuff">
+                                    <text/>
+                                </element>
+                                <element name="printmethod">
+                                    <text/>
+                                </element>
+                                <element name="printstuff">
+                                    <text/>
+                                </element>
+                                <element name="finishing">
+                                    <text/>
+                                </element>
+                                <element name="chemical_compliance">
+                                    <text/>
+                                </element>
+                            </zeroOrMore>
+                        </element>
+                    </oneOrMore>
+                    <element name="instructions">
+                        <text/>
+                    </element>
+                </element>
+            </oneOrMore>
+        </element>
+    </start>
+</grammar>
