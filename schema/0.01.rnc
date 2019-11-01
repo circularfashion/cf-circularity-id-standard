@@ -1,0 +1,7 @@
+# This is a schema file for a circularity.id model
+# please see documentation at https://relaxng.org/compact-tutorial-20030326.html
+# this is a compact file - will have to be converted into a verbose .rng file
+#
+# additionally, it is actually just testing data right now but needs to be filled out.
+start = element book { page+ }
+page = element page { text }

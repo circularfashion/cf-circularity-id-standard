@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar 
+    xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+        <element name="product">
+            <element name="circularity-id">
+                <data type="token"></data>
+            </element>
+            <element name="name">
+                <data type="Name" /><!-- must start with a letter or underscore -->
+            </element>
+            <element name="brand">
+                <text/>
+            </element>
+            <optional>
+                <element name="sku">
+                    <data type="token" />
+                </element>
+            </optional>
+            <optional>
+                <element name="collection">
+                    <text/>
+                </element>
+            </optional>
+            <ref name="product-type" />
+            <oneOrMore>
+                <ref name="assembly"/>
+            </oneOrMore>
+        </element>
+    </start>
+    
+    <define name="product-type">
+        <element name="product-type">
+            <list>
+                <choice>
+                    <value>Clothing</value>
+                    <value>Accessories</value>
+                    <value>Footwear</value>
+                    <value>Other</value>
+                </choice>
+            </list>
+        </element>
+    </define>
+    
+    <define name="assembly">
+        <element name="assembly">
+            <element name="name">
+                <text/>
+            </element>
+            <oneOrMore>
+                <ref name="material"/>
+            </oneOrMore>
+            <element name="instructions-for-disassembly">
+                <text/>
+            </element>
+        </element>
+    </define>
+    
+    <define name="material">
+        <element name="material">
+            <element name="name">
+                <text/>
+            </element>
+            <element name="total_weight">
+                <attribute name="unit">
+                    <list>
+                        <choice>
+                            <value>kg</value>
+                            <value>g</value>
+                            <value>oz</value>
+                            <value>lb</value>
+                        </choice>
+                    </list>
+                </attribute>
+                <data type="decimal"/>
+            </element>
+            <element name="construction">
+                <text/>
+            </element>
+            <oneOrMore>
+                <ref name="component"/>
+            </oneOrMore>
+            <oneOrMore>
+                <ref name="step"/>
+            </oneOrMore>
+            <element name="water_properties">
+                <list>
+                    <choice>
+                        <value>Without</value>
+                        <value>Without</value>
+                        <value>Without</value>
+                    </choice>
+                </list>                 
+            </element>
+            <element name="elasticity"><!-- maybe remove this? -->
+                <attribute name="type"></attribute><!-- add choice list -->
+                <data type="int"></data>
+            </element>
+            <element name="weight">
+                <attribute name="unit">
+                    <list>
+                        <choice>
+                            <value>kg</value>
+                            <value>g</value>
+                            <value>oz</value>
+                            <value>lb</value>
+                        </choice>
+                    </list>
+                </attribute>
+                <data type="decimal"/>
+            </element>
+            <element name="colour">
+                <text></text><!-- replace with choice list -->
+            </element>
+            <optional>
+                <element name="pattern">
+                    <text></text><!-- replace with choice list -->
+                </element>
+            </optional>
+            <element name="dyeing">
+                <text/><!-- replace with choice list -->
+            </element>
+            <optional>
+                <element name="dyestuff">
+                    <text/>
+                </element>
+            </optional>
+            <element name="printing">
+                <text/><!-- replace with choice list -->
+            </element>
+            <optional>
+                <element name="printstuff">
+                    <text/>
+                </element>
+            </optional>
+            <zeroOrMore>
+                <element name="finishing">
+                    <text/>
+                </element>
+            </zeroOrMore>
+            <optional>
+                <element name="chemical_compliance">
+                    <text/>
+                </element>
+            </optional>
+        </element>
+    </define>
+    
+    
+    <define name="component">
+        <element name="component">
+            <element name="name">
+                <text/>
+            </element>
+            <element name="percentage">
+                <data type="decimal"/><!-- percentage total should be 100 -->
+            </element>
+            <element name="is_recycled">
+                <data type="boolean"/>
+            </element>
+            <element name="origin_recycling_input">
+                <text/>
+            </element>
+        </element>
+    </define>
+    
+    
+    <define name="step">
+        <element name="step">
+            <element name="type">
+                <text/><!--replace with list of choices to validate against -->
+            </element>
+            <element name="country">
+                <text/>
+            </element>
+            <optional>
+                <element name="company_name">
+                    <text/>
+                </element>
+            </optional>
+            <optional>
+                <element name="street">
+                    <text/>
+                </element>
+            </optional>
+            <optional>
+                <element name="postal">
+                    <text/>
+                </element>
+            </optional>
+            <optional>
+                <element name="city">
+                    <text/>
+                </element>
+            </optional>
+            <optional>
+                <element name="additional_information">
+                    <text/>
+                </element>
+            </optional>
+        </element>
+    </define>
+</grammar>

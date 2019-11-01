@@ -1,0 +1,103 @@
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+
+start =
+  element product {
+    element circularity-id { xsd:token },
+    element name {
+      xsd:Name
+      # must start with a letter or underscore
+      
+    },
+    element brand { text },
+    element sku { xsd:token }?,
+    element collection { text }?,
+    product-type,
+    assembly+
+  }
+product-type =
+  element product-type {
+    list { "Clothing" | "Accessories" | "Footwear" | "Other" }
+  }
+assembly =
+  element assembly {
+    element name { text },
+    material+,
+    element instructions-for-disassembly { text }
+  }
+material =
+  element material {
+    element name { text },
+    element total_weight {
+      attribute unit {
+        list { "kg" | "g" | "oz" | "lb" }
+      },
+      xsd:decimal
+    },
+    element construction { text },
+    component+,
+    step+,
+    element water_properties {
+      list { "Without" | "Without" | "Without" }
+    },
+    element elasticity {
+      # maybe remove this?
+      attribute type { text },
+      # add choice list
+      xsd:int
+    },
+    element weight {
+      attribute unit {
+        list { "kg" | "g" | "oz" | "lb" }
+      },
+      xsd:decimal
+    },
+    element colour {
+      text
+      # replace with choice list
+      
+    },
+    element pattern {
+      text
+      # replace with choice list
+      
+    }?,
+    element dyeing {
+      text
+      # replace with choice list
+      
+    },
+    element dyestuff { text }?,
+    element printing {
+      text
+      # replace with choice list
+      
+    },
+    element printstuff { text }?,
+    element finishing { text }*,
+    element chemical_compliance { text }?
+  }
+component =
+  element component {
+    element name { text },
+    element percentage {
+      xsd:decimal
+      # percentage total should be 100
+      
+    },
+    element is_recycled { xsd:boolean },
+    element origin_recycling_input { text }
+  }
+step =
+  element step {
+    element type {
+      text
+      # replace with list of choices to validate against
+      
+    },
+    element country { text },
+    element company_name { text }?,
+    element street { text }?,
+    element postal { text }?,
+    element city { text }?,
+    element additional_information { text }?
+  }

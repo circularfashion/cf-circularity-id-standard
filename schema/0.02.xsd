@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="product">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="circularity-id"/>
+        <xs:element name="name" type="xs:Name"/>
+        <xs:element ref="brand"/>
+        <xs:element minOccurs="0" ref="sku"/>
+        <xs:element minOccurs="0" ref="collection"/>
+        <xs:element ref="product-type"/>
+        <xs:element maxOccurs="unbounded" ref="assembly"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="circularity-id" type="xs:token"/>
+  <xs:element name="brand" type="xs:string"/>
+  <xs:element name="sku" type="xs:token"/>
+  <xs:element name="collection" type="xs:string"/>
+  <xs:element name="product-type">
+    <xs:simpleType>
+      <xs:restriction>
+        <xs:simpleType>
+          <xs:list>
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="Clothing"/>
+                <xs:enumeration value="Accessories"/>
+                <xs:enumeration value="Footwear"/>
+                <xs:enumeration value="Other"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:list>
+        </xs:simpleType>
+        <xs:length value="1"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="assembly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element maxOccurs="unbounded" ref="material"/>
+        <xs:element ref="instructions-for-disassembly"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="instructions-for-disassembly" type="xs:string"/>
+  <xs:element name="material">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element ref="total_weight"/>
+        <xs:element ref="construction"/>
+        <xs:element maxOccurs="unbounded" ref="component"/>
+        <xs:element maxOccurs="unbounded" ref="step"/>
+        <xs:element ref="water_properties"/>
+        <xs:element ref="elasticity"/>
+        <xs:element ref="weight"/>
+        <xs:element ref="colour"/>
+        <xs:element minOccurs="0" ref="pattern"/>
+        <xs:element ref="dyeing"/>
+        <xs:element minOccurs="0" ref="dyestuff"/>
+        <xs:element ref="printing"/>
+        <xs:element minOccurs="0" ref="printstuff"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="finishing"/>
+        <xs:element minOccurs="0" ref="chemical_compliance"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="total_weight">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:decimal">
+          <xs:attribute name="unit" use="required">
+            <xs:simpleType>
+              <xs:restriction>
+                <xs:simpleType>
+                  <xs:list>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:token">
+                        <xs:enumeration value="kg"/>
+                        <xs:enumeration value="g"/>
+                        <xs:enumeration value="oz"/>
+                        <xs:enumeration value="lb"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:list>
+                </xs:simpleType>
+                <xs:length value="1"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="construction" type="xs:string"/>
+  <xs:element name="water_properties">
+    <xs:simpleType>
+      <xs:restriction>
+        <xs:simpleType>
+          <xs:list>
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="Without"/>
+                <xs:enumeration value="Without"/>
+                <xs:enumeration value="Without"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:list>
+        </xs:simpleType>
+        <xs:length value="1"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="elasticity">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:int">
+          <xs:attribute name="type" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="weight">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:decimal">
+          <xs:attribute name="unit" use="required">
+            <xs:simpleType>
+              <xs:restriction>
+                <xs:simpleType>
+                  <xs:list>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:token">
+                        <xs:enumeration value="kg"/>
+                        <xs:enumeration value="g"/>
+                        <xs:enumeration value="oz"/>
+                        <xs:enumeration value="lb"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:list>
+                </xs:simpleType>
+                <xs:length value="1"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="colour" type="xs:string"/>
+  <xs:element name="pattern" type="xs:string"/>
+  <xs:element name="dyeing" type="xs:string"/>
+  <xs:element name="dyestuff" type="xs:string"/>
+  <xs:element name="printing" type="xs:string"/>
+  <xs:element name="printstuff" type="xs:string"/>
+  <xs:element name="finishing" type="xs:string"/>
+  <xs:element name="chemical_compliance" type="xs:string"/>
+  <xs:element name="component">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element ref="percentage"/>
+        <xs:element ref="is_recycled"/>
+        <xs:element ref="origin_recycling_input"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="percentage" type="xs:decimal"/>
+  <xs:element name="is_recycled" type="xs:boolean"/>
+  <xs:element name="origin_recycling_input" type="xs:string"/>
+  <xs:element name="step">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="type"/>
+        <xs:element ref="country"/>
+        <xs:element minOccurs="0" ref="company_name"/>
+        <xs:element minOccurs="0" ref="street"/>
+        <xs:element minOccurs="0" ref="postal"/>
+        <xs:element minOccurs="0" ref="city"/>
+        <xs:element minOccurs="0" ref="additional_information"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="type" type="xs:string"/>
+  <xs:element name="country" type="xs:string"/>
+  <xs:element name="company_name" type="xs:string"/>
+  <xs:element name="street" type="xs:string"/>
+  <xs:element name="postal" type="xs:string"/>
+  <xs:element name="city" type="xs:string"/>
+  <xs:element name="additional_information" type="xs:string"/>
+</xs:schema>
