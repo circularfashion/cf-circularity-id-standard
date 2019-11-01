@@ -6,7 +6,7 @@
 #
 
 import sys
-from lxml import etree
+from glob import glob
 
 from subprocess import call
 
@@ -15,6 +15,13 @@ from fnc import (
     compose,
     keyby,
 )
+
+from validations import (
+    validate_one,
+    validate_many,
+)
+
+import uhuh
 
 call('./convert.sh')
 
@@ -33,13 +40,16 @@ def log(x):
 
 
 def unpack(x):
-    expected_args = ('-f', '--schema-version')
-    f, s = expected_args
+    expected_args = ('-v')
+    optional_args = ('-p')
+    v, = expected_args
+    fp, = optional_args
     try:
-        return (x[f], x[s])
+        map(lambda y: x[y], expected_args)
     except:  # noqa: E722
         print('Error!!! -- Expected arguments', expected_args)
         die()
+    return ()
 
 
 args_to_dict = compose(
@@ -52,14 +62,13 @@ f, schema = args_to_dict(arguments)
 
 print(f, schema)
 
-relaxng_doc = etree.parse('./schema/' + schema + '/schema.rng')
+schema_file = './schema/' + schema + '/schema.rng'
 
-validator = etree.RelaxNG(relaxng_doc)
+v = validate_one(schema_file, f)
 
-doc = etree.parse(f)
+print(v)
 
-print('validation ran sucessfully, the supplied xml document has the following validation:')
-valid = validator.validate(doc)
+uhuh.u()
 
-print(valid)
-print(validator.error_log)
+gg = glob('**', recursive=True)
+print(gg)
