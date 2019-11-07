@@ -54,7 +54,7 @@
                 <text/>
             </element>
             <oneOrMore>
-                <ref name="material"/>
+                <ref name="MATERIAL"/>
             </oneOrMore>
             <element name="instructions-for-disassembly">
                 <text/>
@@ -62,7 +62,7 @@
         </element>
     </define>
 
-    <define name="material">
+    <define name="MATERIAL">
         <element name="material">
             <element name="name">
                 <text/>

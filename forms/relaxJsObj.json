@@ -1,558 +1,430 @@
 {
- "grammar": {
-  "$": {
-   "xmlns": "http://relaxng.org/ns/structure/1.0",
-   "xmlns:a": "http://relaxng.org/ns/compatibility/annotations/1.0",
-   "datatypeLibrary": "http://www.w3.org/2001/XMLSchema-datatypes"
-  },
-  "start": [
-   {
-    "element": [
-     {
-      "$": {
-       "name": "product"
-      },
-      "element": [
-       {
-        "$": {
-         "name": "circularity-id"
-        },
-        "data": [
-         {
-          "$": {
-           "type": "token"
-          }
-         }
-        ]
-       },
-       {
-        "$": {
-         "name": "name"
-        },
-        "data": [
-         {
-          "$": {
-           "type": "Name"
-          }
-         }
-        ]
-       },
-       {
-        "$": {
-         "name": "brand"
-        },
-        "text": [
-         ""
-        ]
-       }
-      ],
-      "optional": [
-       {
-        "element": [
-         {
-          "$": {
-           "name": "sku"
-          },
-          "data": [
-           {
-            "$": {
-             "type": "token"
-            }
-           }
-          ]
-         }
-        ]
-       },
-       {
-        "element": [
-         {
-          "$": {
-           "name": "collection"
-          },
-          "text": [
-           ""
-          ]
-         }
-        ]
-       }
-      ],
-      "ref": [
-       {
-        "$": {
-         "name": "product-type"
+  "grammar": {
+    "ATTR": {
+      "xmlns": "http://relaxng.org/ns/structure/1.0",
+      "xmlns:a": "http://relaxng.org/ns/compatibility/annotations/1.0",
+      "datatypeLibrary": "http://www.w3.org/2001/XMLSchema-datatypes"
+    },
+    "start": {
+      "ref": {
+        "ATTR": {
+          "name": "product"
         }
-       }
-      ],
-      "oneOrMore": [
-       {
-        "ref": [
-         {
-          "$": {
-           "name": "assembly"
-          }
-         }
-        ]
-       }
-      ]
-     }
-    ]
-   }
-  ],
-  "define": [
-   {
-    "$": {
-     "name": "product-type"
+      }
     },
-    "element": [
-     {
-      "$": {
-       "name": "product-type"
-      },
-      "list": [
-       {
-        "choice": [
-         {
-          "value": [
-           "Clothing",
-           "Accessories",
-           "Footwear",
-           "Other"
-          ]
-         }
-        ]
-       }
-      ]
-     }
-    ]
-   },
-   {
-    "$": {
-     "name": "assembly"
-    },
-    "element": [
-     {
-      "$": {
-       "name": "assembly"
-      },
-      "element": [
-       {
-        "$": {
-         "name": "name"
+    "define": [
+      {
+        "ATTR": {
+          "name": "product"
         },
-        "text": [
-         ""
-        ]
-       },
-       {
-        "$": {
-         "name": "instructions-for-disassembly"
-        },
-        "text": [
-         ""
-        ]
-       }
-      ],
-      "oneOrMore": [
-       {
-        "ref": [
-         {
-          "$": {
-           "name": "material"
-          }
-         }
-        ]
-       }
-      ]
-     }
-    ]
-   },
-   {
-    "$": {
-     "name": "material"
-    },
-    "element": [
-     {
-      "$": {
-       "name": "material"
-      },
-      "element": [
-       {
-        "$": {
-         "name": "name"
-        },
-        "text": [
-         ""
-        ]
-       },
-       {
-        "$": {
-         "name": "total_weight"
-        },
-        "attribute": [
-         {
-          "$": {
-           "name": "unit"
+        "element": {
+          "ATTR": {
+            "name": "product"
           },
-          "list": [
-           {
-            "choice": [
-             {
+          "element": [
+            {
+              "ATTR": {
+                "name": "circularity-id"
+              },
+              "data": {
+                "ATTR": {
+                  "type": "token"
+                }
+              }
+            },
+            {
+              "ATTR": {
+                "name": "name"
+              },
+              "data": {
+                "ATTR": {
+                  "type": "Name"
+                }
+              }
+            },
+            {
+              "ATTR": {
+                "name": "brand"
+              },
+              "text": ""
+            }
+          ],
+          "optional": [
+            {
+              "element": {
+                "ATTR": {
+                  "name": "sku"
+                },
+                "data": {
+                  "ATTR": {
+                    "type": "token"
+                  }
+                }
+              }
+            },
+            {
+              "element": {
+                "ATTR": {
+                  "name": "collection"
+                },
+                "text": ""
+              }
+            }
+          ],
+          "ref": {
+            "ATTR": {
+              "name": "product-type"
+            }
+          },
+          "oneOrMore": {
+            "ref": {
+              "ATTR": {
+                "name": "assembly"
+              }
+            }
+          }
+        }
+      },
+      {
+        "ATTR": {
+          "name": "product-type"
+        },
+        "element": {
+          "ATTR": {
+            "name": "product-type"
+          },
+          "list": {
+            "choice": {
               "value": [
-               "kg",
-               "g",
-               "oz",
-               "lb"
+                "Clothing",
+                "Accessories",
+                "Footwear",
+                "Other"
               ]
-             }
-            ]
-           }
-          ]
-         }
-        ],
-        "data": [
-         {
-          "$": {
-           "type": "decimal"
+            }
           }
-         }
-        ]
-       },
-       {
-        "$": {
-         "name": "construction"
-        },
-        "text": [
-         ""
-        ]
-       },
-       {
-        "$": {
-         "name": "water_properties"
-        },
-        "list": [
-         {
-          "choice": [
-           {
-            "value": [
-             "Without",
-             "Without",
-             "Without"
-            ]
-           }
-          ]
-         }
-        ]
-       },
-       {
-        "$": {
-         "name": "elasticity"
-        },
-        "attribute": [
-         {
-          "$": {
-           "name": "type"
-          }
-         }
-        ],
-        "data": [
-         {
-          "$": {
-           "type": "int"
-          }
-         }
-        ]
-       },
-       {
-        "$": {
-         "name": "weight"
-        },
-        "attribute": [
-         {
-          "$": {
-           "name": "unit"
-          },
-          "list": [
-           {
-            "choice": [
-             {
-              "value": [
-               "kg",
-               "g",
-               "oz",
-               "lb"
-              ]
-             }
-            ]
-           }
-          ]
-         }
-        ],
-        "data": [
-         {
-          "$": {
-           "type": "decimal"
-          }
-         }
-        ]
-       },
-       {
-        "$": {
-         "name": "colour"
-        },
-        "text": [
-         ""
-        ]
-       },
-       {
-        "$": {
-         "name": "dyeing"
-        },
-        "text": [
-         ""
-        ]
-       },
-       {
-        "$": {
-         "name": "printing"
-        },
-        "text": [
-         ""
-        ]
-       }
-      ],
-      "oneOrMore": [
-       {
-        "ref": [
-         {
-          "$": {
-           "name": "component"
-          }
-         }
-        ]
-       },
-       {
-        "ref": [
-         {
-          "$": {
-           "name": "step"
-          }
-         }
-        ]
-       }
-      ],
-      "optional": [
-       {
-        "element": [
-         {
-          "$": {
-           "name": "pattern"
-          },
-          "text": [
-           ""
-          ]
-         }
-        ]
-       },
-       {
-        "element": [
-         {
-          "$": {
-           "name": "dyestuff"
-          },
-          "text": [
-           ""
-          ]
-         }
-        ]
-       },
-       {
-        "element": [
-         {
-          "$": {
-           "name": "printstuff"
-          },
-          "text": [
-           ""
-          ]
-         }
-        ]
-       },
-       {
-        "element": [
-         {
-          "$": {
-           "name": "chemical_compliance"
-          },
-          "text": [
-           ""
-          ]
-         }
-        ]
-       }
-      ],
-      "zeroOrMore": [
-       {
-        "element": [
-         {
-          "$": {
-           "name": "finishing"
-          },
-          "text": [
-           ""
-          ]
-         }
-        ]
-       }
-      ]
-     }
-    ]
-   },
-   {
-    "$": {
-     "name": "component"
-    },
-    "element": [
-     {
-      "$": {
-       "name": "component"
+        }
       },
-      "element": [
-       {
-        "$": {
-         "name": "name"
+      {
+        "ATTR": {
+          "name": "assembly"
         },
-        "text": [
-         ""
-        ]
-       },
-       {
-        "$": {
-         "name": "percentage"
-        },
-        "data": [
-         {
-          "$": {
-           "type": "decimal"
+        "element": {
+          "ATTR": {
+            "name": "assembly"
+          },
+          "element": [
+            {
+              "ATTR": {
+                "name": "name"
+              },
+              "text": ""
+            },
+            {
+              "ATTR": {
+                "name": "instructions-for-disassembly"
+              },
+              "text": ""
+            }
+          ],
+          "oneOrMore": {
+            "ref": {
+              "ATTR": {
+                "name": "MATERIAL"
+              }
+            }
           }
-         }
-        ]
-       },
-       {
-        "$": {
-         "name": "is_recycled"
-        },
-        "data": [
-         {
-          "$": {
-           "type": "boolean"
-          }
-         }
-        ]
-       },
-       {
-        "$": {
-         "name": "origin_recycling_input"
-        },
-        "text": [
-         ""
-        ]
-       }
-      ]
-     }
-    ]
-   },
-   {
-    "$": {
-     "name": "step"
-    },
-    "element": [
-     {
-      "$": {
-       "name": "step"
+        }
       },
-      "element": [
-       {
-        "$": {
-         "name": "type"
+      {
+        "ATTR": {
+          "name": "MATERIAL"
         },
-        "text": [
-         ""
-        ]
-       },
-       {
-        "$": {
-         "name": "country"
+        "element": {
+          "ATTR": {
+            "name": "material"
+          },
+          "element": [
+            {
+              "ATTR": {
+                "name": "name"
+              },
+              "text": ""
+            },
+            {
+              "ATTR": {
+                "name": "total_weight"
+              },
+              "attribute": {
+                "ATTR": {
+                  "name": "unit"
+                },
+                "list": {
+                  "choice": {
+                    "value": [
+                      "kg",
+                      "g",
+                      "oz",
+                      "lb"
+                    ]
+                  }
+                }
+              },
+              "data": {
+                "ATTR": {
+                  "type": "decimal"
+                }
+              }
+            },
+            {
+              "ATTR": {
+                "name": "construction"
+              },
+              "text": ""
+            },
+            {
+              "ATTR": {
+                "name": "water_properties"
+              },
+              "list": {
+                "choice": {
+                  "value": [
+                    "Without",
+                    "Without",
+                    "Without"
+                  ]
+                }
+              }
+            },
+            {
+              "ATTR": {
+                "name": "elasticity"
+              },
+              "attribute": {
+                "ATTR": {
+                  "name": "type"
+                }
+              },
+              "data": {
+                "ATTR": {
+                  "type": "int"
+                }
+              }
+            },
+            {
+              "ATTR": {
+                "name": "weight"
+              },
+              "attribute": {
+                "ATTR": {
+                  "name": "unit"
+                },
+                "list": {
+                  "choice": {
+                    "value": [
+                      "kg",
+                      "g",
+                      "oz",
+                      "lb"
+                    ]
+                  }
+                }
+              },
+              "data": {
+                "ATTR": {
+                  "type": "decimal"
+                }
+              }
+            },
+            {
+              "ATTR": {
+                "name": "colour"
+              },
+              "text": ""
+            },
+            {
+              "ATTR": {
+                "name": "dyeing"
+              },
+              "text": ""
+            },
+            {
+              "ATTR": {
+                "name": "printing"
+              },
+              "text": ""
+            }
+          ],
+          "oneOrMore": [
+            {
+              "ref": {
+                "ATTR": {
+                  "name": "component"
+                }
+              }
+            },
+            {
+              "ref": {
+                "ATTR": {
+                  "name": "step"
+                }
+              }
+            }
+          ],
+          "optional": [
+            {
+              "element": {
+                "ATTR": {
+                  "name": "pattern"
+                },
+                "text": ""
+              }
+            },
+            {
+              "element": {
+                "ATTR": {
+                  "name": "dyestuff"
+                },
+                "text": ""
+              }
+            },
+            {
+              "element": {
+                "ATTR": {
+                  "name": "printstuff"
+                },
+                "text": ""
+              }
+            },
+            {
+              "element": {
+                "ATTR": {
+                  "name": "chemical_compliance"
+                },
+                "text": ""
+              }
+            }
+          ],
+          "zeroOrMore": {
+            "element": {
+              "ATTR": {
+                "name": "finishing"
+              },
+              "text": ""
+            }
+          }
+        }
+      },
+      {
+        "ATTR": {
+          "name": "component"
         },
-        "text": [
-         ""
-        ]
-       }
-      ],
-      "optional": [
-       {
-        "element": [
-         {
-          "$": {
-           "name": "company_name"
+        "element": {
+          "ATTR": {
+            "name": "component"
           },
-          "text": [
-           ""
+          "element": [
+            {
+              "ATTR": {
+                "name": "name"
+              },
+              "text": ""
+            },
+            {
+              "ATTR": {
+                "name": "percentage"
+              },
+              "data": {
+                "ATTR": {
+                  "type": "decimal"
+                }
+              }
+            },
+            {
+              "ATTR": {
+                "name": "is_recycled"
+              },
+              "data": {
+                "ATTR": {
+                  "type": "boolean"
+                }
+              }
+            },
+            {
+              "ATTR": {
+                "name": "origin_recycling_input"
+              },
+              "text": ""
+            }
           ]
-         }
-        ]
-       },
-       {
-        "element": [
-         {
-          "$": {
-           "name": "street"
+        }
+      },
+      {
+        "ATTR": {
+          "name": "step"
+        },
+        "element": {
+          "ATTR": {
+            "name": "step"
           },
-          "text": [
-           ""
+          "element": [
+            {
+              "ATTR": {
+                "name": "type"
+              },
+              "text": ""
+            },
+            {
+              "ATTR": {
+                "name": "country"
+              },
+              "text": ""
+            }
+          ],
+          "optional": [
+            {
+              "element": {
+                "ATTR": {
+                  "name": "company_name"
+                },
+                "text": ""
+              }
+            },
+            {
+              "element": {
+                "ATTR": {
+                  "name": "street"
+                },
+                "text": ""
+              }
+            },
+            {
+              "element": {
+                "ATTR": {
+                  "name": "postal"
+                },
+                "text": ""
+              }
+            },
+            {
+              "element": {
+                "ATTR": {
+                  "name": "city"
+                },
+                "text": ""
+              }
+            },
+            {
+              "element": {
+                "ATTR": {
+                  "name": "additional_information"
+                },
+                "text": ""
+              }
+            }
           ]
-         }
-        ]
-       },
-       {
-        "element": [
-         {
-          "$": {
-           "name": "postal"
-          },
-          "text": [
-           ""
-          ]
-         }
-        ]
-       },
-       {
-        "element": [
-         {
-          "$": {
-           "name": "city"
-          },
-          "text": [
-           ""
-          ]
-         }
-        ]
-       },
-       {
-        "element": [
-         {
-          "$": {
-           "name": "additional_information"
-          },
-          "text": [
-           ""
-          ]
-         }
-        ]
-       }
-      ]
-     }
+        }
+      }
     ]
-   }
-  ]
- }
+  }
 }
