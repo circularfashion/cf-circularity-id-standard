@@ -3,7 +3,8 @@
     <circularity-id>circularity-id0</circularity-id>
     <name>name0</name>
     <brand>brand0</brand>
-    <product-type>Clothing</product-type>
+    <sku>345*</sku>
+    <product-type>Spaghetti</product-type>
     <assembly>
         <name>name1</name>
         <material>
@@ -16,14 +17,8 @@
                 <is_recycled>false</is_recycled>
                 <origin_recycling_input>origin_recycling_input0</origin_recycling_input>
             </component>
-            <component>
-                <name>name4</name>
-                <percentage>0</percentage>
-                <is_recycled>false</is_recycled>
-                <origin_recycling_input>origin_recycling_input1</origin_recycling_input>
-            </component>
             <step>
-                <type>type0</type>
+                <name>type0</name>
                 <country>country0</country>
             </step>
             <step>
