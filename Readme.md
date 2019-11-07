@@ -17,6 +17,20 @@ the compact version for ease.
 very helpful wikipedia article:
 https://en.wikipedia.org/wiki/RELAX_NG
 
+### using the library
+
+```
+In [1]: from id_standards import validations
+In [2]: xml_invalid = '<product></product>'
+In [3]: xml_valid = '<book><page /><page /></book>'
+In [4]: validations.validate_on_version('0.01', xml_valid)
+Out[4]: [True, 'XML is valid according to schema']
+In [5]: validations.validate_on_version('0.01', xml_invalid)
+Out[5]:
+[False,
+ <string>:1:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element book, got product]
+```
+
 
 ### TEST VALIDATING THE STANDARDS!
 
@@ -39,13 +53,13 @@ options
      --files (-f): a path to a file or the glob pattern to the xml files to test against
 
 # this command will test ALL failing and passing for schema version 0.01
-python id_standards/test.py -v 0.01
+python test.py -v 0.01
 
 # this command will test a certain version on all .xml files in a path
-python id_standards/test.py -v 0.01 -f ./example/0.02/failing
+python test.py -v 0.01 -f ./example/0.02/failing
 
 # additionally, you can hand it a specific .rng schema file using -s
-python id_standards/test.py -s schema/testing.rng -f example
+python test.py -s schema/testing.rng -f example
 
 ```
 

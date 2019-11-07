@@ -6,16 +6,16 @@ from fnc import (
     map as mapF,
 )
 
-import schema
+from . import schema
 
-import validator
+from . import validator
 
-def validate_one(schema: str, xml: str):
-    validator.set_schema(schema)
+def validate_one(sch: str, xml: str):
+    validator.set_schema(sch)
     return [validator.validate(xml), validator.errors()]
 
-def validate_many(schema, xmls):
-    validate = partial(validate_one, schema)
+def validate_many(sch, xmls):
+    validate = partial(validate_one, sch)
     return mapF(validate, xmls)
 
 def validate_on_version(version: str, xml:str):

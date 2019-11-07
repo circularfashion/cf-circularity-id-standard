@@ -17,12 +17,12 @@ from fnc import (
     map as mapF,
 )
 
-from validations import (
+from id_standards.validations import (
     validate_one,
     validate_many,
 )
 
-import schema
+from id_standards import schema
 
 script_name, *arguments = sys.argv
 
