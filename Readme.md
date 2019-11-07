@@ -20,7 +20,9 @@ https://en.wikipedia.org/wiki/RELAX_NG
 
 ### TEST VALIDATING THE STANDARDS!
 
-first you must convert the schemas from `.rnc` to `.rng`
+first you must convert the schemas from `.rnc` to `.rng` or back again.
+
+the logic is - if both file types exist, do nothing.  if one but not the other, cconvert.
 
 ```
 ./convert.sh
