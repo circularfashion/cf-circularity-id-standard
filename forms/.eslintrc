@@ -1,0 +1,58 @@
+{
+    "parserOptions": {
+      "parser": "babel-eslint",
+      "ecmaVersion": 8,
+      "sourceType": "module"
+  },
+  "extends": ["airbnb-base", "plugin:vue/recommended", "plugin:lodash-fp/recommended"],
+  "env": {
+    "browser": true,
+    "mocha": true,
+    "node": true
+  },
+  "rules": {
+    "arrow-parens": ["off"],
+    "object-curly-spacing": ["off"],
+    "compat/compat": 2,
+    "import/no-unresolved": ["error", { "ignore": ["electron"] }],
+    "no-console": 1,
+    "no-use-before-define": "off",
+    "promise/param-names": 2,
+    "promise/always-return": 2,
+    "promise/catch-or-return": 2,
+    "vue/require-prop-types": 0,
+    "vue/order-in-components": 0,
+    "vue/require-default-prop": 0,
+    "comma-dangle": ["error", {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "always-multiline",
+      "exports": "always-multiline",
+      "functions": "never"
+    }],
+    "no-unused-vars": ["error", {
+      "vars": "all",
+      "args": "after-used",
+      "argsIgnorePattern": "^_",
+      "ignoreRestSiblings": true
+      }],
+    "promise/no-native": 0,
+    "lodash-fp/use-fp": "warn",
+    "implicit-arrow-linebreak": ["off"],
+    "no-nested-ternary": ["off"],
+    "operator-linebreak": ["off"]
+  },
+  "plugins": [
+    "import",
+    "promise",
+    "compat",
+    "lodash-fp"
+  ],
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.config.eslint.js"
+      }
+    }
+  }
+}

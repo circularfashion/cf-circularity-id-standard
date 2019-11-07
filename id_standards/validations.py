@@ -6,9 +6,10 @@ from fnc import (
     map as mapF,
 )
 
-from . import schema
-
-from . import validator
+from . import (
+    schema,
+    validator,
+)
 
 def validate_one(sch: str, xml: str):
     validator.set_schema(sch)
