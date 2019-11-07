@@ -11,7 +11,8 @@
   "dependencies": {
     "bluebird": "^3.7.1",
     "lodash": "^4.17.15",
-    "xml2js": "^0.4.22"
+    "xml2js": "^0.4.22",
+    "z": "^1.0.9"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
