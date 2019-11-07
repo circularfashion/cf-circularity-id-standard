@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<grammar 
+<grammar
     xmlns="http://relaxng.org/ns/structure/1.0"
     xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
     datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
@@ -30,7 +30,7 @@
             </oneOrMore>
         </element>
     </start>
-    
+
     <define name="product-type">
         <element name="product-type">
             <list>
@@ -43,7 +43,7 @@
             </list>
         </element>
     </define>
-    
+
     <define name="assembly">
         <element name="assembly">
             <element name="name">
@@ -57,7 +57,7 @@
             </element>
         </element>
     </define>
-    
+
     <define name="material">
         <element name="material">
             <element name="name">
@@ -92,7 +92,7 @@
                         <value>Without</value>
                         <value>Without</value>
                     </choice>
-                </list>                 
+                </list>
             </element>
             <element name="elasticity"><!-- maybe remove this? -->
                 <attribute name="type"></attribute><!-- add choice list -->
@@ -147,8 +147,8 @@
             </optional>
         </element>
     </define>
-    
-    
+
+
     <define name="component">
         <element name="component">
             <element name="name">
@@ -165,8 +165,8 @@
             </element>
         </element>
     </define>
-    
-    
+
+
     <define name="step">
         <element name="step">
             <element name="type">

@@ -1,16 +1,3 @@
-import os
-
-from typing import (
-    Union
-)
-
-from io import IOBase
-
-from os.path import (
-    exists,
-    join,
-)
-
 from functools import (
     partial
 )
@@ -19,16 +6,22 @@ from fnc import (
     map as mapF,
 )
 
+from . import schema
+
 from . import validator
 
-def validate_on_schema(schema_version, f):
-    schema_file = os.path.join(os.path.dirname(__file__), '..', 'schema', schema_version, 'schema.rng')
-    return validate_one(schema_file, f)
+def validate_one(sch: str, xml: str):
+    validator.set_schema(sch)
+    return [validator.validate(xml), validator.errors()]
 
-def validate_one(schema_file, f:Union[IOBase, str]):
-    validator.set_schema(schema_file)
-    return [validator.validate(f), validator.errors()]
+def validate_many(sch, xmls):
+    validate = partial(validate_one, sch)
+    return mapF(validate, xmls)
 
-def validate_many(schema_file, fs):
-    validate_on_schema = partial(validate_one, schema_file)
-    return mapF(validate_on_schema, fs)
+def validate_on_version(version: str, xml:str):
+    s = schema.from_version(version)
+    return validate_one(s, xml)
+
+def validate_many_on_version(version: str, xmls: list):
+    validate = partial(validate_on_version, version)
+    return mapF(validate, xmls)
