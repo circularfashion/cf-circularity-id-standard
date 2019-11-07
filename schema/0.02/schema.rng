@@ -4,6 +4,10 @@
     xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
     datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
     <start>
+      <ref name="product" />
+    </start>
+
+    <define name="product">
         <element name="product">
             <element name="circularity-id">
                 <data type="token"></data>
@@ -29,7 +33,7 @@
                 <ref name="assembly"/>
             </oneOrMore>
         </element>
-    </start>
+    </define>
 
     <define name="product-type">
         <element name="product-type">
