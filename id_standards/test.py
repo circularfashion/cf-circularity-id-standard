@@ -24,7 +24,6 @@ from validations import (
 
 import schema
 
-
 script_name, *arguments = sys.argv
 
 def die(): sys.exit()

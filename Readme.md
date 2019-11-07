@@ -49,6 +49,31 @@ python id_standards/test.py -s schema/testing.rng -f example
 
 ```
 
+### XML utilities
+
+##### merge
+```
+In [1]: from id_standards.utils.xml import merge
+In [2]: xml1 = '<pd />'
+In [3]: xml2 = '<pdd />'
+In [4]: xml3 = '<pdd><data1 /></pdd>'
+In [5]: merge(xml1, xml2, xml3)
+Out[5]: b'<pdd><data1/></pdd>'
+```
+
+##### equals
+```
+In [2]: xml1 = '<pd />'
+In [3]: xml2 = '<pdd />'
+In [4]: xml3 = '<pdd><data1 /></pdd>'
+In [6]: xml4 = '<pdd><data1></data1></pdd>'
+In [7]: from id_standards.utils.xml import equals
+In [8]: equals(xml1, xml4)
+Out[8]: False
+In [9]: equals(xml3, xml4)
+Out[9]: True
+```
+
 
 ## research:
 

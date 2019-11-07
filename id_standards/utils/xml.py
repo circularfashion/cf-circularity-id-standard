@@ -1,6 +1,7 @@
 from json import loads, dumps
 from functools import (
-    partial
+    partial,
+    reduce,
 )
 from lxml import etree
 
@@ -24,12 +25,13 @@ def assert_are_xml(*args) -> bool:
         all
     )(args)
 
-def merge(xml1: str, xml2: str) -> str:
-    assert_are_xml(xml1, xml2)
-    # TODO: consider using convert to json, merge, then normalize to do this
-    x1, x2 = etree.fromstring(xml1), etree.fromstring(xml2)
-    x1.extend(x2)
-    return etree.tostring(x1)
+def merge(*args) -> str:
+    "take an arbitrary amont of xml strings and merge them left"
+    assert_are_xml(*args)
+    xmls = map(etree.fromstring, args)
+    merge_one = lambda x,y: x.extend(y) if x is not None else y
+    merged = reduce(merge_one, xmls)
+    return etree.tostring(merged)
 
 def to_dict(xml: str) -> dict:
     return compose(
@@ -55,7 +57,6 @@ def apply_hash(xml: str, hashing_function=None) -> str:
 
 def equals(xml1: str, xml2: str) -> bool:
     assert_are_xml(xml1, xml2)
-    # we do this because we do NOT care about dict order
     d1, d2 = to_dict(xml1), to_dict(xml2)
     return d1 == d2
 
