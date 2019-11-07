@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 # Hello!
 # please send me a -f file path to an xml file
@@ -13,7 +13,8 @@ from subprocess import call
 from fnc import (
     chunk,
     compose,
-    keyby,
+    get,
+    map as mapF,
 )
 
 from validations import (
@@ -21,15 +22,12 @@ from validations import (
     validate_many,
 )
 
-import uhuh
+import schema
 
-call('./convert.sh')
 
 script_name, *arguments = sys.argv
 
-
 def die(): sys.exit()
-
 
 def log(x):
     try:
@@ -38,19 +36,13 @@ def log(x):
         print(x)
     return x
 
-
 def unpack(x):
-    expected_args = ('-v')
-    optional_args = ('-p')
-    v, = expected_args
-    fp, = optional_args
-    try:
-        map(lambda y: x[y], expected_args)
-    except:  # noqa: E722
-        print('Error!!! -- Expected arguments', expected_args)
-        die()
-    return ()
-
+    d = {
+        'version': get('--version', x) or get('-v', x),
+        'schema_file': get('--schema-file', x) or get('-s', x),
+        'glob': get('--files', x) or get('-f', x),
+    }
+    return d
 
 args_to_dict = compose(
     (chunk, 2),
@@ -58,17 +50,42 @@ args_to_dict = compose(
     unpack,
 )
 
-f, schema = args_to_dict(arguments)
+def schema_to_str(args):
+    schema_str = None
+    if get('version', args):
+        schema_str = schema.from_version(get('version', args))
+    elif get('schema_file', args):
+        schema_str = schema.load_schema_file(get('schema_file', args))
+    if not schema_str:
+        print('you need to supply a schema version or file with -v or -s')
+        die()
+    return schema_str
 
-print(f, schema)
+args = args_to_dict(arguments)
 
-schema_file = './schema/' + schema + '/schema.rng'
+print('using args', args)
 
-v = validate_one(schema_file, f)
+schema_str = schema_to_str(args)
 
-print(v)
+gl = get('glob', args) or './example/' + get('version', args)
+print('glooob patternnn', gl)
 
-uhuh.u()
-
-gg = glob('**', recursive=True)
+# read a directory for xml files recursively else just use given one
+gg = list(filter(
+    lambda x: x.endswith('.xml'),
+    glob(f'{gl}/**', recursive=True) + [gl]
+))
+print(f'running supplied schema on the following files')
 print(gg)
+
+
+# call('./convert.sh')
+print('---------------------------------------------------------')
+print('validating xml files!!!!')
+print('---------------------------------------------------------')
+for f in gg:
+    xml = schema.load_schema_file(f)
+    result = validate_one(schema_str, xml)
+    print(f)
+    print(result)
+    print('-------------------------------------------')

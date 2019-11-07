@@ -26,15 +26,20 @@ first you must convert the schemas from `.rnc` to `.rng`
 ./convert.sh
 ```
 
-```
-python validate_test.py -f example/0.01.xml --schema-version 0.01
-```
-
-or try a failing one!
+you can use the command line script to do fun things!
 
 ```
-python validate_test.py -f failing_example/0.01.xml --schema-version 0.01
+# this command will test ALL failing and passing for schema version 0.01
+python id_standards/test.py -v 0.01
+
+# this command will test a certain version on all .xml files in a path
+python id_standards/test.py -v 0.01 -f ./example/0.02/failing
+
+# additionally, you can hand it a specific .rng schema file using -s
+python id_standards/test.py -s schema/testing.rng -f example
+
 ```
+
 
 ## research:
 

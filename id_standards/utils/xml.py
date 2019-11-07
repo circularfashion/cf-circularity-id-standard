@@ -1,10 +1,12 @@
 from json import loads, dumps
-
-from copy import (
-    deepcopy
+from functools import (
+    partial
 )
 from lxml import etree
 
+from fnc import (
+    compose,
+)
 
 from xmltodict import ( # should this library be trusted?
     parse as xml_to_o_dict,
@@ -13,27 +15,32 @@ from xmltodict import ( # should this library be trusted?
 
 def assert_is_xml(xml: str) -> bool:
     etree.fromstring(xml)
-    return True
+    return xml
 
 def assert_are_xml(*args) -> bool:
-    print(args)
-    return all(list(map(assert_is_xml, args)))
+    return compose(
+        (map, assert_is_xml),
+        list,
+        all
+    )(args)
 
 def merge(xml1: str, xml2: str) -> str:
     assert_are_xml(xml1, xml2)
     # TODO: consider using convert to json, merge, then normalize to do this
     x1, x2 = etree.fromstring(xml1), etree.fromstring(xml2)
-    new = deepcopy(x1) # and furthermore, mutability must be destroyed
-    new.extend(x2) # yuck!!!
-    return etree.tostring(new)
+    x1.extend(x2)
+    return etree.tostring(x1)
 
 def to_dict(xml: str) -> dict:
-    assert_is_xml(xml)
-    return loads(dumps(xml_to_o_dict(xml), sort_keys=True)) # i think it's pretty funny this has to be done
-    # sorted keys because when we unparse it we want it to be normalized
-    # it's here though because it has to happen at this part in the chain
-    # also attempted was:
-    # dict(xml_to_o_dict) this doesnt work nested lol
+    return compose(
+        assert_is_xml,
+        # turn xml into an ordered dictionary
+        xml_to_o_dict,
+        # turn it into json and back to remove ordering
+        partial(dumps, sort_keys=True),
+        # sorted keys because when we unparse it we want it to be normalized
+        loads
+    )(xml)
 
 def normalize(xml: str) -> str: #xml
     assert_is_xml(xml)
