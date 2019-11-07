@@ -34,12 +34,12 @@ const rest = bigData => {
     if (isArray(obj)) {
       return map2((v, k) => {
         func(obj, kk, oo);
-        return traverseObject(func, v, k, obj)
+        return traverseObject(func, v, k, obj);
       }, obj);
     } else if (isObject(obj)) {
       return mapValues2((v, k, o) => {
         func(obj, kk, oo);
-        return traverseObject(func, v, k, o)
+        return traverseObject(func, v, k, o);
       }, obj);
     } else {
       return func(obj, kk, oo);
@@ -47,21 +47,21 @@ const rest = bigData => {
   };
 
   console.log('hello');
-  const elements = []
+  const elements = [];
 
   const val = (v, k, o) => {
     const y = get('ATTR.name', v);
     console.log('--');
     if (y && y === 'material') {
       elements.push(v);
-      console.log(y)
-      console.log(k)
+      console.log(y);
+      console.log(k);
     }
     return v;
-  }
+  };
 
 
-  const l = traverseObject(val, bigData.grammar.define)
+  const l = traverseObject(val, bigData.grammar.define);
 
 
 
@@ -71,7 +71,7 @@ const rest = bigData => {
 
   console.log(uniq(p));
   console.log('---------');
-}
+};
 
 xml2js.parseStringPromise(f, {
   attrkey: 'ATTR',
