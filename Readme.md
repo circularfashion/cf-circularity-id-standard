@@ -31,6 +31,13 @@ the logic is - if both file types exist, do nothing.  if one but not the other, 
 you can use the command line script to do fun things!
 
 ```
+options
+   must set one of these two:
+     --version (-v): a schema version to test against.  from ./schema/[x]
+     --schema-file (-s): path to a specific schema file
+   and also:
+     --files (-f): a path to a file or the glob pattern to the xml files to test against
+
 # this command will test ALL failing and passing for schema version 0.01
 python id_standards/test.py -v 0.01
 
