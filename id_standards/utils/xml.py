@@ -19,7 +19,7 @@ def assert_is_xml(xml: str) -> bool:
         etree.fromstring(xml)
     except ValueError:
         # look below in normalize func for an explanation of the following line
-        raise NotXmlError(f'You did not supply xml!!  you may need to normalize it first. \n  supplied xml: \n {xml}')
+        raise NotXmlError(f'You did not supply xml!!  you may need to normalize it first, which you can do by importing the normalize function. \n  supplied xml: \n {xml}')
     return xml
 
 def assert_are_xml(*args) -> bool:
@@ -49,7 +49,6 @@ def to_dict(xml: str) -> dict:
     )(xml)
 
 def normalize(xml: str) -> str: #xml
-    # assert_is_xml(xml)
     return compose(
         # turn the xml into a dictionary of normalized data
         to_dict,
