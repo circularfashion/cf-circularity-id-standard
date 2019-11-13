@@ -13,9 +13,13 @@ from xmltodict import ( # should this library be trusted?
     parse as xml_to_o_dict,
     unparse as dict_to_xml,
 )
-
+class NotXmlError(Exception): pass
 def assert_is_xml(xml: str) -> bool:
-    etree.fromstring(xml)
+    try:
+        etree.fromstring(xml)
+    except ValueError:
+        # look below in normalize func for an explanation of the following line
+        raise NotXmlError(f'You did not supply xml!!  you may need to normalize it first.  supplied xml: {xml}')
     return xml
 
 def assert_are_xml(*args) -> bool:
