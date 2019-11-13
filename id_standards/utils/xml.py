@@ -29,9 +29,10 @@ def merge(*args) -> str:
     "take an arbitrary amont of xml strings and merge them left"
     assert_are_xml(*args)
     xmls = map(etree.fromstring, args)
-    merge_one = lambda x,y: x.extend(y) if x is not None else y
-    merged = reduce(merge_one, xmls)
-    return etree.tostring(merged)
+    first, *rest = xmls
+    for x in rest:
+        first.extend(x)
+    return etree.tostring(first)
 
 def to_dict(xml: str) -> dict:
     return compose(
