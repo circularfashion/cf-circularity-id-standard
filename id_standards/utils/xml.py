@@ -34,11 +34,15 @@ def merge(*args) -> str:
         first.extend(x)
     return etree.tostring(first)
 
+def hi(x):
+    print(x)
+    return x
+
 def to_dict(xml: str) -> dict:
     return compose(
-        assert_is_xml,
         # turn xml into an ordered dictionary
         xml_to_o_dict,
+        hi,
         # turn it into json and back to remove ordering
         partial(dumps, sort_keys=True),
         # sorted keys because when we unparse it we want it to be normalized
@@ -46,8 +50,18 @@ def to_dict(xml: str) -> dict:
     )(xml)
 
 def normalize(xml: str) -> str: #xml
-    assert_is_xml(xml)
-    return dict_to_xml(to_dict(xml))
+    # assert_is_xml(xml)
+    return compose(
+        # turn the xml into a dictionary of normalized data
+        to_dict,
+        # use the xmltodict library to turn it back into xml
+        dict_to_xml,
+        # make sure that the xml encoding string is NOT included in them
+        # normalized version, as this causes issues down the line.
+        # the following line removes the first line of the output
+        # which looks like <?xml version="1.0" encoding="UTF-8"?>
+        lambda x: "\n".join(x.split("\n")[1:]),
+    )(xml)
 
 def apply_hash(xml: str, hashing_function=None) -> str:
     assert_is_xml(xml)
