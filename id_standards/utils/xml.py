@@ -34,15 +34,10 @@ def merge(*args) -> str:
         first.extend(x)
     return etree.tostring(first)
 
-def hi(x):
-    print(x)
-    return x
-
 def to_dict(xml: str) -> dict:
     return compose(
         # turn xml into an ordered dictionary
         xml_to_o_dict,
-        hi,
         # turn it into json and back to remove ordering
         partial(dumps, sort_keys=True),
         # sorted keys because when we unparse it we want it to be normalized
