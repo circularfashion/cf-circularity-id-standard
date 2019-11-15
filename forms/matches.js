@@ -37,6 +37,10 @@ const nodeMatches = (node) =>
     }) => definitions.oneOrMore,
     //
     (x = {
+      tagName: 'zeroOrMore',
+    }) => definitions.zeroOrMore,
+    //
+    (x = {
       tagName: 'optional',
     }) => definitions.optional,
     //
@@ -47,6 +51,18 @@ const nodeMatches = (node) =>
     (x = {
       tagName: 'ref',
     }) => definitions.ref, // todo actually deal with this!!!!!
+    //
+    (x = {
+      tagName: 'list',
+    }) => definitions.list, // todo actually deal with this!!!!!
+    //
+    (x = {
+      tagName: 'choice',
+    }) => definitions.choice, // todo actually deal with this!!!!!
+    //
+    (x = {
+      tagName: 'value',
+    }) => definitions.value, // todo actually deal with this!!!!!
     //
     (x = {
       tagName: 'data',
@@ -63,10 +79,34 @@ const nodeMatches = (node) =>
       attributes: {
         0: {
           name: 'type',
+          value: 'decimal',
+        },
+      },
+    }) => definitions.decimal,
+    //
+    (x = {
+      tagName: 'data',
+      attributes: {
+        0: {
+          name: 'type',
+          value: 'int',
+        },
+      },
+    }) => definitions.int,
+    //
+    (x = {
+      tagName: 'data',
+      attributes: {
+        0: {
+          name: 'type',
           value: 'token',
         },
       },
     }) => definitions.input,
+    //
+    (x = {
+      tagName: 'attribute',
+    }) => definitions.attribute,
     //
     (x) => definitions.default,
   );

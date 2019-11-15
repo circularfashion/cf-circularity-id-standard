@@ -24,7 +24,7 @@ const f = fs.readFileSync('../schema/0.02/schema.rng', 'utf8');
 const parser = new DOMParser();
 const document = parser.parseFromString(f, 'text/xml');
 const define = document.getElementsByTagName('define');
-const product = define[0];
+const product = define[3];
 
 const walkDOM = curry((func, node) => {
   const filterchildren = filter(has('tagName'));
