@@ -1,62 +1,69 @@
 {
+  "_declaration": {
+    "_attributes": {
+      "version": "1.0",
+      "encoding": "UTF-8"
+    }
+  },
   "grammar": {
-    "ATTR": {
+    "_attributes": {
       "xmlns": "http://relaxng.org/ns/structure/1.0",
       "xmlns:a": "http://relaxng.org/ns/compatibility/annotations/1.0",
       "datatypeLibrary": "http://www.w3.org/2001/XMLSchema-datatypes"
     },
     "start": {
       "ref": {
-        "ATTR": {
+        "_attributes": {
           "name": "product"
         }
       }
     },
     "define": [
       {
-        "ATTR": {
+        "_attributes": {
           "name": "product"
         },
         "element": {
-          "ATTR": {
+          "_attributes": {
             "name": "product"
           },
           "element": [
             {
-              "ATTR": {
+              "_attributes": {
                 "name": "circularity-id"
               },
               "data": {
-                "ATTR": {
+                "_attributes": {
                   "type": "token"
                 }
               }
             },
             {
-              "ATTR": {
+              "_attributes": {
                 "name": "name"
               },
               "data": {
-                "ATTR": {
+                "_attributes": {
                   "type": "Name"
                 }
-              }
+              },
+              "_comment": " must start with a letter or underscore "
             },
             {
-              "ATTR": {
+              "_attributes": {
                 "name": "brand"
               },
-              "text": ""
+              "text": {}
             }
           ],
           "optional": [
             {
               "element": {
-                "ATTR": {
+                "_attributes": {
                   "name": "sku"
                 },
                 "data": {
-                  "ATTR": {
+                  "_attributes": {
                     "type": "token"
                   }
                 }
@@ -64,21 +71,21 @@
             },
             {
               "element": {
-                "ATTR": {
+                "_attributes": {
                   "name": "collection"
                 },
-                "text": ""
+                "text": {}
               }
             }
           ],
           "ref": {
-            "ATTR": {
+            "_attributes": {
               "name": "product-type"
             }
           },
           "oneOrMore": {
             "ref": {
-              "ATTR": {
+              "_attributes": {
                 "name": "assembly"
               }
             }
@@ -86,50 +93,58 @@
         }
       },
       {
-        "ATTR": {
+        "_attributes": {
           "name": "product-type"
         },
         "element": {
-          "ATTR": {
+          "_attributes": {
             "name": "product-type"
           },
           "list": {
             "choice": {
               "value": [
-                "Clothing",
-                "Accessories",
-                "Footwear",
-                "Other"
+                {
+                  "_text": "Clothing"
+                },
+                {
+                  "_text": "Accessories"
+                },
+                {
+                  "_text": "Footwear"
+                },
+                {
+                  "_text": "Other"
+                }
               ]
             }
           }
         }
       },
       {
-        "ATTR": {
+        "_attributes": {
           "name": "assembly"
         },
         "element": {
-          "ATTR": {
+          "_attributes": {
             "name": "assembly"
           },
           "element": [
             {
-              "ATTR": {
+              "_attributes": {
                 "name": "name"
               },
-              "text": ""
+              "text": {}
             },
             {
-              "ATTR": {
+              "_attributes": {
                 "name": "instructions-for-disassembly"
               },
-              "text": ""
+              "text": {}
             }
           ],
           "oneOrMore": {
             "ref": {
-              "ATTR": {
+              "_attributes": {
                 "name": "MATERIAL"
               }
             }
@@ -137,135 +152,164 @@
         }
       },
       {
-        "ATTR": {
+        "_attributes": {
           "name": "MATERIAL"
         },
         "element": {
-          "ATTR": {
+          "_attributes": {
             "name": "material"
           },
           "element": [
             {
-              "ATTR": {
+              "_attributes": {
                 "name": "name"
               },
-              "text": ""
+              "text": {}
             },
             {
-              "ATTR": {
+              "_attributes": {
                 "name": "total_weight"
               },
               "attribute": {
-                "ATTR": {
+                "_attributes": {
                   "name": "unit"
                 },
                 "list": {
                   "choice": {
                     "value": [
-                      "kg",
-                      "g",
-                      "oz",
-                      "lb"
+                      {
+                        "_text": "kg"
+                      },
+                      {
+                        "_text": "g"
+                      },
+                      {
+                        "_text": "oz"
+                      },
+                      {
+                        "_text": "lb"
+                      }
                     ]
                   }
                 }
               },
               "data": {
-                "ATTR": {
+                "_attributes": {
                   "type": "decimal"
                 }
               }
             },
             {
-              "ATTR": {
+              "_attributes": {
                 "name": "construction"
               },
-              "text": ""
+              "text": {}
             },
             {
-              "ATTR": {
+              "_attributes": {
                 "name": "water_properties"
               },
               "list": {
                 "choice": {
                   "value": [
-                    "Without",
-                    "Without",
-                    "Without"
+                    {
+                      "_text": "Without"
+                    },
+                    {
+                      "_text": "Without"
+                    },
+                    {
+                      "_text": "Without"
+                    }
                   ]
                 }
               }
             },
             {
-              "ATTR": {
+              "_attributes": {
                 "name": "elasticity"
               },
+              "_comment": [
+                " maybe remove this? ",
+                " add choice list "
+              ],
               "attribute": {
-                "ATTR": {
+                "_attributes": {
                   "name": "type"
                 }
               },
               "data": {
-                "ATTR": {
+                "_attributes": {
                   "type": "int"
                 }
               }
             },
             {
-              "ATTR": {
+              "_attributes": {
                 "name": "weight"
               },
               "attribute": {
-                "ATTR": {
+                "_attributes": {
                   "name": "unit"
                 },
                 "list": {
                   "choice": {
                     "value": [
-                      "kg",
-                      "g",
-                      "oz",
-                      "lb"
+                      {
+                        "_text": "kg"
+                      },
+                      {
+                        "_text": "g"
+                      },
+                      {
+                        "_text": "oz"
+                      },
+                      {
+                        "_text": "lb"
+                      }
                     ]
                   }
                 }
               },
               "data": {
-                "ATTR": {
+                "_attributes": {
                   "type": "decimal"
                 }
               }
             },
             {
-              "ATTR": {
+              "_attributes": {
                 "name": "colour"
               },
-              "text": ""
+              "text": {},
+              "_comment": " replace with choice list "
             },
             {
-              "ATTR": {
+              "_attributes": {
                 "name": "dyeing"
               },
-              "text": ""
+              "text": {},
+              "_comment": " replace with choice list "
             },
             {
-              "ATTR": {
+              "_attributes": {
                 "name": "printing"
               },
-              "text": ""
+              "text": {},
+              "_comment": " replace with choice list "
             }
           ],
           "oneOrMore": [
             {
               "ref": {
-                "ATTR": {
+                "_attributes": {
                   "name": "component"
                 }
               }
             },
             {
               "ref": {
-                "ATTR": {
+                "_attributes": {
                   "name": "step"
                 }
               }
@@ -274,152 +318,155 @@
           "optional": [
             {
               "element": {
-                "ATTR": {
+                "_attributes": {
                   "name": "pattern"
                 },
-                "text": ""
+                "text": {},
+                "_comment": " replace with choice list "
               }
             },
             {
               "element": {
-                "ATTR": {
+                "_attributes": {
                   "name": "dyestuff"
                 },
-                "text": ""
+                "text": {}
               }
             },
             {
               "element": {
-                "ATTR": {
+                "_attributes": {
                   "name": "printstuff"
                 },
-                "text": ""
+                "text": {}
               }
             },
             {
               "element": {
-                "ATTR": {
+                "_attributes": {
                   "name": "chemical_compliance"
                 },
-                "text": ""
+                "text": {}
               }
             }
           ],
           "zeroOrMore": {
             "element": {
-              "ATTR": {
+              "_attributes": {
                 "name": "finishing"
               },
-              "text": ""
+              "text": {}
             }
           }
         }
       },
       {
-        "ATTR": {
+        "_attributes": {
           "name": "component"
         },
         "element": {
-          "ATTR": {
+          "_attributes": {
             "name": "component"
           },
           "element": [
             {
-              "ATTR": {
+              "_attributes": {
                 "name": "name"
               },
-              "text": ""
+              "text": {}
             },
             {
-              "ATTR": {
+              "_attributes": {
                 "name": "percentage"
               },
               "data": {
-                "ATTR": {
+                "_attributes": {
                   "type": "decimal"
                 }
-              }
+              },
+              "_comment": " percentage total should be 100 "
             },
             {
-              "ATTR": {
+              "_attributes": {
                 "name": "is_recycled"
               },
               "data": {
-                "ATTR": {
+                "_attributes": {
                   "type": "boolean"
                 }
               }
             },
             {
-              "ATTR": {
+              "_attributes": {
                 "name": "origin_recycling_input"
               },
-              "text": ""
+              "text": {}
             }
           ]
         }
       },
       {
-        "ATTR": {
+        "_attributes": {
           "name": "step"
         },
         "element": {
-          "ATTR": {
+          "_attributes": {
             "name": "step"
           },
           "element": [
             {
-              "ATTR": {
+              "_attributes": {
                 "name": "type"
               },
-              "text": ""
+              "text": {},
+              "_comment": "replace with list of choices to validate against "
             },
             {
-              "ATTR": {
+              "_attributes": {
                 "name": "country"
               },
-              "text": ""
+              "text": {}
             }
           ],
           "optional": [
             {
               "element": {
-                "ATTR": {
+                "_attributes": {
                   "name": "company_name"
                 },
-                "text": ""
+                "text": {}
               }
             },
             {
               "element": {
-                "ATTR": {
+                "_attributes": {
                   "name": "street"
                 },
-                "text": ""
+                "text": {}
               }
             },
             {
               "element": {
-                "ATTR": {
+                "_attributes": {
                   "name": "postal"
                 },
-                "text": ""
+                "text": {}
               }
             },
             {
               "element": {
-                "ATTR": {
+                "_attributes": {
                   "name": "city"
                 },
-                "text": ""
+                "text": {}
               }
             },
             {
               "element": {
-                "ATTR": {
+                "_attributes": {
                   "name": "additional_information"
                 },
-                "text": ""
+                "text": {}
               }
             }
           ]
