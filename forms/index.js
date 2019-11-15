@@ -11,12 +11,21 @@ const {
 } = _;
 
 const {nodeMatches} = require('./matches.js');
+const {pathMatches} = require('./match_path.js');
 
 const f = fs.readFileSync('../schema/0.02/schema.rng', 'utf8');
 const parser = new DOMParser();
 const document = parser.parseFromString(f, 'text/xml');
 const define = document.getElementsByTagName('define');
-const product = define[3];
+const product = define[0];
+
+const walkDOMUp = (node) => {
+  if (!node) return '';
+  if (!node.parentNode) return '';
+  const p = walkDOMUp(node.parentNode);
+  const repr = pathMatches(node);
+  return repr ? `${p}.${repr}` : p;
+};
 
 const walkDOM = curry((func, node) => {
   const filterchildren = filter(has('tagName'));
@@ -32,6 +41,7 @@ const parseElement = (node, inject) => {
   // if (!inject) return node.tagName;
   //if (nodeName == 'product') console.log(node);
   const transformFunction = nodeMatches(node);
+  console.log(walkDOMUp(node));
   return transformFunction(node, inject);
 };
 
