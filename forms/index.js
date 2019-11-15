@@ -33,19 +33,14 @@ const walkDOM = curry((func, node) => {
       walkDOM(func),
       filterchildren(values(node.childNodes))
     ) : null;
-  console.log(children);
   return func(node, children);
 });
 
 const parseElement = (node, inject) => {
-  console.log('---------');
   // if (!inject) return node.tagName;
-  if (!node || !isObject(node)) return '';
-  const nodeName = ('getAttribute' in node) ? node.getAttribute('name'): '';
-  const tag = node.tagName;
-  console.log(nodeName)
-  if (nodeName == 'product') console.log(node);
-  return nodeMatches(node, inject);
+   //if (nodeName == 'product') console.log(node);
+  const transformFunction = nodeMatches(node);
+  return transformFunction(node, inject);
 };
 
 const rs = walkDOM(parseElement, product);
