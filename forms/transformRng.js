@@ -46,7 +46,9 @@ const funks = {
     const {
       parseDotPath,
       parseRng,
-    } = require('./parsers.js'); // must be here!!! otherwise circular dependency
+    } = require('./parsers.js'); // eslint-disable-line
+    // the above require must be there otherwise there is a circular
+    // dependency.  since the whole lib is recursive by nature, we need it.
     return `<ref> <small>ref</small> <br /> ${parseRng(definition)} </ref>`;
     // return `<h5> I AM A REF for ${nodeName(node)} ${inject.join('<br />')}</h5>`;
   },

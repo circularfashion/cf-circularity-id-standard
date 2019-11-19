@@ -10,7 +10,7 @@ const {
 const f = fs.readFileSync('../schema/0.02/schema.rng', 'utf8');
 const parser = new DOMParser();
 const document = parser.parseFromString(f, 'text/xml');
-const define = document.getElementsByTagName('define');
+const define = document.getElementsByTagName('start');
 const product = define[0];
 
 const rs = parseRng(product);
