@@ -1,69 +1,84 @@
 
-const _ = require('lodash/fp');
 
-const {
-  get,
-} = _;
-
-const nodeName = get('attributes.0.value');
-
-const funks = {
-  define: (node, inject) =>
-    inject.join('<br />')
-  ,
-  product: (node, inject) =>
-    `<h1>omg we have a product</h1><product>${inject.join('<br />')}</product>`
-  ,
-  element: (node, inject) =>
-    `<element>${inject.join('<br />')}</element>`
-  ,
-  oneOrMore: (node, inject) =>
-    `<oneOrMore>${inject.join('<br />')}</oneOrMore>` // functionality for this
-  ,
-  zeroOrMore: (node, inject) =>
-    `<zeroOrMore>${inject.join('<br />')}</zeroOrMore>` // functionality for this
-  ,
-  optional: (node, inject) =>
-    `<optional>${inject.join('<br />')}</optional>`
-  ,
-  text: (node, inject) =>
-    `<textarea>${inject.join('<br />')}</textarea>`
-  ,
-  ref: (node, inject) => // todo actually deal with this lol
-    `<h5> I AM A REF for ${nodeName(node)} ${inject.join('<br />')}</h5>`
-  ,
-  input: (node, inject) =>
-    `<input type='text'>${inject.join('<br />')}</input>`
-  ,
-  decimal: (node, inject) =>
-    `<input name=opacity type=number min=0 max=1 step=0.01>${inject.join('<br />')}</input`
-  ,
-  int: (node, inject) =>
-    `<input type=number>${inject.join('<br />')}</input`
-  ,
-  list: (node, inject) =>
-    `<select>${inject.join('<br />')}</select>`
-  ,
-  choice: (node, inject) =>
-    inject.join('/n')
-  ,
-  value: (node, inject) => {
-    const choiceVal = get('childNodes.0.nodeValue', node);
-    return `<option value='${choiceVal}'>${choiceVal}</option>`;
+const definitions = {
+  definition: {
+    tagName: 'define',
   },
-  namedElement: (node, inject) => {
-    const elname = get('attributes.0.value', node);
-    return `<${elname}>${elname}<br />${inject.join('<br />')}</${elname}>`;
+  namedElement: {
+    tagName: 'element',
+    attributes: {
+      0: {
+        name: 'name',
+      },
+    },
   },
-  attribute: (node, inject) => {
-    const elname = get('attributes.0.value', node);
-    return `<attribute>${elname} - ${inject.join('<br />')}</attribute>`;
+  element: {
+    tagName: 'element',
   },
-  default: (node, inject) => {
-    console.log(node);
-    console.log(node.tagName);
-    return `<<${inject.join('<br />')}>>`;
+  oneOrMore: {
+    tagName: 'oneOrMore',
   },
+  zeroOrMore: {
+    tagName: 'zeroOrMore',
+  },
+  optional: {
+    tagName: 'optional',
+  },
+  text: {
+    tagName: 'text',
+  },
+  ref: {
+    tagName: 'ref',
+  },
+  list: {
+    tagName: 'list',
+  },
+  choice: {
+    tagName: 'choice',
+  },
+  value: {
+    tagName: 'value',
+  },
+  input: {
+    tagName: 'data',
+    attributes: {
+      0: {
+        name: 'type',
+        value: 'Name',
+      },
+    },
+  },
+  decimal: {
+    tagName: 'data',
+    attributes: {
+      0: {
+        name: 'type',
+        value: 'decimal',
+      },
+    },
+  },
+  int: {
+    tagName: 'data',
+    attributes: {
+      0: {
+        name: 'type',
+        value: 'int',
+      },
+    },
+  },
+  token: {
+    tagName: 'data',
+    attributes: {
+      0: {
+        name: 'type',
+        value: 'token',
+      },
+    },
+  },
+  attribute: {
+    tagName: 'attribute',
+  },
+  default: {},
 };
 
-module.exports = funks;
+module.exports = definitions;
