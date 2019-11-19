@@ -1,10 +1,6 @@
 const fs = require('fs');
 const {DOMParser} = require('xmldom');
 
-const {
-  walkDOMUp,
-  walkDOMDown,
-} = require('./walkers.js');
 
 const {
   parseDotPath,
@@ -17,7 +13,7 @@ const document = parser.parseFromString(f, 'text/xml');
 const define = document.getElementsByTagName('define');
 const product = define[0];
 
-const rs = walkDOMDown(parseRng, product);
+const rs = parseRng(product);
 
 console.log(rs);
 //copy and paste rs and put it in to a .html file

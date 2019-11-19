@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 const {
   get,
+  find,
+  values,
 } = require('lodash/fp');
 
 const {matches} = require('z');
@@ -35,9 +37,19 @@ const funks = {
   text: (node, inject) =>
     `<textarea>${inject.join('<br />')}</textarea>`
   ,
-  ref: (node, inject) => // todo actually deal with this lol
-    `<h5> I AM A REF for ${nodeName(node)} ${inject.join('<br />')}</h5>`
-  ,
+  ref: (node, inject) => {
+    const refFor = nodeName(node);
+    const dom = node.ownerDocument;
+    const defs = values(dom.getElementsByTagName('define'));
+    const definition = find(x => get('attributes.0.value', x) === refFor, defs);
+    if (!definition) return `<h5>REF NOT FOUND FOR ${refFor}</h5>`;
+    const {
+      parseDotPath,
+      parseRng,
+    } = require('./parsers.js'); // must be here!!! otherwise circular dependency
+    return `<ref> <small>ref</small> <br /> ${parseRng(definition)} </ref>`;
+    // return `<h5> I AM A REF for ${nodeName(node)} ${inject.join('<br />')}</h5>`;
+  },
   input: (node, inject) => {
     const opt = optional(node.parentNode.parentNode);
     return `${opt ? 'i am optional!!!' : 'required'}<input type='text'>${inject.join('<br />')}</input>`;
