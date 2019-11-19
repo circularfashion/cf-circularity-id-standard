@@ -1,11 +1,17 @@
-
-const _ = require('lodash/fp');
-
+/* eslint-disable no-unused-vars */
 const {
   get,
-} = _;
+} = require('lodash/fp');
+
+const {matches} = require('z');
+const definitions = require('./definitions.js');
 
 const nodeName = get('attributes.0.value');
+const optional = node => matches(node).call(
+  {definitions},
+  (x = definitions.optional) => true,
+  (x) => false
+);
 
 const funks = {
   define: (node, inject) =>
@@ -32,9 +38,10 @@ const funks = {
   ref: (node, inject) => // todo actually deal with this lol
     `<h5> I AM A REF for ${nodeName(node)} ${inject.join('<br />')}</h5>`
   ,
-  input: (node, inject) =>
-    `<input type='text'>${inject.join('<br />')}</input>`
-  ,
+  input: (node, inject) => {
+    const opt = optional(node.parentNode.parentNode);
+    return `${opt ? 'i am optional!!!' : 'required'}<input type='text'>${inject.join('<br />')}</input>`;
+  },
   decimal: (node, inject) =>
     `<input name=opacity type=number min=0 max=1 step=0.01>${inject.join('<br />')}</input`
   ,
