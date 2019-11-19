@@ -69,7 +69,7 @@ const funks = {
   default: (node, inject) => {
     console.log(node);
     console.log(node.tagName);
-    console.log('above node element NOT FOUND!!!!');
+    console.log('above node element NOT FOUND in definitions!!!!');
     return `<<${inject.join('<br />')}>>`;
   },
 };

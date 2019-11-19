@@ -1,14 +1,11 @@
 const fs = require('fs');
-const _ = require('lodash/fp');
 const {DOMParser} = require('xmldom');
 
 const {
-  values,
-  curry,
-  map,
-  filter,
-  has,
-} = _;
+  walkDOMUp,
+  walkDOMDown,
+} = require('./walkers.js');
+
 
 const {nodeMatches} = require('./matches.js');
 const {pathMatches} = require('./match_path.js');
@@ -19,33 +16,18 @@ const document = parser.parseFromString(f, 'text/xml');
 const define = document.getElementsByTagName('define');
 const product = define[0];
 
-const walkDOMUp = (node) => {
-  if (!node) return '';
-  if (!node.parentNode) return '';
-  const p = walkDOMUp(node.parentNode);
+const parseDotPath = (node, parents) => {
   const repr = pathMatches(node);
-  return repr ? `${p}.${repr}` : p;
+  return repr ? `${parents}.${repr}` : parents;
 };
 
-const walkDOM = curry((func, node) => {
-  const filterchildren = filter(has('tagName'));
-  const children = node.hasChildNodes ?
-    map(
-      walkDOM(func),
-      filterchildren(values(node.childNodes))
-    ) : null;
-  return func(node, children);
-});
-
-const parseElement = (node, inject) => {
-  // if (!inject) return node.tagName;
-  //if (nodeName == 'product') console.log(node);
+const parseRng = (node, inject) => {
   const transformFunction = nodeMatches(node);
-  console.log(walkDOMUp(node));
+  console.log(walkDOMUp(parseDotPath, node));
   return transformFunction(node, inject);
 };
 
-const rs = walkDOM(parseElement, product);
+const rs = walkDOMDown(parseRng, product);
 
 console.log(rs);
 //copy and paste rs and put it in to a .html file
