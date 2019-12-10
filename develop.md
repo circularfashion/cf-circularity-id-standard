@@ -1,4 +1,6 @@
 
+![circularity id logo](logo.jpg)
+
 # Developing circularity.ID
 
 ## Developing the data format (schema)
