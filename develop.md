@@ -22,7 +22,7 @@ additionally, there is a small python module bundled with the schema (`./tools/c
 ## requirements
 
 ```
-python3
+python3.8
 ```
 ## installing the tools
 
