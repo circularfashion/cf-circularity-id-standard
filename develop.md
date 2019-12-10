@@ -49,27 +49,34 @@ python tools/test.py -s schema/testing.rng -f examples
 ### using the library
 
 ```python
-from circularity_id_standards import validations
+from circularity_id_standards.validations import (
+    validate_on_version
+)
 
-xml_invalid = '<product></product>'
+invalid_xml = '<product></product>'
 
-xml_valid = '<book><page /><page /></book>'
+valid_xml = '<book><page /><page /></book>'
 
-validations.validate_on_version('0.01', xml_valid)
+validate_on_version('0.01', xml_valid)
 # [True, 'XML is valid according to schema']
 
-validations.validate_on_version('0.01', xml_invalid)
-# [False,
-# <string>:1:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element book, got product]
+validate_on_version('0.01', xml_invalid)
+# [False, <string>:1:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element book, got product]
 ```
 
-### TEST VALIDATING THE STANDARDS!
 
-### XML utilities
+## XML utilities
+
+##### normalize
 
 ##### merge
+
+merges two or more xml strings, data left takes precedence.  for merging disparate datasetos
+
 ```python
-from id_standards.utils.xml import merge
+from circularity_id_standards.utils.xml import (
+    merge,
+)
 xml1 = '<pd />'
 xml2 = '<pdd />'
 xml3 = '<pdd><data1 /></pdd>'
@@ -78,14 +85,22 @@ merge(xml1, xml2, xml3)
 ```
 
 ##### equals
+
+tests the equality of xml strings disregarding whitespace, docstrings, order, or other inconsistincies.  'is the data the same?'
+
 ```python
+from circularity_id_standards.utils.xml import (
+    equals
+)
+
 xml1 = '<pd />'
 xml2 = '<pdd />'
 xml3 = '<pdd><data1 /></pdd>'
 xml4 = '<pdd><data1></data1></pdd>'
-from id_standards.utils.xml import equals
+
 equals(xml1, xml4)
- False
+# False
+
 equals(xml3, xml4)
- True
+# True
 ```
