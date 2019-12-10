@@ -11,7 +11,7 @@ Everything related to the schema is in `./schema`, and the examples are in `./ex
 
 relaxng is a little bit difficult to parse, but there are validators in many different languages for many different systems.  The wikipedia article for relaxng is very helpful: [https://en.wikipedia.org/wiki/RELAX_NG](https://en.wikipedia.org/wiki/RELAX_NG)
 
-the schema can be edited either directly in the `.rng` or `.rnc` files, or using a GUI editor such as [<oxygen /> xml editor](https://www.oxygenxml.com/) - as long as the resulting files are stored in `./schema/$VERSION/schema.rng` and `./schema/$VERSION/schema.rnc`
+the schema can be edited either directly in the `.rng` or `.rnc` files, or using a GUI editor such as [\<oxygen \/\> xml editor](https://www.oxygenxml.com/) - as long as the resulting files are stored in `./schema/$VERSION/schema.rng` and `./schema/$VERSION/schema.rnc`
 
 one goal is to keep the xml schema simple enough that the data for it can cleanly be converted to simple json format, and then back into valid xml.  this conversion script is still in development.
 
