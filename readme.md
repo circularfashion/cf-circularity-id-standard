@@ -1,6 +1,6 @@
 # circularity.ID(r) open data standard
 
-for developing the standard or the associated tools, please see (developing circularity.ID)[/develop]
+for developing the standard or the associated tools, please see [developing circularity.ID](/develop)
 
 ### cf standards for circular id data (iso norm?)
 
