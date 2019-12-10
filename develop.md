@@ -48,7 +48,7 @@ python tools/test.py -s schema/testing.rng -f examples
 
 ### using the library
 
-```
+```python
 from circularity_id_standards import validations
 
 xml_invalid = '<product></product>'
@@ -68,7 +68,7 @@ validations.validate_on_version('0.01', xml_invalid)
 ### XML utilities
 
 ##### merge
-```
+```python
 from id_standards.utils.xml import merge
 xml1 = '<pd />'
 xml2 = '<pdd />'
@@ -78,7 +78,7 @@ merge(xml1, xml2, xml3)
 ```
 
 ##### equals
-```
+```python
 xml1 = '<pd />'
 xml2 = '<pdd />'
 xml3 = '<pdd><data1 /></pdd>'
