@@ -98,11 +98,13 @@ merges two or more xml strings, data left takes precedence.  for merging dispara
 from circularity_id_standards.utils.xml import (
     merge,
 )
+
 xml1 = '<pd />'
 xml2 = '<pdd />'
 xml3 = '<pdd><data1 /></pdd>'
+
 merge(xml1, xml2, xml3)
- b'<pdd><data1/></pdd>'
+# b'<pdd><data1/></pdd>'
 ```
 
 ##### equals
