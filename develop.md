@@ -16,8 +16,10 @@ you can use the command line script `python tools/test.py` to do fun things!
 script options
 - `--version` (`-v`): a schema version to test against.  from ./schema/[x].
   - example `0.01` or `0.02`
-- `--schema-file` (`-s`): path to a specific schema file instead of a schema version number. example `./schema/development/schema.rng`
-- `--files` (`-f`): a path to a file or the glob pattern to the xml files to test against. example `./examples/testing` or `./new_example.xml`
+- `--schema-file` (`-s`): path to a specific schema file instead of a schema version number.
+  - example `./schema/development/schema.rng`
+- `--files` (`-f`): a path to a file or the glob pattern to the xml files to test against.
+  - example `./examples/testing` or `./new_example.xml`
 
 ##### examples
 
