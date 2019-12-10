@@ -11,9 +11,14 @@ development uses pylint with the supplied pylintrc file.
 
 ## Testing the data format and validations
 
-you can use the command line script `python tools/test.py` to do fun things!
+for each version of the schema, example xml files should be created.  These exammple files should account for product xml files that are valid according to the schema version as well as those that are not.
 
-script options
+correct examples should go into `examples/[VERSION]/passing`, and failing into `examples/[VERSION]/failing`
+
+you can use the command line script `python tools/test.py` to do fun things with testing these files. Additionally, it will make sure that the schema stands the test of time and can always be validated off of it's examples.
+
+##### script options
+
 - `--version` (`-v`): a schema version to test against.  from ./schema/[x].
   - example `0.01` or `0.02`
 - `--schema-file` (`-s`): path to a specific schema file instead of a schema version number.
