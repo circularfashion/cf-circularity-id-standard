@@ -3,48 +3,59 @@
 
 ## Developing the data format (schema)
 
+## installing the tools
+
+`pip install -r tools/requirements.txt`
+
+development uses pylint with the supplied pylintrc file.
+
 ## Testing the data format and validations
+
+you can use the command line script `python tools/test.py` to do fun things!
+
+script options
+    - `--version` (`-v`): a schema version to test against.  from ./schema/[x]. example `0.01` or `0.02`
+    - `--schema-file` (`-s`): path to a specific schema file instead of a schema version number. example `./schema/development/schema.rng`
+    - `--files` (`-f`): a path to a file or the glob pattern to the xml files to test against. example `./examples/testing` or `./new_example.xml`
+
+##### examples
+
+```bash
+# this command will test ALL failing and passing for schema version 0.01
+python tools/test.py -v 0.01
+```
+
+```bash
+# this command will test a certain version on all .xml files in a path
+python tools/test.py -v 0.01 -f ./examples/0.02/failing
+```
+
+```bash
+# additionally, you can hand it a specific .rng schema file using -s
+python tools/test.py -s schema/testing.rng -f examples
+```
+
 
 ## python tools development
 
 ### using the library
 
 ```
-from id_standards import validations
+from circularity_id_standards import validations
+
 xml_invalid = '<product></product>'
+
 xml_valid = '<book><page /><page /></book>'
+
 validations.validate_on_version('0.01', xml_valid)
- [True, 'XML is valid according to schema']
+# [True, 'XML is valid according to schema']
+
 validations.validate_on_version('0.01', xml_invalid)
-
-[False,
- <string>:1:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element book, got product]
+# [False,
+# <string>:1:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element book, got product]
 ```
-
 
 ### TEST VALIDATING THE STANDARDS!
-
-
-you can use the command line script to do fun things!
-
-```
-options
-   must set one of these two:
-     --version (-v): a schema version to test against.  from ./schema/[x]
-     --schema-file (-s): path to a specific schema file
-   and also:
-     --files (-f): a path to a file or the glob pattern to the xml files to test against
-
-# this command will test ALL failing and passing for schema version 0.01
-python tools/test.py -v 0.01
-
-# this command will test a certain version on all .xml files in a path
-python tools/test.py -v 0.01 -f ./examples/0.02/failing
-
-# additionally, you can hand it a specific .rng schema file using -s
-python tools/test.py -s schema/testing.rng -f examples
-
-```
 
 ### XML utilities
 
