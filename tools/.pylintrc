@@ -1,0 +1,2 @@
+[MASTER]
+disable=E0401,E0402,unused-argument,no-member

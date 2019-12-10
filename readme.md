@@ -1,3 +1,6 @@
+# circularity.ID(r) open data standard
+
+for developing the standard or the associated tools, please see (developing circularity.ID)[/develop]
 
 ### cf standards for circular id data (iso norm?)
 
@@ -34,13 +37,6 @@ Out[5]:
 
 ### TEST VALIDATING THE STANDARDS!
 
-first you must convert the schemas from `.rnc` to `.rng` or back again.
-
-the logic is - if both file types exist, do nothing.  if one but not the other, cconvert.
-
-```
-./convert.sh
-```
 
 you can use the command line script to do fun things!
 
@@ -53,13 +49,13 @@ options
      --files (-f): a path to a file or the glob pattern to the xml files to test against
 
 # this command will test ALL failing and passing for schema version 0.01
-python test.py -v 0.01
+python tools/test.py -v 0.01
 
 # this command will test a certain version on all .xml files in a path
-python test.py -v 0.01 -f ./example/0.02/failing
+python tools/test.py -v 0.01 -f ./examples/0.02/failing
 
 # additionally, you can hand it a specific .rng schema file using -s
-python test.py -s schema/testing.rng -f example
+python tools/test.py -s schema/testing.rng -f examples
 
 ```
 
@@ -87,10 +83,3 @@ Out[8]: False
 In [9]: equals(xml3, xml4)
 Out[9]: True
 ```
-
-
-## research:
-
-automatically generate webforms from `.rng`:
-
-http://debeissat.nicolas.free.fr/RNGtoHTMLform.php

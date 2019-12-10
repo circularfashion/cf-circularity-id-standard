@@ -17,12 +17,12 @@ from fnc import (
     map as mapF,
 )
 
-from id_standards.validations import (
+from circularity_id_standard.validations import (
     validate_one,
     validate_many,
 )
 
-from id_standards import schema
+from circularity_id_standard import schema
 
 script_name, *arguments = sys.argv
 
@@ -66,7 +66,7 @@ print('using args', args)
 
 schema_str = schema_to_str(args)
 
-gl = get('glob', args) or './example/' + get('version', args)
+gl = get('glob', args) or './examples/' + get('version', args)
 print('glooob patternnn', gl)
 
 # read a directory for xml files recursively else just use given one
@@ -76,9 +76,6 @@ gg = list(filter(
 ))
 print(f'running supplied schema on the following files')
 print(gg)
-
-
-# call('./convert.sh')
 print('---------------------------------------------------------')
 print('validating xml files!!!!')
 print('---------------------------------------------------------')
