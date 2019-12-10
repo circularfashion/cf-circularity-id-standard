@@ -1,10 +1,5 @@
 #!/usr/bin/python3
 
-# Hello!
-# please send me a -f file path to an xml file
-# and a --schema-version that I will read from ./schema!
-#
-
 import sys
 from glob import glob
 
