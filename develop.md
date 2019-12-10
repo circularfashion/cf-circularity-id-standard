@@ -3,6 +3,27 @@
 
 ## Developing the data format (schema)
 
+The schema is a [relaxng](https://relaxng.org/) schema, as the goal is to create product xml data.  We have created versions of the data so that changes to the schema do not explicitly force data formats.  It is up to each system using the schema to decide which versions it accepts.
+
+This means any change in the schema that would affect a change in data of the previous schema should warrant it's own version number, and must supply examples of failing and passing xml files.
+
+Everything related to the schema is in `./schema`, and the examples are in `./examples`
+
+relaxng is a little bit difficult to parse, but there are validators in many different languages for many different systems.  The wikipedia article for relaxng is very helpful: [https://en.wikipedia.org/wiki/RELAX_NG](https://en.wikipedia.org/wiki/RELAX_NG)
+
+the schema can be edited either directly in the `.rng` or `.rnc` files, or using a GUI editor such as [<oxygen /> xml editor](https://www.oxygenxml.com/) - as long as the resulting files are stored in `./schema/$VERSION/schema.rng` and `./schema/$VERSION/schema.rnc`
+
+one goal is to keep the xml schema simple enough that the data for it can cleanly be converted to simple json format, and then back into valid xml.  this conversion script is still in development.
+
+## Python circularity.ID standard tools
+
+additionally, there is a small python module bundled with the schema (`./tools/circularity_id_standard`) - this module can do validation, testing, as well as a batch of useful xml utilities to be used in applications.
+
+## requirements
+
+```
+python3
+```
 ## installing the tools
 
 `pip install -r tools/requirements.txt`
