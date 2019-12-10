@@ -1,13 +1,22 @@
+
+# Developing circularity.ID
+
+## Developing the data format (schema)
+
+## Testing the data format and validations
+
+## python tools development
+
 ### using the library
 
 ```
-In [1]: from id_standards import validations
-In [2]: xml_invalid = '<product></product>'
-In [3]: xml_valid = '<book><page /><page /></book>'
-In [4]: validations.validate_on_version('0.01', xml_valid)
-Out[4]: [True, 'XML is valid according to schema']
-In [5]: validations.validate_on_version('0.01', xml_invalid)
-Out[5]:
+from id_standards import validations
+xml_invalid = '<product></product>'
+xml_valid = '<book><page /><page /></book>'
+validations.validate_on_version('0.01', xml_valid)
+ [True, 'XML is valid according to schema']
+validations.validate_on_version('0.01', xml_invalid)
+
 [False,
  <string>:1:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element book, got product]
 ```
@@ -41,23 +50,23 @@ python tools/test.py -s schema/testing.rng -f examples
 
 ##### merge
 ```
-In [1]: from id_standards.utils.xml import merge
-In [2]: xml1 = '<pd />'
-In [3]: xml2 = '<pdd />'
-In [4]: xml3 = '<pdd><data1 /></pdd>'
-In [5]: merge(xml1, xml2, xml3)
-Out[5]: b'<pdd><data1/></pdd>'
+from id_standards.utils.xml import merge
+xml1 = '<pd />'
+xml2 = '<pdd />'
+xml3 = '<pdd><data1 /></pdd>'
+merge(xml1, xml2, xml3)
+ b'<pdd><data1/></pdd>'
 ```
 
 ##### equals
 ```
-In [2]: xml1 = '<pd />'
-In [3]: xml2 = '<pdd />'
-In [4]: xml3 = '<pdd><data1 /></pdd>'
-In [6]: xml4 = '<pdd><data1></data1></pdd>'
-In [7]: from id_standards.utils.xml import equals
-In [8]: equals(xml1, xml4)
-Out[8]: False
-In [9]: equals(xml3, xml4)
-Out[9]: True
+xml1 = '<pd />'
+xml2 = '<pdd />'
+xml3 = '<pdd><data1 /></pdd>'
+xml4 = '<pdd><data1></data1></pdd>'
+from id_standards.utils.xml import equals
+equals(xml1, xml4)
+ False
+equals(xml3, xml4)
+ True
 ```
