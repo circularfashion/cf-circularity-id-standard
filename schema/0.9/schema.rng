@@ -21,7 +21,7 @@
                 </element>
             </optional>
             <element name="name">
-               <data type="token" />
+               <ref name="NOTEMPTY" />
             </element>
             <element name="brand">
                 <text/>
@@ -455,4 +455,10 @@
       </element>
     </define>
 
+    <define name="NOTEMPTY">
+      <data type="string">
+        <param name="pattern">(.|\n|\r)*\S(.|\n|\r)*</param>
+        <param name="minLength">1</param>
+      </data>
+    </define>
 </grammar>

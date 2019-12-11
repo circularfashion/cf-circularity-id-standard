@@ -8,7 +8,6 @@
     <gtin>
         this is a value
     </gtin>
-    <name></name>
     <brand>
         this is a value
     </brand>
@@ -53,7 +52,8 @@
                 <source_raw_material>
                 </source_raw_material>
             </component>
-            <weight unit="">
+            <weight unit="kg">
+                1
             </weight>
             <consumption unit="sq-cm">
                 1
