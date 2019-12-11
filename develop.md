@@ -1,5 +1,5 @@
 
-![circularity id logo](logo.jpg)
+![circularity.id Open Data Standard Version 1.0](logo.jpg)
 
 # Developing circularity.ID
 
