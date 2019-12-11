@@ -4,11 +4,11 @@
     xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
     datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
     <start>
-      <ref name="product" />
+      <ref name="PRODUCT" />
     </start>
 
-    <define name="product">
-        <element name="product">
+    <define name="PRODUCT">
+      <element name="product">
             <optional>
                 <element name="sku">
                     <data type="token" />
@@ -43,7 +43,7 @@
                 <ref name="ASSEMBLY"/>
             </oneOrMore>
             <zeroOrMore>
-                <ref name="step"/>
+                <ref name="STEP"/>
             </zeroOrMore>
             <zeroOrMore>
                 <ref name="CERTIFICATION"/>
@@ -52,55 +52,12 @@
                 <element name="instructions_for_disassembly">
                     <text/>
                 </element>
-                <element name="finishing">
-                    <text/> <!-- should this be free text or a list -->
-                </element>
-                <element name="embellishment">
-                    <text/> <!-- should this be free text or a list -->
-                </element>
+                <ref name="FINISHING"/>
+                <ref name="EMBELLISHMENT"/>
             </optional>
         </element>
     </define>
 
-    <define name="PRODUCT-CATEGORY">
-        <element name="product_category">
-            <list>
-                <choice>
-                    <value>Clothing</value>
-                    <value>Accessories</value>
-                    <value>Footwear</value>
-                    <value>Other</value>
-                </choice>
-            </list>
-        </element>
-    </define>
-
-    <define name="CERTIFICATION">
-        <element name="certification">
-            <list>
-                <choice>
-                    <value>CERTIFICATION 1</value>
-                    <value>CERTIFICATION 2</value>
-                    <value>CERTIFICATION 3</value>
-                    <value>CERTIFICATION 4</value>
-                </choice>
-            </list>
-        </element>
-    </define>
-
-
-    <define name="PRODUCT-TYPE">
-        <element name="product_type">
-            <list>
-                <choice>
-                    <value>Clothing</value>
-                    <value>Accessories</value>
-                    <value>Footwear</value>
-                    <value>Other</value>
-                </choice>
-            </list>
-        </element>
-    </define>
 
     <define name="ASSEMBLY">
         <element name="assembly">
@@ -114,35 +71,6 @@
         </element>
     </define>
 
-    <define name="MATERIAL-TYPE">
-      <element name="type">
-        <list>
-          <choice>
-              <value>Leather</value>
-              <value>Trim</value>
-              <value>Fabric</value>
-              <value>Yarn</value>
-          </choice>
-        </list>
-      </element>
-    </define>
-
-    <define name="WEIGHT">
-      <element name="weight">
-        <data type="decimal"/>
-        <attribute name="unit">
-            <list>
-                <choice>
-                    <value>kg</value>
-                    <value>g</value>
-                    <value>oz</value>
-                    <value>lb</value>
-                </choice>
-            </list>
-        </attribute>
-      </element>
-    </define>
-
     <define name="MATERIAL">
         <element name="material">
             <ref name="MATERIAL-TYPE"/>
@@ -150,7 +78,7 @@
                 <text/>
             </element>
             <oneOrMore>
-                <ref name="component"/>
+                <ref name="COMPONENT"/>
             </oneOrMore>
             <optional>
               <ref name="WEIGHT" />
@@ -170,7 +98,7 @@
               </element>
             </optional>
             <zeroOrMore>
-                <ref name="step"/>
+                <ref name="STEP"/>
             </zeroOrMore>
 
             <ref name="COLOR"/>
@@ -192,9 +120,7 @@
             </optional>
 
             <zeroOrMore>
-                <element name="finishing">
-                    <text/>
-                </element>
+              <ref name="FINISHING" />
             </zeroOrMore>
 
             <ref name="CHEMICAL-COMPLIANCE"/>
@@ -223,17 +149,13 @@
                 <element name="pretanning_agent">
                     <text/>
                 </element>
-            </optional>
-            <optional>
-                <element name="embellishment">
-                    <text/>
-                </element>
+                <ref name="EMBELLISHMENT"/>
             </optional>
         </element>
     </define>
 
 
-    <define name="component">
+    <define name="COMPONENT">
         <element name="component">
             <element name="fiber_component">
                 <text/>
@@ -256,7 +178,7 @@
     </define>
 
 
-    <define name="step">
+    <define name="STEP">
         <element name="step">
             <element name="type">
                 <text/>
@@ -287,8 +209,94 @@
         </element>
     </define>
 
-    <define name="COLOR">
-      <element name="color">
+
+    <define name="PRODUCT-CATEGORY">
+      <element name="product_category">
+        <text />
+        <!-- in development: adding choices
+            <list>
+                <choice>
+                    <value>Clothing</value>
+                    <value>Accessories</value>
+                    <value>Footwear</value>
+                    <value>Other</value>
+                </choice>
+            </list>
+            -->
+        </element>
+    </define>
+
+    <define name="CERTIFICATION">
+      <element name="certification">
+        <text />
+        <!-- in development: adding choices
+            <list>
+                <choice>
+                    <value>CERTIFICATION 1</value>
+                    <value>CERTIFICATION 2</value>
+                    <value>CERTIFICATION 3</value>
+                    <value>CERTIFICATION 4</value>
+                </choice>
+            </list>
+            -->
+        </element>
+    </define>
+
+
+    <define name="PRODUCT-TYPE">
+      <element name="product_type">
+        <text />
+        <!-- in development: adding choices
+            <list>
+                <choice>
+                    <value>Clothing</value>
+                    <value>Accessories</value>
+                    <value>Footwear</value>
+                    <value>Other</value>
+                </choice>
+            </list>
+            -->
+        </element>
+    </define>
+
+
+
+    <define name="MATERIAL-TYPE">
+      <element name="type">
+        <text />
+        <!-- in development: adding choices
+        <list>
+          <choice>
+              <value>Leather</value>
+              <value>Trim</value>
+              <value>Fabric</value>
+              <value>Yarn</value>
+          </choice>
+        </list>
+        -->
+      </element>
+    </define>
+
+    <define name="WEIGHT">
+      <element name="weight">
+        <data type="decimal"/>
+        <attribute name="unit">
+            <list>
+                <choice>
+                    <value>kg</value>
+                    <value>g</value>
+                    <value>oz</value>
+                    <value>lb</value>
+                </choice>
+            </list>
+        </attribute>
+      </element>
+    </define>
+
+    <define name="EMBELLISHMENT">
+      <element name="embellishment">
+        <text />
+        <!-- In development: adding choices
         <list>
           <choice>
               <value>Cyan</value>
@@ -297,11 +305,47 @@
               <value>Black</value>
           </choice>
         </list>
+        -->
+      </element>
+    </define>
+
+    <define name="FINISHING">
+      <element name="finishing">
+        <text />
+        <!-- In development: adding choices
+        <list>
+          <choice>
+              <value>Cyan</value>
+              <value>Magenta</value>
+              <value>Yellow</value>
+              <value>Black</value>
+          </choice>
+        </list>
+        -->
+      </element>
+    </define>
+
+
+    <define name="COLOR">
+      <element name="color">
+        <text />
+        <!-- In development: adding choices
+        <list>
+          <choice>
+              <value>Cyan</value>
+              <value>Magenta</value>
+              <value>Yellow</value>
+              <value>Black</value>
+          </choice>
+        </list>
+        -->
       </element>
     </define>
 
     <define name="PATTERN">
       <element name="pattern">
+        <text />
+        <!-- In development: adding choices
         <list>
           <choice>
               <value>Houndstooth</value>
@@ -310,11 +354,14 @@
               <value>other</value>
           </choice>
         </list>
+        -->
       </element>
     </define>
 
     <define name="DYEING-METHOD">
       <element name="dyeing_method">
+        <text />
+        <!-- In development: adding choices
         <list>
           <choice>
               <value>we have some choices</value>
@@ -323,11 +370,14 @@
               <value>other</value>
           </choice>
         </list>
+        -->
       </element>
     </define>
 
     <define name="PRINTING-METHOD">
       <element name="printing_method">
+        <text />
+        <!-- in development: adding choices
         <list>
           <choice>
               <value>we have some choices</value>
@@ -336,11 +386,14 @@
               <value>other</value>
           </choice>
         </list>
+        -->
       </element>
     </define>
 
     <define name="TANNING-METHOD">
       <element name="tanning_method">
+        <text />
+        <!-- in development: adding choices
         <list>
           <choice>
               <value>we have some choices</value>
@@ -349,12 +402,15 @@
               <value>other</value>
           </choice>
         </list>
+        -->
       </element>
     </define>
 
 
     <define name="CHEMICAL-COMPLIANCE">
       <element name="chemical_compliance">
+        <text />
+        <!-- in development: adding choices
         <list>
           <choice>
               <value>we have some choices</value>
@@ -363,11 +419,14 @@
               <value>other</value>
           </choice>
         </list>
+        -->
       </element>
     </define>
 
     <define name="BIODEGRADABILITY-CERTIFICATION">
       <element name="biodegradability_certification">
+        <text />
+        <!-- in development: adding choices
         <list>
           <choice>
               <value>we have some choices</value>
@@ -376,11 +435,14 @@
               <value>other</value>
           </choice>
         </list>
+        -->
       </element>
     </define>
 
     <define name="MATERIAL-CERTIFICATION">
       <element name="material_certification">
+        <text />
+        <!-- in development: adding choices
         <list>
           <choice>
               <value>we have some choices</value>
@@ -389,6 +451,7 @@
               <value>other</value>
           </choice>
         </list>
+        -->
       </element>
     </define>
 
