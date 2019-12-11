@@ -17,6 +17,15 @@ the schema can be edited either directly in the `.rng` or `.rnc` files, or using
 
 one goal is to keep the xml schema simple enough that the data for it can cleanly be converted to simple json format, and then back into valid xml.  this conversion script is still in development.
 
+### schema rules
+
+we have a few things we like to lean on and some standards that we adhere to with the relaxng schema definitions.
+
+- refs should be `IN_ALL_UPPERCASE` to distinguish them from regular elements
+- element names should use underscores (`_`) and not dashes (`-`)
+- refs should be the same name as the element they include, just in uppercase
+
+
 ## Python circularity.ID standard tools
 
 additionally, there is a small python module bundled with the schema (`./tools/circularity_id_standard`) - this module can do validation, testing, as well as a batch of useful xml utilities to be used in applications.
