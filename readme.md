@@ -6,4 +6,4 @@ __current version__: [0.9 as xml](https://github.com/circularfashion/cf-circular
 
 __[all versions](https://github.com/circularfashion/cf-circularity-id-standard/tree/master/schema)__
 
-For contributing to or developing the open data standard or the associated tooling, please see [developing circularity.ID](develop.md)
+For information on how to integrate the open data standard into your tech tools, or for contributing see [developing circularity.ID](develop.md)
