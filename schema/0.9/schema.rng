@@ -21,7 +21,7 @@
                 </element>
             </optional>
             <element name="name">
-                <text/>
+               <data type="token" />
             </element>
             <element name="brand">
                 <text/>
@@ -87,8 +87,8 @@
                   <attribute name="unit">
                       <list>
                           <choice>
-                              <value>sq. cm</value>
-                              <value>sq. inch</value>
+                              <value>sq-cm</value>
+                              <value>sq-inch</value>
                           </choice>
                       </list>
                   </attribute>
