@@ -2,4 +2,6 @@
 
 # circularity.ID open data standard
 
+__current version__: [0.9](https://github.com/circularfashion/cf-circularity-id-standard/blob/master/schema/0.9/schema.rng)
+
 For contributing to or developing the open data standard or the associated tooling, please see [developing circularity.ID](develop.md)
