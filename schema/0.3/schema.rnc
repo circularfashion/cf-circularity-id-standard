@@ -1,0 +1,87 @@
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+
+start = product
+product =
+  element product {
+    element circularity-id { xsd:token }?,
+    element sku { xsd:token }?,
+    element sgtin { xsd:token }?,
+    element gtin { xsd:token }?,
+    element name { text },
+    element brand { text },
+    element company { text }?,
+    element collection { text }?,
+    element colourway { text },
+    product-type,
+    element season { text }?,
+    assembly+,
+    step*,
+    certification*,
+    element instructions-for-disassembly { text }?
+  }
+product-type =
+  element product-type {
+    list { "Clothing" | "Accessories" | "Footwear" | "Other" }
+  }
+assembly =
+  element assembly {
+    element name { text },
+    MATERIAL+
+  }
+MATERIAL =
+  element material {
+    element type { text },
+    element name { text },
+    component+,
+    element weight {
+      xsd:decimal,
+      attribute unit {
+        list { "kg" | "g" | "oz" | "lb" }
+      }
+    },
+    element consumption {
+      xsd:decimal,
+      attribute unit {
+        list { "sq. cm" | "sq. inch" }
+      }
+    },
+    element construction { text },
+    step*,
+    element colour { text },
+    element pattern { text }?,
+    element dyeing_method { text },
+    element dyestuff { text }?,
+    element printing_method { text },
+    element print_dyestuff { text }?,
+    element finishing { text }*,
+    element chemical_compliance { text }?,
+    element biodegradability { text }?,
+    element certification { text }?,
+    element tanning_method { text }?,
+    element tanning_agent { text }?,
+    element pretanning_method { text }?,
+    element pretanning_agent { text }?
+  }
+component =
+  element component {
+    element name { text },
+    element percentage {
+      xsd:decimal
+      # percentage total should be 100
+      
+    },
+    element is_recycled { xsd:boolean },
+    element origin_recycling_input { text },
+    element origin_raw_material { text }
+  }
+step =
+  element step {
+    element type { text },
+    element country { text },
+    element company_name { text }?,
+    element street { text }?,
+    element postal { text }?,
+    element city { text }?,
+    element oar { text }?,
+    element additional_information { text }?
+  }
