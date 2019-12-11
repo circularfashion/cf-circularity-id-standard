@@ -37,8 +37,8 @@
             <element name="colourway">
                 <text/>
             </element>
-            <ref name="PRODUCT-CATEGORY" />
-            <ref name="PRODUCT-TYPE" />
+            <ref name="PRODUCT_CATEGORY" />
+            <ref name="PRODUCT_TYPE" />
             <oneOrMore>
                 <ref name="ASSEMBLY"/>
             </oneOrMore>
@@ -73,7 +73,7 @@
 
     <define name="MATERIAL">
         <element name="material">
-            <ref name="MATERIAL-TYPE"/>
+            <ref name="MATERIAL_TYPE"/>
             <element name="name">
                 <text/>
             </element>
@@ -105,13 +105,13 @@
             <optional>
               <ref name="PATTERN"/>
             </optional>
-            <ref name="DYEING-METHOD"/>
+            <ref name="DYEING_METHOD"/>
 
             <element name="dyestuff">
                 <text/>
             </element>
 
-            <ref name="PRINTING-METHOD"/>
+            <ref name="PRINTING_METHOD"/>
 
             <optional>
                 <element name="print_dyestuff">
@@ -123,17 +123,17 @@
               <ref name="FINISHING" />
             </zeroOrMore>
 
-            <ref name="CHEMICAL-COMPLIANCE"/>
+            <ref name="CHEMICAL_COMPLIANCE"/>
             <optional>
-              <ref name="BIODEGRADABILITY-CERTIFICATION"/>
+              <ref name="BIODEGRADABILITY_CERTIFICATION"/>
             </optional>
 
             <optional>
-              <ref name="MATERIAL-CERTIFICATION"/>
+              <ref name="MATERIAL_CERTIFICATION"/>
             </optional>
 
             <optional>
-              <ref name="TANNING-METHOD"/>
+              <ref name="TANNING_METHOD"/>
             </optional>
             <optional>
                 <element name="tanning_agent">
@@ -210,7 +210,7 @@
     </define>
 
 
-    <define name="PRODUCT-CATEGORY">
+    <define name="PRODUCT_CATEGORY">
       <element name="product_category">
         <text />
         <!-- in development: adding choices
@@ -243,7 +243,7 @@
     </define>
 
 
-    <define name="PRODUCT-TYPE">
+    <define name="PRODUCT_TYPE">
       <element name="product_type">
         <text />
         <!-- in development: adding choices
@@ -261,7 +261,7 @@
 
 
 
-    <define name="MATERIAL-TYPE">
+    <define name="MATERIAL_TYPE">
       <element name="type">
         <text />
         <!-- in development: adding choices
@@ -358,7 +358,7 @@
       </element>
     </define>
 
-    <define name="DYEING-METHOD">
+    <define name="DYEING_METHOD">
       <element name="dyeing_method">
         <text />
         <!-- In development: adding choices
@@ -374,7 +374,7 @@
       </element>
     </define>
 
-    <define name="PRINTING-METHOD">
+    <define name="PRINTING_METHOD">
       <element name="printing_method">
         <text />
         <!-- in development: adding choices
@@ -390,7 +390,7 @@
       </element>
     </define>
 
-    <define name="TANNING-METHOD">
+    <define name="TANNING_METHOD">
       <element name="tanning_method">
         <text />
         <!-- in development: adding choices
@@ -407,7 +407,7 @@
     </define>
 
 
-    <define name="CHEMICAL-COMPLIANCE">
+    <define name="CHEMICAL_COMPLIANCE">
       <element name="chemical_compliance">
         <text />
         <!-- in development: adding choices
@@ -423,7 +423,7 @@
       </element>
     </define>
 
-    <define name="BIODEGRADABILITY-CERTIFICATION">
+    <define name="BIODEGRADABILITY_CERTIFICATION">
       <element name="biodegradability_certification">
         <text />
         <!-- in development: adding choices
@@ -439,7 +439,7 @@
       </element>
     </define>
 
-    <define name="MATERIAL-CERTIFICATION">
+    <define name="MATERIAL_CERTIFICATION">
       <element name="material_certification">
         <text />
         <!-- in development: adding choices
