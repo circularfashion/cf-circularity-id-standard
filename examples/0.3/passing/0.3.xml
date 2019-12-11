@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<product>
+    <circularity-id>1HDFX98HGR56H6Z4E</circularity-id>
+    <sku>098-765-432</sku>
+    <sgtin>0987654321POIUZTR</sgtin>
+    <gtin>0987654321POIUZTR</gtin>
+    <po-nr>QWER0987</po-nr>
+    <name>Chelsea Jacket Blue</name>
+    <brand>Cheezy</brand>
+    <company>Qwerty Ltd.</company>
+    <season>Winter</season>
+    <colourway>Marine/Yellow</colourway>
+    <product-type>Clothing</product-type>
+    <assembly>
+        <name>Shell</name>
+        <material>
+            <type>Fabric</type>
+            <name>Stretch Organic Twill</name>
+            <component>
+                <name>Cotton</name>
+                <percentage>95</percentage>
+                <is_recycled>false</is_recycled>
+                <origin_recycling_input>n/a</origin_recycling_input>
+                <origin_raw_material>n/a</origin_raw_material>
+            </component>
+            <component>
+                <name>Elasthan</name>
+                <percentage>5</percentage>
+                <is_recycled>false</is_recycled>
+                <origin_recycling_input>n/a</origin_recycling_input>
+                <origin_raw_material>n/a</origin_raw_material>
+            </component>
+            <weight unit="g">100</weight>
+            <consumption unit="sqm">1</consumption>
+            <construction>Interlock</construction>
+            <step>
+                <type>Origin of Raw Material</type>
+                <country>India</country>
+            </step>
+            <step>
+                <type>Manufacturing</type>
+                <country>Estonia</country>
+            </step>
+            <colour>Blue</colour>
+            <pattern>Striped</pattern>
+            <dyeing_method>xyz</dyeing_method>
+            <dyestuff>xyz</dyestuff>
+            <printing_method>XYZ</printing_method>
+            <print_dyestuff>XYZ</print_dyestuff>
+            <finishing>Water repellant</finishing>
+            <chemical_compliance>GRS</chemical_compliance>
+        </material>
+    </assembly>
+</product>
