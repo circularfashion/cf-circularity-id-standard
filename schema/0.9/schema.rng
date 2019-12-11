@@ -296,7 +296,7 @@
     <define name="EMBELLISHMENT">
       <element name="embellishment">
         <text />
-        <!-- In development: adding choices
+        <!-- in development: adding choices
         <list>
           <choice>
               <value>Cyan</value>
@@ -312,7 +312,7 @@
     <define name="FINISHING">
       <element name="finishing">
         <text />
-        <!-- In development: adding choices
+        <!-- in development: adding choices
         <list>
           <choice>
               <value>Cyan</value>
@@ -329,7 +329,7 @@
     <define name="COLOR">
       <element name="color">
         <text />
-        <!-- In development: adding choices
+        <!-- in development: adding choices
         <list>
           <choice>
               <value>Cyan</value>
@@ -345,7 +345,7 @@
     <define name="PATTERN">
       <element name="pattern">
         <text />
-        <!-- In development: adding choices
+        <!-- in development: adding choices
         <list>
           <choice>
               <value>Houndstooth</value>
@@ -361,7 +361,7 @@
     <define name="DYEING_METHOD">
       <element name="dyeing_method">
         <text />
-        <!-- In development: adding choices
+        <!-- in development: adding choices
         <list>
           <choice>
               <value>we have some choices</value>
