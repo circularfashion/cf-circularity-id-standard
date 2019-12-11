@@ -1,11 +1,21 @@
 from setuptools import setup
 
-setup(name='cf-id-standards',
-      version='0.01',
-      description='Circular.Fashion ID Standards',
-      url='http://github.com/ITForCircularty/cf-id-standards',
-      author='Circular.Fashion UG (haftungsbeschraenkt)',
-      author_email='develop@circular.fashion',
-      license='MIT',
-      packages=['id_standards'],
-      zip_safe=False)
+setup(
+    name='cf-circularity-id-standard',
+    version='1.0',
+    description='circular.fashion circularity.ID Standard',
+    url='http://github.com/circularfashion/cf-circularity-id-standard',
+    author='Circular.Fashion UG (haftungsbeschraenkt)',
+    author_email='develop@circular.fashion',
+    license='MIT',
+    packages=['circularity_id_standard'],
+    package_dir={'circularity_id_standard': 'tools/circularity_id_standard'},
+    install_requires = [ # also update ./tools/requirements.txt
+        'xmldiff==2.4',
+        'xmltodict==0.12.0',
+        'fnc==0.4.0',
+        'lxml==4.4.1',
+        'jingtrang==0.1.2',
+    ],
+    zip_safe=False
+)

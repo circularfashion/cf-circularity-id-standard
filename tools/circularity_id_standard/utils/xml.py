@@ -1,7 +1,7 @@
 from json import loads, dumps
+
 from functools import (
     partial,
-    reduce,
 )
 from lxml import etree
 
@@ -13,7 +13,9 @@ from xmltodict import ( # should this library be trusted?
     parse as xml_to_o_dict,
     unparse as dict_to_xml,
 )
+
 class NotXmlError(Exception): pass
+
 def assert_is_xml(xml: str) -> bool:
     try:
         etree.fromstring(xml)
