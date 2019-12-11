@@ -3,23 +3,50 @@
 
 # Developing circularity.ID
 
+This document is targeted at developers and who want to contribute to the 
+_circularity.ID_ standard.
+
 ## Developing the data format (schema)
 
-The schema is a [relaxng](https://relaxng.org/) schema, as the goal is to create product xml data.  We have created versions of the data so that changes to the schema do not explicitly force data formats.  It is up to each system using the schema to decide which versions it accepts.
+The schema is defined in the [RELAX NG](https://relaxng.org/) format.
+The schema is versioned so that changes to the schema do not explicitly force 
+users to update existing XML data. It is up to each system using the schema to
+decide which versions it accepts.
 
-This means any change in the schema that would affect a change in data of the previous schema should warrant it's own version number, and must supply examples of failing and passing xml files.
+Version numbering should adhere to the conventions of
+[semantic versioning](https://semver.org/):
 
-Everything related to the schema is in `./schema`, and the examples are in `./examples`
+> Given a version number MAJOR.MINOR.PATCH, increment the:
+> - MAJOR version when you make incompatible API changes,
+> - MINOR version when you add functionality in a backwards compatible manner, and
+> - PATCH version when you make backwards compatible bug fixes.
 
-relaxng is a little bit difficult to parse, but there are validators in many different languages for many different systems.  The wikipedia article for relaxng is very helpful: [https://en.wikipedia.org/wiki/RELAX_NG](https://en.wikipedia.org/wiki/RELAX_NG)
+This means any change in the schema that would affect an incompatible change in
+data of the previous schema should warrant it's own MAJOR version number. Every
+MAJOR and MINOR version must supply examples of failing and passing xml files.
 
-the schema can be edited either directly in the `.rng` or `.rnc` files, or using a GUI editor such as [\<oxygen \/\> xml editor](https://www.oxygenxml.com/) - as long as the resulting files are stored in `./schema/$VERSION/schema.rng` and `./schema/$VERSION/schema.rnc`
+Everything related to the schema is stored in `./schema`, and the examples are
+in `./examples`.
 
-one goal is to keep the xml schema simple enough that the data for it can cleanly be converted to simple json format, and then back into valid xml.  this conversion script is still in development.
+RELAX NG is a little bit difficult to parse, but there are validators in many 
+different languages for many different systems. The Wikipedia article for 
+RELAX NG is very helpful: 
+[https://en.wikipedia.org/wiki/RELAX_NG](https://en.wikipedia.org/wiki/RELAX_NG)
+
+The schema can be edited either directly in the `.rng` or `.rnc` files, 
+or using a GUI editor such as 
+[\<oxygen \/\> xml editor](https://www.oxygenxml.com/) - as long as the 
+resulting files are stored in `./schema/$VERSION/schema.rng` and 
+`./schema/$VERSION/schema.rnc`
+
+One goal is to keep the XML schema simple enough that the data for it can 
+cleanly be converted into a simple JSON format, and then back into valid xml. 
+This conversion script is still in development.
 
 ### schema rules
 
-we have a few things we like to lean on and some standards that we adhere to with the relaxng schema definitions.
+we have a few things we like to lean on and some standards that we adhere to 
+with the relaxng schema definitions.
 
 - refs should be `IN_ALL_UPPERCASE` to distinguish them from regular elements
 - element names should use underscores (`_`) and not dashes (`-`)
@@ -30,7 +57,9 @@ additionally, we have developed a few `refs` to use for validation
 
 ##### NOTEMPTY (string)
 
-this ref is a string data that disallows empty strings in an element, but allows newlines.
+this ref is a string data that disallows empty strings in an element, but 
+allows newlines.
+
 ```html
   <define name="NOTEMPTY">
     <data type="string">
@@ -44,23 +73,25 @@ this ref is a string data that disallows empty strings in an element, but allows
   </define>
 ```
 
-
 ## Python circularity.ID standard tools
 
-additionally, there is a small python module bundled with the schema (`./tools/circularity_id_standard`) - this module can do validation, testing, as well as a batch of useful xml utilities to be used in applications.
+Additionally, there is a small [Python](https://python.org/) module bundled 
+with the schema (`./tools/circularity_id_standard`) - this module can do 
+validation, testing, as well as a batch of useful xml utilities to be used 
+in applications.
 
 ## requirements
 
 ```
 python3.8
 ```
-## installing the tools
+## Installing the Tools
 
 `pip install -r tools/requirements.txt`
 
-development uses pylint with the supplied pylintrc file.
+Development uses `pylint` with the supplied pylintrc file.
 
-## Testing the data format and validations
+## Testing the Data Format and Validations
 
 for each version of the schema, example xml files should be created.  These exammple files should account for product xml files that are valid according to the schema version as well as those that are not.
 
