@@ -24,6 +24,25 @@ we have a few things we like to lean on and some standards that we adhere to wit
 - refs should be `IN_ALL_UPPERCASE` to distinguish them from regular elements
 - element names should use underscores (`_`) and not dashes (`-`)
 - refs should be the same name as the element they include, just in uppercase
+- two space indent ;)
+
+additionally, we have developed a few `refs` to use for validation
+
+##### NOTEMPTY (string)
+
+this ref is a string data that disallows empty strings in an element, but allows newlines.
+```html
+  <define name="NOTEMPTY">
+    <data type="string">
+      <!-- allow for newlines, but not just whitespace -->
+      <param name="pattern">
+      (.|\n|\r)*\S(.|\n|\r)*</param>
+      <!-- at least one character should be included -->
+      <param name="minLength">
+      1</param>
+    </data>
+  </define>
+```
 
 
 ## Python circularity.ID standard tools
