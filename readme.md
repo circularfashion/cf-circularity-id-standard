@@ -2,4 +2,4 @@
 
 # circularity.ID open data standard
 
-for developing the standard or the associated tools, please see [developing circularity.ID](develop.md)
+For contributing to or developing the open data standard or the associated tooling, please see [developing circularity.ID](develop.md)
