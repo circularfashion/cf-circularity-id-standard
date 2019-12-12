@@ -57,7 +57,7 @@
                     this is a value
                 </source_raw_material>
             </component>
-            <weight unit="kg">
+            <weight unit="gsm">
                 1
             </weight>
             <consumption unit="sqm">
