@@ -3,13 +3,13 @@
 
 # Developing circularity.ID
 
-This document is targeted at developers and who want to contribute to the 
+This document is targeted at developers and who want to contribute to the
 _circularity.ID_ standard.
 
 ## Developing the data format (schema)
 
 The schema is defined in the [RELAX NG](https://relaxng.org/) format.
-The schema is versioned so that changes to the schema do not explicitly force 
+The schema is versioned so that changes to the schema do not explicitly force
 users to update existing XML data. It is up to each system using the schema to
 decide which versions it accepts.
 
@@ -28,28 +28,28 @@ MAJOR and MINOR version must supply examples of failing and passing xml files.
 Everything related to the schema is stored in `./schema`, and the examples are
 in `./examples`.
 
-RELAX NG is a little bit difficult to parse, but there are validators in many 
-different languages for many different systems. The Wikipedia article for 
-RELAX NG is very helpful: 
+RELAX NG is a little bit difficult to parse, but there are validators in many
+different languages for many different systems. The Wikipedia article for
+RELAX NG is very helpful:
 [https://en.wikipedia.org/wiki/RELAX_NG](https://en.wikipedia.org/wiki/RELAX_NG)
 
-The schema can be edited either directly in the `.rng` or `.rnc` files, 
-or using a GUI editor such as 
-[\<oxygen \/\> xml editor](https://www.oxygenxml.com/) - as long as the 
-resulting files are stored in `./schema/$VERSION/schema.rng` and 
+The schema can be edited either directly in the `.rng` or `.rnc` files,
+or using a GUI editor such as
+[\<oxygen \/\> xml editor](https://www.oxygenxml.com/) - as long as the
+resulting files are stored in `./schema/$VERSION/schema.rng` and
 `./schema/$VERSION/schema.rnc`
 
-One goal is to keep the XML schema simple enough that the data for it can 
-cleanly be converted into a simple JSON format, and then back into valid xml. 
+One goal is to keep the XML schema simple enough that the data for it can
+cleanly be converted into a simple JSON format, and then back into valid xml.
 This conversion script is still in development.
 
 ### schema rules
 
-we have a few things we like to lean on and some standards that we adhere to 
+we have a few things we like to lean on and some standards that we adhere to
 with the relaxng schema definitions.
 
 - refs should be `IN_ALL_UPPERCASE` to distinguish them from regular elements
-- element names should use underscores (`_`) and not dashes (`-`)
+- element names should use snake case (underscores (`_`) and not dashes (`-`))
 - refs should be the same name as the element they include, just in uppercase
 - two space indent ;)
 
@@ -57,7 +57,7 @@ additionally, we have developed a few `refs` to use for validation
 
 ##### NOTEMPTY (string)
 
-this ref is a string data that disallows empty strings in an element, but 
+this ref is a string data that disallows empty strings in an element, but
 allows newlines.
 
 ```html
@@ -75,9 +75,9 @@ allows newlines.
 
 ## Python circularity.ID standard tools
 
-Additionally, there is a small [Python](https://python.org/) module bundled 
-with the schema (`./tools/circularity_id_standard`) - this module can do 
-validation, testing, as well as a batch of useful xml utilities to be used 
+Additionally, there is a small [Python](https://python.org/) module bundled
+with the schema (`./tools/circularity_id_standard`) - this module can do
+validation, testing, as well as a batch of useful xml utilities to be used
 in applications.
 
 ## requirements
