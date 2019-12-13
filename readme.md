@@ -37,6 +37,6 @@ The circularity.ID  Open Data Standard can be used according to the License GNU 
 Use of circularity.ID Trademark
 circularity.ID is a registered trademark. Using the the circularity.ID Open Data Standard does not include allowance for using the circularity.ID  trademark. circular.fashion is the only issuing body of the circularity.ID and will provide a unique identifying number as a proof. Only when circular.fashion issued an ID as  circularity.ID the trademark is allowed to be used following separate guidelines stated in a different document. 
 
-### Developing
+## Developing
 
 For information on how to integrate the open data standard into your tech tools, or for contributing see [developing circularity.ID](develop.md)
