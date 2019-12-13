@@ -31,10 +31,10 @@ Contact: [https://circular.fashion/about/](https://circular.fashion/about/)
 
 ## Guidelines for Use
 
-Use of circularity.ID Open Data Standard
+### Use of circularity.ID Open Data Standard
 The circularity.ID  Open Data Standard can be used according to the License GNU General Public License v3.0. and always needs to be referenced when using or modifying the standard. Using the circularity.ID Open Data Standard does not imply that a product was tested for recyclability by circular.fashion, but the use of the standard data format enables circular.fashion to conduct Circular Product Checks, and supports connected services and applications. The circularity.ID Open Data Standard does not imply that data created according to the standard must be made public.
 
-Use of circularity.ID Trademark
+### Use of circularity.ID Trademark
 circularity.ID is a registered trademark. Using the the circularity.ID Open Data Standard does not include allowance for using the circularity.ID  trademark. circular.fashion is the only issuing body of the circularity.ID and will provide a unique identifying number as a proof. Only when circular.fashion issued an ID as  circularity.ID the trademark is allowed to be used following separate guidelines stated in a different document. 
 
 ## Developing
