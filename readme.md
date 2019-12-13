@@ -27,6 +27,7 @@ circularity.ID ODS is split into an XML component that contains immutable produc
 ## Contact
 
 The circularity.ID is initiated and administered by circular.fashion UG (haftungsbeschränkt).
+
 Contact: [https://circular.fashion/about/](https://circular.fashion/about/)
 
 ## Guidelines for Use
