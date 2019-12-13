@@ -6,7 +6,7 @@
 This document is targeted at developers and who want to contribute to the
 _circularity.ID_ standard.
 
-## Developing the data format (schema)
+## Developing the Data Format (Schema)
 
 The schema is defined in the [RELAX NG](https://relaxng.org/) format.
 The schema is versioned so that changes to the schema do not explicitly force
@@ -43,9 +43,9 @@ One goal is to keep the XML schema simple enough that the data for it can
 cleanly be converted into a simple JSON format, and then back into valid xml.
 This conversion script is still in development.
 
-### schema rules
+### Schema Rules
 
-we have a few things we like to lean on and some standards that we adhere to
+We have a few things we like to lean on and some standards that we adhere to
 with the relaxng schema definitions.
 
 - refs should be `IN_ALL_UPPERCASE` to distinguish them from regular elements
@@ -53,7 +53,7 @@ with the relaxng schema definitions.
 - refs should be the same name as the element they include, just in uppercase
 - two space indent ;)
 
-additionally, we have developed a few `refs` to use for validation
+Additionally, we have developed a few `refs` to use for validation
 
 ##### NOTEMPTY (string)
 
@@ -73,14 +73,14 @@ allows newlines.
   </define>
 ```
 
-## Python circularity.ID standard tools
+## Python circularity.ID Standard Tools
 
 Additionally, there is a small [Python](https://python.org/) module bundled
 with the schema (`./tools/circularity_id_standard`) - this module can do
 validation, testing, as well as a batch of useful xml utilities to be used
 in applications.
 
-## requirements
+## Requirements
 
 ```
 python3.8
@@ -99,7 +99,7 @@ correct examples should go into `examples/[VERSION]/passing`, and failing into `
 
 you can use the command line script `python tools/test.py` to do fun things with testing these files. Additionally, it will make sure that the schema stands the test of time and can always be validated off of it's examples.
 
-##### script options
+##### Script Options
 
 - `--version` (`-v`): a schema version to test against.  from ./schema/[x].
   - example `0.01` or `0.02`
@@ -108,7 +108,7 @@ you can use the command line script `python tools/test.py` to do fun things with
 - `--files` (`-f`): a path to a file or the glob pattern to the xml files to test against.
   - example `./examples/testing/*` or `./new_example.xml`
 
-##### examples
+##### Examples
 
 ```bash
 # this command will test ALL failing and passing for schema version 0.01
@@ -126,9 +126,9 @@ python tools/test.py -s schema/testing.rng -f examples
 ```
 
 
-## python tools development
+## Python tools development
 
-### using the library
+### Using the Library
 
 ```python
 from circularity_id_standards.validations import (
@@ -149,9 +149,9 @@ validate_on_version('0.01', xml_invalid)
 
 ## XML utilities
 
-##### normalize
+##### Normalize
 
-##### merge
+##### Merge
 
 merges two or more xml strings, data left takes precedence.  for merging disparate datasetos
 
@@ -168,7 +168,7 @@ merge(xml1, xml2, xml3)
 # b'<pdd><data1/></pdd>'
 ```
 
-##### equals
+##### Equals
 
 tests the equality of xml strings disregarding whitespace, docstrings, order, or other inconsistincies.  'is the data the same?'
 
