@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name='cf-circularity-id-standard',
+    name='circularity-id-standard',
     version='1.0',
     description='circular.fashion circularity.ID Standard',
     url='http://github.com/circularfashion/cf-circularity-id-standard',
