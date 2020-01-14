@@ -9,7 +9,7 @@ setup(
     author_email='develop@circular.fashion',
     license='GPLv3',
     # packages=['circularity_id_standard'],
-    package_dir={'circularity_id_standard': 'tools/circularity_id_standard'},
+    package_dir={'circularity_id_standard': 'tools'},
     install_requires = [ # also update ./tools/requirements.txt
         'xmldiff==2.4',
         'xmltodict==0.12.0',
