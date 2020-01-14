@@ -8,7 +8,7 @@ setup(
     author='Circular.Fashion UG (haftungsbeschraenkt)',
     author_email='develop@circular.fashion',
     license='GPLv3',
-    packages=['circularity_id_standard'],
+    # packages=['circularity_id_standard'],
     package_dir={'circularity_id_standard': 'tools/circularity_id_standard'},
     install_requires = [ # also update ./tools/requirements.txt
         'xmldiff==2.4',
