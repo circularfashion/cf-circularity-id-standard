@@ -119,12 +119,12 @@
       <oneOrMore>
         <ref name="CHEMICAL_COMPLIANCE"/>
       </oneOrMore>
-      <optional>
+      <zeroOrMore>
         <ref name="BIODEGRADABILITY_CERTIFICATION"/>
-      </optional>
-      <optional>
+      </zeroOrMore>
+      <zeroOrMore>
         <ref name="MATERIAL_CERTIFICATION"/>
-      </optional>
+      </zeroOrMore>
       <optional>
         <ref name="TANNING_METHOD"/>
       </optional>
