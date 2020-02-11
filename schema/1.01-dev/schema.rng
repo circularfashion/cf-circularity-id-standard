@@ -52,7 +52,7 @@
       </zeroOrMore>
       <optional>
         <element name="instructions">
-          <text/> 
+          <text/>
         </element>
         <ref name="FINISHING"/>
         <ref name="EMBELLISHMENT"/>
@@ -116,7 +116,9 @@
       <zeroOrMore>
         <ref name="FINISHING" />
       </zeroOrMore>
-      <ref name="CHEMICAL_COMPLIANCE"/>
+      <oneOrMore>
+        <ref name="CHEMICAL_COMPLIANCE"/>
+      </oneOrMore>
       <optional>
         <ref name="BIODEGRADABILITY_CERTIFICATION"/>
       </optional>
