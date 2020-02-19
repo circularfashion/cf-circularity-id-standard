@@ -221,6 +221,7 @@
 
   <define name="PRODUCT_TYPE">
     <element name="product_type">
+      <text />
       <!-- in development: adding choices
         <list>
             <choice>
