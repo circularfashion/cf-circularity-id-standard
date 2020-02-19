@@ -77,6 +77,9 @@
       <element name="name">
         <text/>
       </element>
+      <optional>
+        <ref name="CONSTRUCTION"/>
+      </optional>
       <oneOrMore>
         <ref name="COMPONENT"/>
       </oneOrMore>
@@ -91,9 +94,6 @@
               </choice>
             </list>
           </attribute>
-        </element>
-        <element name="construction">
-          <text/>
         </element>
       </optional>
       <zeroOrMore>
@@ -418,6 +418,57 @@
         </list>
     </element>
   </define>
+
+  <define name="CONSTRUCTION">
+    <element name="construction">
+        <list>
+          <choice>
+                <value>Birds Eye</value>
+                <value>Cable</value>
+                <value>Cardigan</value>
+                <value>Fleece</value>
+                <value>French Terry</value>
+                <value>Intarsia</value>
+                <value>Interlock</value>
+                <value>Jacquard Jersey</value>
+                <value>Lacoste</value>
+                <value>Milano Rib</value>
+                <value>Pointelle</value>
+                <value>Purl Knit</value>
+                <value>Rachel</value>
+                <value>Rib Knit</value>
+                <value>Single Jersey</value>
+                <value>Sliver Knit</value>
+                <value>Tricot</value>
+                <value>Velour</value>
+                <value>Plain weave</value>
+                <value>Basket weave</value>
+                <value>Buckram</value>
+                <value>Cambric</value>
+                <value>Chiffon</value>
+                <value>Chintz</value>
+                <value>Corduroy</value>
+                <value>Crepe</value>
+                <value>Denim</value>
+                <value>Dobby</value>
+                <value>Drill</value>
+                <value>Flannel</value>
+                <value>Gabardine</value>
+                <value>Georgette</value>
+                <value>Jacquard</value>
+                <value>Khadi</value>
+                <value>Pique</value>
+                <value>Poplin</value>
+                <value>Satin</value>
+                <value>Sateen</value>
+                <value>Taffeta</value>
+                <value>Twill</value>
+                <value>Non Woven</value>
+          </choice>
+        </list>
+    </element>
+  </define>
+
 
   <define name="BIODEGRADABILITY_CERTIFICATION">
     <element name="biodegradability_certification">
