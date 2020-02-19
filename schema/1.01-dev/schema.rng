@@ -149,7 +149,7 @@
 
   <define name="COMPONENT">
     <element name="component">
-      <element name="fiber_component">
+      <element name="content">
         <text/>
       </element>
       <element name="percentage">
