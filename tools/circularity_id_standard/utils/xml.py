@@ -9,7 +9,7 @@ from fnc import (
     compose,
 )
 
-from xmltodict import ( # should this library be trusted?
+from xmltodict import ( 
     parse as xml_to_o_dict,
     unparse as dict_to_xml,
 )
