@@ -460,86 +460,86 @@
 
   <define name="CONSTRUCTION">
     <element name="construction">
-        <list>
-          <choice>
-              <value>Birds Eye</value>
-              <value>Cable</value>
-              <value>Cardigan</value>
-              <value>Fleece</value>
-              <value>French Terry</value>
-              <value>Intarsia</value>
-              <value>Interlock</value>
-              <value>Jacquard Jersey</value>
-              <value>Lacoste</value>
-              <value>Milano Rib</value>
-              <value>Pointelle</value>
-              <value>Purl Knit</value>
-              <value>Rachel</value>
-              <value>Rib Knit</value>
-              <value>Single Jersey</value>
-              <value>Sliver Knit</value>
-              <value>Tricot</value>
-              <value>Velour</value>
-              <value>Plain weave</value>
-              <value>Basket weave</value>
-              <value>Buckram</value>
-              <value>Cambric</value>
-              <value>Chiffon</value>
-              <value>Chintz</value>
-              <value>Corduroy</value>
-              <value>Crepe</value>
-              <value>Denim</value>
-              <value>Dobby</value>
-              <value>Drill</value>
-              <value>Flannel</value>
-              <value>Gabardine</value>
-              <value>Georgette</value>
-              <value>Jacquard</value>
-              <value>Khadi</value>
-              <value>Pique</value>
-              <value>Poplin</value>
-              <value>Satin</value>
-              <value>Sateen</value>
-              <value>Taffeta</value>
-              <value>Twill</value>
-              <value>Non Woven</value>
-              <!-- from alternative leather: -->
-              <value>Non Woven Dry Laid</value>
-              <value>Non Woven Wet Laid</value>
-              <value>Non Woven Spunlaid</value>
-              <value>Non Woven Meltblown</value>
-              <value>Non Woven Needle-punched</value>
-              <value>Bonded</value>
-              <value>Naturally occurring</value>
-              <value>Lab grown</value>
-              <value>Biotextile</value>
-              <!-- from trim type: -->
-              <value>Beads</value>
-              <value>Braid</value>
-              <value>Buckle</value>
-              <value>Button</value>
-              <value>Care label</value>
-              <value>Collar stay</value>
-              <value>Elastic</value>
-              <value>Eyelet/grommet</value>
-              <value>Fusing material</value>
-              <value>Hook and Loop</value>
-              <value>Interfacing</value>
-              <value>Lace</value>
-              <value>Label</value>
-              <value>Piping cord </value>
-              <value>Rivets</value>
-              <value>Seam sealing tape</value>
-              <value>Sequins</value>
-              <value>Shoulder pad</value>
-              <value>String/Draw Cord</value>
-              <value>Swivel hook</value>
-              <value>Twill tape</value>
-              <value>Velcro tape</value>
-              <value>Wadding </value>
-              <value>Zipper</value>
-          </choice>
-        </list>
+      <list>
+        <choice>
+          <value>Birds Eye</value>
+          <value>Cable</value>
+          <value>Cardigan</value>
+          <value>Fleece</value>
+          <value>French Terry</value>
+          <value>Intarsia</value>
+          <value>Interlock</value>
+          <value>Jacquard Jersey</value>
+          <value>Lacoste</value>
+          <value>Milano Rib</value>
+          <value>Pointelle</value>
+          <value>Purl Knit</value>
+          <value>Rachel</value>
+          <value>Rib Knit</value>
+          <value>Single Jersey</value>
+          <value>Sliver Knit</value>
+          <value>Tricot</value>
+          <value>Velour</value>
+          <value>Plain weave</value>
+          <value>Basket weave</value>
+          <value>Buckram</value>
+          <value>Cambric</value>
+          <value>Chiffon</value>
+          <value>Chintz</value>
+          <value>Corduroy</value>
+          <value>Crepe</value>
+          <value>Denim</value>
+          <value>Dobby</value>
+          <value>Drill</value>
+          <value>Flannel</value>
+          <value>Gabardine</value>
+          <value>Georgette</value>
+          <value>Jacquard</value>
+          <value>Khadi</value>
+          <value>Pique</value>
+          <value>Poplin</value>
+          <value>Satin</value>
+          <value>Sateen</value>
+          <value>Taffeta</value>
+          <value>Twill</value>
+          <value>Non Woven</value>
+          <!-- from alternative leather: -->
+          <value>Non Woven Dry Laid</value>
+          <value>Non Woven Wet Laid</value>
+          <value>Non Woven Spunlaid</value>
+          <value>Non Woven Meltblown</value>
+          <value>Non Woven Needle-punched</value>
+          <value>Bonded</value>
+          <value>Naturally occurring</value>
+          <value>Lab grown</value>
+          <value>Biotextile</value>
+          <!-- from trim type: -->
+          <value>Beads</value>
+          <value>Braid</value>
+          <value>Buckle</value>
+          <value>Button</value>
+          <value>Care label</value>
+          <value>Collar stay</value>
+          <value>Elastic</value>
+          <value>Eyelet/grommet</value>
+          <value>Fusing material</value>
+          <value>Hook and Loop</value>
+          <value>Interfacing</value>
+          <value>Lace</value>
+          <value>Label</value>
+          <value>Piping cord </value>
+          <value>Rivets</value>
+          <value>Seam sealing tape</value>
+          <value>Sequins</value>
+          <value>Shoulder pad</value>
+          <value>String/Draw Cord</value>
+          <value>Swivel hook</value>
+          <value>Twill tape</value>
+          <value>Velcro tape</value>
+          <value>Wadding </value>
+          <value>Zipper</value>
+        </choice>
+      </list>
     </element>
   </define>
 
