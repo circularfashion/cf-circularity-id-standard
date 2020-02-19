@@ -167,6 +167,9 @@
           <text/>
         </element>
       </optional>
+      <zeroOrMore>
+        <ref name="STEP"/>
+      </zeroOrMore>
     </element>
   </define>
 
@@ -203,7 +206,6 @@
 
   <define name="PRODUCT_CATEGORY">
     <element name="product_category">
-      <!-- <text /> -->
         <list>
             <choice>
                 <value>Clothing</value>
