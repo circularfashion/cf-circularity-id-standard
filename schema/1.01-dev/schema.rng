@@ -208,14 +208,14 @@
 
   <define name="PRODUCT_CATEGORY">
     <element name="product_category">
-        <list>
-            <choice>
-                <value>Clothing</value>
-                <value>Accessories</value>
-                <value>Footwear</value>
-                <value>Other</value>
-            </choice>
-        </list>
+      <list>
+        <choice>
+          <value>Clothing</value>
+          <value>Accessories</value>
+          <value>Footwear</value>
+          <value>Other</value>
+        </choice>
+      </list>
     </element>
   </define>
 
@@ -297,96 +297,136 @@
 
   <define name="FINISHING">
     <element name="finishing">
-      <text />
-        <list>
-          <choice>
-            <value>Beading/Sequins</value>
-            <value>Prepared for dyeing</value>
-            <value>Ready to dye</value>
-            <value>Sheared or singed</value>
-            <value>Washed</value>
-            <value>Calendered</value>
-            <value>Caseins</value>
-            <value>Coated</value>
-            <value>Desized</value>
-            <value>Embroidery</value>
-            <value>Fillers</value>
-            <value>Matting agents</value>
-            <value>Mercerized</value>
-            <value>Natural</value>
-            <value>Oils</value>
-            <value>Raised</value>
-            <value>Roughened</value>
-            <value>Sanforized</value>
-            <value>Softening agents</value>
-            <value>Washed</value>
-            <value>Waxes</value>
-          </choice>
-        </list>
+      <list>
+        <choice>
+          <value>Beading/Sequins</value>
+          <value>Prepared for dyeing</value>
+          <value>Ready to dye</value>
+          <value>Sheared or singed</value>
+          <value>Washed</value>
+          <value>Calendered</value>
+          <value>Caseins</value>
+          <value>Coated</value>
+          <value>Desized</value>
+          <value>Embroidery</value>
+          <value>Fillers</value>
+          <value>Matting agents</value>
+          <value>Mercerized</value>
+          <value>Natural</value>
+          <value>Oils</value>
+          <value>Raised</value>
+          <value>Roughened</value>
+          <value>Sanforized</value>
+          <value>Softening agents</value>
+          <value>Washed</value>
+          <value>Waxes</value>
+        </choice>
+      </list>
     </element>
   </define>
 
   <define name="COLOUR">
     <element name="colour">
-      <text />
-      <!-- in development: adding choices
-        <list>
-          <choice>
-              <value>Cyan</value>
-              <value>Magenta</value>
-              <value>Yellow</value>
-              <value>Black</value>
-          </choice>
-        </list>
-        -->
+      <list>
+        <choice>
+          <value>beige</value>
+          <value>black</value>
+          <value>black and white</value>
+          <value>blue</value>
+          <value>brown</value>
+          <value>coral</value>
+          <value>gold</value>
+          <value>green</value>
+          <value>grey</value>
+          <value>khaki</value>
+          <value>multicoloured</value>
+          <value>navy</value>
+          <value>nude</value>
+          <value>off-white</value>
+          <value>orange</value>
+          <value>pink</value>
+          <value>purple</value>
+          <value>red</value>
+          <value>rose</value>
+          <value>silver</value>
+          <value>taupe</value>
+          <value>teal</value>
+          <value>turquoise</value>
+          <value>untreated</value>
+          <value>white</value>
+          <value>yellow</value>
+        </choice>
+      </list>
     </element>
   </define>
 
   <define name="PATTERN">
     <element name="pattern">
-      <text />
-      <!-- in development: adding choices
-        <list>
-          <choice>
-              <value>Houndstooth</value>
-              <value>something</value>
-              <value>or</value>
-              <value>other</value>
-          </choice>
-        </list>
-        -->
+      <list>
+        <choice>
+          <value>None</value>
+          <value>abstract</value>
+          <value>baby and kids</value>
+          <value>black and white</value>
+          <value>check</value>
+          <value>checked</value>
+          <value>chevron</value>
+          <value>damask</value>
+          <value>dotted</value>
+          <value>floral</value>
+          <value>geometric</value>
+          <value>gingham</value>
+          <value>heathered</value>
+          <value>herringbone</value>
+          <value>houndstooth</value>
+          <value>marled</value>
+          <value>melange</value>
+          <value>mixed</value>
+          <value>motifs for children</value>
+          <value>ombre</value>
+          <value>other pattern</value>
+          <value>other</value>
+          <value>paisley</value>
+          <value>self striping</value>
+          <value>stars</value>
+          <value>striped</value>
+          <value>stripes</value>
+          <value>tartan</value>
+          <value>unicoloured</value>
+        </choice>
+      </list>
     </element>
   </define>
 
   <define name="DYEING_METHOD">
     <element name="dyeing_method">
-      <text />
-      <!-- in development: adding choices
-        <list>
-          <choice>
-              <value>we have some choices</value>
-              <value>something</value>
-              <value>or</value>
-              <value>other</value>
-          </choice>
-        </list>
-        -->
+      <list>
+        <choice>
+          <value>None</value>
+          <value>Top Dyed</value>
+          <value>Yarn Dyed</value>
+          <value>Dope Dyed</value>
+          <value>Aniline</value>
+          <value>Dyed through</value>
+          <value>Pigmented</value>
+          <value>Top Coat</value>
+        </choice>
+      </list>
     </element>
   </define>
 
   <define name="PRINTING_METHOD">
     <element name="printing_method">
-      <text />
-      <!-- in development: adding choices
-        <list>
-          <choice>
-              <value>we have some choices</value>
-              <value>something</value>
-              <value>or</value>
-              <value>other</value>
-          </choice>
-        </list>
-        -->
+      <list>
+        <choice>
+          <value>None</value>
+          <value>Digital printed</value>
+          <value>Hand painted</value>
+          <value>Inkjet printed</value>
+          <value>Roller printed</value>
+          <value>Screen printed</value>
+        </choice>
+      </list>
     </element>
   </define>
 
@@ -463,6 +503,41 @@
               <value>Taffeta</value>
               <value>Twill</value>
               <value>Non Woven</value>
+              <!-- from alternative leather: -->
+              <value>Non Woven Dry Laid</value>
+              <value>Non Woven Wet Laid</value>
+              <value>Non Woven Spunlaid</value>
+              <value>Non Woven Meltblown</value>
+              <value>Non Woven Needle-punched</value>
+              <value>Bonded</value>
+              <value>Naturally occurring</value>
+              <value>Lab grown</value>
+              <value>Biotextile</value>
+              <!-- from trim type: -->
+              <value>Beads</value>
+              <value>Braid</value>
+              <value>Buckle</value>
+              <value>Button</value>
+              <value>Care label</value>
+              <value>Collar stay</value>
+              <value>Elastic</value>
+              <value>Eyelet/grommet</value>
+              <value>Fusing material</value>
+              <value>Hook and Loop</value>
+              <value>Interfacing</value>
+              <value>Lace</value>
+              <value>Label</value>
+              <value>Piping cord </value>
+              <value>Rivets</value>
+              <value>Seam sealing tape</value>
+              <value>Sequins</value>
+              <value>Shoulder pad</value>
+              <value>String/Draw Cord</value>
+              <value>Swivel hook</value>
+              <value>Twill tape</value>
+              <value>Velcro tape</value>
+              <value>Wadding </value>
+              <value>Zipper</value>
           </choice>
         </list>
     </element>
