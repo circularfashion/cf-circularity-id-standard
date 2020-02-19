@@ -40,7 +40,9 @@
         <text/>
       </element>
       <ref name="PRODUCT_CATEGORY" />
-      <ref name="PRODUCT_TYPE" />
+      <optional>
+        <ref name="PRODUCT_TYPE" />
+      </optional>
       <oneOrMore>
         <ref name="ASSEMBLY"/>
       </oneOrMore>
@@ -50,12 +52,13 @@
       <zeroOrMore>
         <ref name="CERTIFICATION"/>
       </zeroOrMore>
+      <zeroOrMore>
+        <ref name="FINISHING"/>
+      </zeroOrMore>
       <optional>
         <element name="instructions">
           <text/>
         </element>
-        <ref name="FINISHING"/>
-        <ref name="EMBELLISHMENT"/>
       </optional>
     </element>
   </define>
@@ -142,7 +145,6 @@
         <element name="pretanning_agent">
           <text/>
         </element>
-        <ref name="EMBELLISHMENT"/>
       </optional>
     </element>
   </define>
@@ -217,6 +219,21 @@
     </element>
   </define>
 
+  <define name="PRODUCT_TYPE">
+    <element name="product_type">
+      <!-- in development: adding choices
+        <list>
+            <choice>
+                <value>Clothing</value>
+                <value>Accessories</value>
+                <value>Footwear</value>
+                <value>Other</value>
+            </choice>
+        </list>
+        -->
+    </element>
+  </define>
+
   <define name="CERTIFICATION">
     <element name="certification">
       <text />
@@ -234,35 +251,18 @@
     </element>
   </define>
 
-  <define name="PRODUCT_TYPE">
-    <element name="product_type">
-      <text />
-      <!-- in development: adding choices
-        <list>
-            <choice>
-                <value>Clothing</value>
-                <value>Accessories</value>
-                <value>Footwear</value>
-                <value>Other</value>
-            </choice>
-        </list>
-        -->
-    </element>
-  </define>
 
   <define name="MATERIAL_TYPE">
     <element name="type">
-      <text />
-      <!-- in development: adding choices
-        <list>
-          <choice>
-              <value>Leather</value>
-              <value>Trim</value>
-              <value>Fabric</value>
-              <value>Yarn</value>
-          </choice>
-        </list>
-        -->
+      <list>
+        <choice>
+          <value>Fabric</value>
+          <value>Yarn</value>
+          <value>Trim</value>
+          <value>Leather</value>
+          <value>Alternative leather</value>
+        </choice>
+      </list>
     </element>
   </define>
 
@@ -295,35 +295,34 @@
     </element>
   </define>
 
-  <define name="EMBELLISHMENT">
-    <element name="embellishment">
-      <text />
-      <!-- in development: adding choices
-        <list>
-          <choice>
-              <value>Cyan</value>
-              <value>Magenta</value>
-              <value>Yellow</value>
-              <value>Black</value>
-          </choice>
-        </list>
-        -->
-    </element>
-  </define>
-
   <define name="FINISHING">
     <element name="finishing">
       <text />
-      <!-- in development: adding choices
         <list>
           <choice>
-              <value>Cyan</value>
-              <value>Magenta</value>
-              <value>Yellow</value>
-              <value>Black</value>
+            <value>Beading/Sequins</value>
+            <value>Prepared for dyeing</value>
+            <value>Ready to dye</value>
+            <value>Sheared or singed</value>
+            <value>Washed</value>
+            <value>Calendered</value>
+            <value>Caseins</value>
+            <value>Coated</value>
+            <value>Desized</value>
+            <value>Embroidery</value>
+            <value>Fillers</value>
+            <value>Matting agents</value>
+            <value>Mercerized</value>
+            <value>Natural</value>
+            <value>Oils</value>
+            <value>Raised</value>
+            <value>Roughened</value>
+            <value>Sanforized</value>
+            <value>Softening agents</value>
+            <value>Washed</value>
+            <value>Waxes</value>
           </choice>
         </list>
-        -->
     </element>
   </define>
 
