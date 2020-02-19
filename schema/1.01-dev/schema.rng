@@ -203,8 +203,7 @@
 
   <define name="PRODUCT_CATEGORY">
     <element name="product_category">
-      <text />
-      <!-- in development: adding choices
+      <!-- <text /> -->
         <list>
             <choice>
                 <value>Clothing</value>
@@ -213,7 +212,6 @@
                 <value>Other</value>
             </choice>
         </list>
-        -->
     </element>
   </define>
 
@@ -221,6 +219,7 @@
     <element name="certification">
       <text />
       <!-- in development: adding choices
+           these are certifications for the PRODUCT
         <list>
             <choice>
                 <value>CERTIFICATION 1</value>
@@ -392,65 +391,97 @@
 
   <define name="TANNING_METHOD">
     <element name="tanning_method">
-      <text />
-      <!-- in development: adding choices
         <list>
           <choice>
-              <value>we have some choices</value>
-              <value>something</value>
-              <value>or</value>
-              <value>other</value>
+              <value>synthetic</value>
+              <value>vegetable</value>
           </choice>
         </list>
-        -->
     </element>
   </define>
 
   <define name="CHEMICAL_COMPLIANCE">
     <element name="chemical_compliance">
-      <text />
-      <!-- in development: adding choices
         <list>
           <choice>
-              <value>we have some choices</value>
-              <value>something</value>
-              <value>or</value>
-              <value>other</value>
+              <value>C2C</value>
+              <value>Fairtrade Prohibited Material List</value>
+              <value>Global Recycling Standard</value>
+              <value>IVN</value>
+              <value>REACH</value>
+              <value>ZDHC</value>
+              <value>MRSL</value>
+              <value>ECHA SVHC Candidate List</value>
           </choice>
         </list>
-        -->
     </element>
   </define>
 
   <define name="BIODEGRADABILITY_CERTIFICATION">
     <element name="biodegradability_certification">
-      <text />
-      <!-- in development: adding choices
+      <!--
+           these are choices for the material biodegradability certs
+      -->
         <list>
           <choice>
-              <value>we have some choices</value>
-              <value>something</value>
-              <value>or</value>
-              <value>other</value>
+            <value>ISO 11721-1</value>
+            <value>ISO 846</value>
+            <value>en 13432</value>
+            <value>OECD 301 A</value>
+            <value>OECD 301 E</value>
+            <value>ISO 7827</value>
+            <value>OECD 302 A</value>
+            <value>ISO 9887</value>
+            <value>OECD 302 B</value>
+            <value>ISO 9888</value>
+            <value>OECD 303 A</value>
+            <value>OECD 301 D</value>
+            <value>OECD 310</value>
+            <value>DIN EN ISO 14593</value>
+            <value>DIN EN ISO 9408</value>
+            <value>OECD 301 F</value>
+            <value>OECD 302 A</value>
+            <value>OECD 302B</value>
+            <value>CEC-L-103-12</value>
+            <value>OECD 311</value>
+            <value>DIN EN ISO 11734</value>
           </choice>
         </list>
-        -->
     </element>
   </define>
 
   <define name="MATERIAL_CERTIFICATION">
     <element name="material_certification">
-      <text />
-      <!-- in development: adding choices
         <list>
           <choice>
-              <value>we have some choices</value>
-              <value>something</value>
-              <value>or</value>
-              <value>other</value>
+            <value>C2C Bronce</value>
+            <value>C2C Silver</value>
+            <value>C2C Gold</value>
+            <value>C2C Platin</value>
+            <value>GOTS</value>
+            <value>IVN Best</value>
+            <value>GRS Global Recycling Standard</value>
+            <value>EU Ecolabel</value>
+            <value>BSCI</value>
+            <value>Fairtrade</value>
+            <value>SA8000</value>
+            <value>C2C Silver</value>
+            <value>C2C Gold</value>
+            <value>C2C Platin</value>
+            <value>GRS</value>
+            <value>GOTS</value>
+            <value>IVN</value>
+            <value>ILO</value>
+            <value>Global Compact</value>
+            <value>Naturleder</value>
+            <value>IVN</value>
+            <value>LWG (Leather Working Group) Gold</value>
+            <value>LWG (Leather Working Group) Silver</value>
+            <value>LWG (Leather WorkingGroup) Bronze</value>
+            <value>Ecopelle,</value>
+            <value>ICEC</value>
           </choice>
         </list>
-        -->
     </element>
   </define>
 
