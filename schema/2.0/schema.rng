@@ -37,7 +37,7 @@
         <ref name="PRODUCT_WEIGHT" />
       </optional>
       <element name="colourway">
-        <text/>
+        <ref name="NOTEMPTY" />
       </element>
       <ref name="PRODUCT_CATEGORY" />
       <optional>
@@ -107,9 +107,11 @@
         <ref name="PATTERN"/>
       </optional>
       <ref name="DYEING_METHOD"/>
-      <element name="dyestuff">
-        <text/>
-      </element>
+      <optional>
+        <element name="dyestuff">
+          <text/>
+        </element>
+      </optional>
       <ref name="PRINTING_METHOD"/>
       <optional>
         <element name="print_dyestuff">
@@ -119,9 +121,9 @@
       <zeroOrMore>
         <ref name="FINISHING" />
       </zeroOrMore>
-      <oneOrMore>
+      <zeroOrMore>
         <ref name="CHEMICAL_COMPLIANCE"/>
-      </oneOrMore>
+      </zeroOrMore>
       <zeroOrMore>
         <ref name="BIODEGRADABILITY_CERTIFICATION"/>
       </zeroOrMore>
@@ -149,9 +151,7 @@
 
   <define name="COMPONENT">
     <element name="component">
-      <element name="content">
-        <text/>
-      </element>
+      <ref name="CONTENT"/>
       <element name="percentage">
         <data type="decimal"/>
         <!-- percentage total should be 100 -->
@@ -195,9 +195,6 @@
           <text/>
         </element>
         <element name="oar">
-          <text/>
-        </element>
-        <element name="additional_information">
           <text/>
         </element>
       </optional>
@@ -250,6 +247,94 @@
     </element>
   </define>
 
+  <define name="CONTENT">
+    <element name="certification">
+      <list>
+        <choice>
+          <value>Abaca</value>
+          <value>Bamboo</value>
+          <value>Banana</value>
+          <value>Bee wax</value>
+          <value>Coconut</value>
+          <value>Cork</value>
+          <value>Corn</value>
+          <value>Corozo</value>
+          <value>Cotton</value>
+          <value>Hemp</value>
+          <value>Jute</value>
+          <value>Kapok</value>
+          <value>Manila Hemp</value>
+          <value>Mother of Pearl</value>
+          <value>Natural Latex</value>
+          <value>Natural Rubber</value>
+          <value>Nettle</value>
+          <value>Organic Cotton</value>
+          <value>Organic Hemp</value>
+          <value>Organic Linen</value>
+          <value>Pineapple Fiber</value>
+          <value>Ramie</value>
+          <value>Sisal</value>
+          <value>Soy</value>
+          <value>Stone Nut</value>
+          <value>Vegetable Ivory</value>
+          <value>Wax</value>
+          <value>Wood</value>
+          <value>Alpaca</value>
+          <value>Casein</value>
+          <value>Cashmere</value>
+          <value>Merino Wool</value>
+          <value>Mohair</value>
+          <value>Organic Wool</value>
+          <value>Organic Silk</value>
+          <value>Peace Silk</value>
+          <value>Silk</value>
+          <value>Wool</value>
+          <value>Yak</value>
+          <value>Bamboo Rayon</value>
+          <value>Cupro</value>
+          <value>Ecovero</value>
+          <value>Lyocell</value>
+          <value>Modal</value>
+          <value>Orange Fiber</value>
+          <value>Rayon</value>
+          <value>Refibra</value>
+          <value>Tencel</value>
+          <value>Viscose</value>
+          <value>Acetate</value>
+          <value>Acrylic</value>
+          <value>Bio-PDO</value>
+          <value>Biodegradable Polyester</value>
+          <value>Cellulose Acetate</value>
+          <value>Econyl</value>
+          <value>Elastane</value>
+          <value>Modacrylic</value>
+          <value>Nylon</value>
+          <value>Polyamide</value>
+          <value>Polyester</value>
+          <value>Polyether</value>
+          <value>Polyethylene</value>
+          <value>Polylactic Acid</value>
+          <value>Polyurethane</value>
+          <value>Resin</value>
+          <value>Solvent-free Polyurethane</value>
+          <value>Triacetate</value>
+          <value>Water-based Polyurethane</value>
+          <value>Aluminium</value>
+          <value>Brass</value>
+          <value>Bronze</value>
+          <value>Copper</value>
+          <value>Nickel</value>
+          <value>Stainless Steel</value>
+          <value>Titanium</value>
+          <value>Zinc</value>
+          <value>Zinc Alloy</value>
+          <value>Water-based Adhesive</value>
+          <value>Solvent-free Adhesive</value>
+        </choice>
+      </list>
+    </element>
+  </define>
+
 
   <define name="MATERIAL_TYPE">
     <element name="type">
@@ -284,8 +369,8 @@
       <attribute name="unit">
         <list>
           <choice>
-            <value>kg</value>
             <value>g</value>
+            <value>kg</value>
             <value>oz</value>
             <value>lb</value>
           </choice>
