@@ -9,7 +9,7 @@ from fnc import (
     compose,
 )
 
-from xmltodict import ( # should this library be trusted?
+from xmltodict import ( 
     parse as xml_to_o_dict,
     unparse as dict_to_xml,
 )
@@ -40,13 +40,26 @@ def merge(*args) -> str:
         first.extend(x)
     return etree.tostring(first)
 
+known_multiple = [ # these are used in xmltodict to make sure the JSON representation is as arrays
+                   # things that might have one item but should always be representated as arrays.
+    'assembly',    # currently used only in the function below.
+    'step',
+    'certification',
+    'component',
+    'colour',
+    'finishing',
+    'chemical_compliance',
+    'biodegradability_certification',
+    'material_certification',
+]
+
 def to_dict(xml: str) -> dict:
     return compose(
         # turn xml into an ordered dictionary
-        xml_to_o_dict,
+        partial(xml_to_o_dict, force_list=known_multiple),
         # turn it into json and back to remove ordering
-        partial(dumps, sort_keys=True),
         # sorted keys because when we unparse it we want it to be normalized
+        partial(dumps, sort_keys=True),
         loads
     )(xml)
 
