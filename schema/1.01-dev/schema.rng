@@ -137,9 +137,7 @@
         </element>
       </optional>
       <optional>
-        <element name="pretanning_method">
-          <text/>
-        </element>
+        <ref name="PRETANNING_METHOD"/>
       </optional>
       <optional>
         <element name="pretanning_agent">
@@ -432,6 +430,17 @@
   </define>
 
   <define name="TANNING_METHOD">
+    <element name="tanning_method">
+        <list>
+          <choice>
+              <value>synthetic</value>
+              <value>vegetable</value>
+          </choice>
+        </list>
+    </element>
+  </define>
+
+  <define name="PRETANNING_METHOD">
     <element name="tanning_method">
         <list>
           <choice>
