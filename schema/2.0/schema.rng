@@ -248,7 +248,7 @@
   </define>
 
   <define name="CONTENT">
-    <element name="certification">
+    <element name="content">
       <list>
         <choice>
           <value>Abaca</value>
