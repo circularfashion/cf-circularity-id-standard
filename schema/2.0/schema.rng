@@ -10,56 +10,66 @@
 
   <define name="PRODUCT">
     <element name="product">
-      <optional>
-        <element name="sku">
-          <data type="token" />
-        </element>
-        <element name="sgtin">
-          <data type="token" />
-        </element>
-        <element name="gtin">
-          <data type="token" />
-        </element>
-      </optional>
-      <element name="name">
-        <ref name="NOTEMPTY" />
-      </element>
-      <element name="brand">
-        <text/>
-      </element>
-      <optional>
-        <element name="company">
-          <text/>
-        </element>
-        <element name="season">
-          <text/>
-        </element>
-        <ref name="PRODUCT_WEIGHT" />
-      </optional>
-      <element name="colourway">
-        <ref name="NOTEMPTY" />
-      </element>
-      <ref name="PRODUCT_CATEGORY" />
-      <optional>
-        <ref name="PRODUCT_TYPE" />
-      </optional>
-      <oneOrMore>
-        <ref name="ASSEMBLY"/>
-      </oneOrMore>
-      <zeroOrMore>
-        <ref name="STEP"/>
-      </zeroOrMore>
-      <zeroOrMore>
-        <ref name="CERTIFICATION"/>
-      </zeroOrMore>
-      <zeroOrMore>
-        <ref name="FINISHING"/>
-      </zeroOrMore>
-      <optional>
-        <element name="instructions">
-          <text/>
-        </element>
-      </optional>
+      <interleave>
+	      <optional>
+		<element name="sku">
+		  <data type="token" />
+		</element>
+	      </optional>
+	      <optional>
+		<element name="sgtin">
+		  <data type="token" />
+		</element>
+	      </optional>
+	      <optional>
+		<element name="gtin">
+		  <data type="token" />
+		</element>
+	      </optional>
+	      <element name="name">
+		<ref name="NOTEMPTY" />
+	      </element>
+	      <element name="brand">
+		<text/>
+	      </element>
+	      <optional>
+		<element name="company">
+		  <text/>
+		</element>
+	      </optional>
+	      <optional>
+		<element name="season">
+		  <text/>
+		</element>
+	      </optional>
+	      <element name="colourway">
+		<ref name="NOTEMPTY" />
+	      </element>
+	      <ref name="PRODUCT_CATEGORY" />
+	      <optional>
+		<ref name="PRODUCT_TYPE" />
+	      </optional>
+              <optional>
+	      	<ref name="PRODUCT_WEIGHT" />
+              </optional>
+	      <oneOrMore>
+		<ref name="ASSEMBLY"/>
+	      </oneOrMore>
+	      <zeroOrMore>
+		<ref name="STEP"/>
+	      </zeroOrMore>
+	      <zeroOrMore>
+		<ref name="CERTIFICATION"/>
+	      </zeroOrMore>
+	      <zeroOrMore>
+		<ref name="FINISHING"/>
+	      </zeroOrMore>
+	      <optional>
+		<element name="instructions">
+		  <text/>
+		</element>
+	      </optional>
+       </interleave>
     </element>
   </define>
 
@@ -230,6 +240,22 @@
     </element>
   </define>
 
+  <define name="PRODUCT_WEIGHT">
+    <element name="product_weight">
+      <text /> <!-- TODO: replace this with a decimal or null type field in the future -->
+      <attribute name="unit">
+        <list>
+          <choice>
+            <value>g</value>
+            <value>kg</value>
+            <value>oz</value>
+            <value>lb</value>
+          </choice>
+        </list>
+      </attribute>
+    </element>
+  </define>
+
   <define name="CERTIFICATION">
     <element name="certification">
       <text />
@@ -363,21 +389,7 @@
     </element>
   </define>
 
-  <define name="PRODUCT_WEIGHT">
-    <element name="product_weight">
-      <data type="decimal"/>
-      <attribute name="unit">
-        <list>
-          <choice>
-            <value>g</value>
-            <value>kg</value>
-            <value>oz</value>
-            <value>lb</value>
-          </choice>
-        </list>
-      </attribute>
-    </element>
-  </define>
+
 
   <define name="FINISHING">
     <element name="finishing">
