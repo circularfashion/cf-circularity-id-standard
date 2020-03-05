@@ -707,11 +707,9 @@
   <define name="NOTEMPTY">
     <data type="string">
       <!-- allow for newlines, but not just whitespace -->
-      <param name="pattern">
-      (.|\n|\r)*\S(.|\n|\r)*</param>
+      <param name="pattern">(.|\n|\r)*\S(.|\n|\r)*</param>
       <!-- at least one character should be included -->
-      <param name="minLength">
-      1</param>
+      <param name="minLength">1</param>
     </data>
   </define>
 
