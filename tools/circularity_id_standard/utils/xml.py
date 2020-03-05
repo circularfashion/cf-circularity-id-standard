@@ -81,7 +81,7 @@ def pretty(xml: str) -> str: #xml
         to_dict,
         partial(dict_to_xml, pretty=True),
         lambda x: "\n".join(x.split("\n")[1:]),
-    )
+    )(xml)
 
 def apply_hash(xml: str, hashing_function=None) -> str:
     assert_is_xml(xml)
