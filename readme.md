@@ -4,7 +4,7 @@
 
 [view the website](https://circularity.id) | [development guidelines](develop.md)
 
-__current version__: [1.0 as xml](https://github.com/circularfashion/cf-circularity-id-standard/blob/master/schema/1.0/schema.rng) | [as pdf](#)
+__current version__: [2.0 as xml](https://github.com/circularfashion/cf-circularity-id-standard/blob/master/schema/2.0/schema.rng) | [as pdf](https://github.com/circularfashion/cf-circularity-id-standard/blob/master/docs/circularity.ID-Standard-Specification-v2.pdf)
 
 __[all versions](https://github.com/circularfashion/cf-circularity-id-standard/tree/master/schema)__
 
