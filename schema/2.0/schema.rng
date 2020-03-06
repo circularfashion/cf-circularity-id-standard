@@ -250,10 +250,7 @@
       <!-- in development: adding choices
         <list>
             <choice>
-                <value>Clothing</value>
-                <value>Accessories</value>
-                <value>Footwear</value>
-                <value>Other</value>
+              <value>tshirt</value>
             </choice>
         </list>
         -->

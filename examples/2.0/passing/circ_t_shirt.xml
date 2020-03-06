@@ -2,17 +2,20 @@
 <product>
 	<assembly>
 		<material>
-			<colour>green</colour>
+			<!-- TODO: certificates?? -->
+			<name>Woven Care Label</name>
+			<colour>purple</colour> <!-- TODO: ask cecilia/kim about this, it's white AND purple -->
+			<type>Trim</type>
 			<component>
 				<content>Cotton</content>
 				<is_recycled>false</is_recycled>
 				<percentage>100.00</percentage>
-				<source_raw_material></source_raw_material>
-				<source_recycled_input></source_recycled_input>
+				<source_raw_material></source_raw_material> <!-- TODO: cecilia - do we need source raw material if we have steps now -->
+				<source_recycled_input></source_recycled_input>  <!-- TODO: kim - what is source raw material... country?? -->
+				<!-- can also add steps here now -->
 			</component>
-			<dyeing_method>None</dyeing_method>
-			<dyestuff></dyestuff>
-			<name>Woven Care Label |</name>
+			<dyeing_method>None</dyeing_method><!-- TODO: ask kim about this -->
+			<dyestuff></dyestuff><!-- TODO: ask kim about this -->
 			<print_dyestuff></print_dyestuff>
 			<printing_method>None</printing_method>
 			<step>
@@ -25,18 +28,19 @@
 				<street></street>
 			</step>
 			<step>
+				<type>Production of raw material</type>
 				<city></city>
 				<company_name></company_name>
 				<country>Egypt</country>
 				<oar></oar>
 				<postal></postal>
 				<street></street>
-				<type>Production of raw material</type>
 			</step>
-			<type>Trim</type>
 		</material>
 		<material>
-			<colour>green</colour>
+			<name>Recycled Cotton Embroidery Backing | White</name>
+			<colour>white</colour>
+			<type>Trim</type>
 			<component>
 				<content>Cotton</content>
 				<is_recycled>true</is_recycled>
@@ -45,9 +49,8 @@
 				<source_raw_material></source_raw_material>
 				<source_recycled_input></source_recycled_input>
 			</component>
-			<dyeing_method>None</dyeing_method>
+			<dyeing_method>None</dyeing_method> <!-- TODO: cecilia - add reactive Dyed field ?? -->
 			<dyestuff></dyestuff>
-			<name>Recycled Cotton Embroidery Backing | White</name>
 			<print_dyestuff></print_dyestuff>
 			<printing_method>None</printing_method>
 			<step>
@@ -68,7 +71,6 @@
 				<street></street>
 				<type>Production of raw material</type>
 			</step>
-			<type>Trim</type>
 		</material>
 		<material>
 			<colour>green</colour>
@@ -209,17 +211,19 @@
 			</step>
 			<type>Trim</type>
 		</material>
-		<name>Components</name>
+		<name>Primary</name> <!-- TODO: ask cecilia about this -->
 	</assembly>
 	<brand>circular.fashion</brand>
 	<colourway>Beige</colourway>
 	<company>circular.fashion</company>
-	<gtin></gtin>
-	<instructions></instructions>
+	<instructions>
+		For general washing, we recommend to wash at 30 degrees and at a gentler cycle to reduce overall energy consumption. Only wash at 40 degrees to remove heavier dirt and stains. Whenever possible, please choose to air-dry. Frequent tumble drying can cause colour fading, shrinkage and wearing down of the material surface.
+	</instructions> <!-- TODO: ask cecilia about this -->
 	<name>Circular T-shirt</name>
 	<product_category>Clothing</product_category>
-	<product_type></product_type>
+	<product_type>tshirt</product_type>
 	<season>2019</season>
-	<sgtin></sgtin>
-	<sku></sku>
+	<sgtin></sgtin> <!-- TODO: ask cecilia about this -->
+	<gtin></gtin>   <!-- TODO: ask cecilia about this -->
+	<sku>TSH-BEI-COT-S19</sku>
 </product>
