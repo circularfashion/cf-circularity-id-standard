@@ -199,7 +199,19 @@
     <element name="step">
       <interleave>
         <element name="type">
-          <text/>
+           <list>
+              <choice>
+                <value>dyeing</value>
+                <value>finishing</value>
+                <value>printing</value>
+                <value>production</value>
+                <value>production_of_raw_material</value>
+                <value>rawhide</value>
+                <value>spinning</value>
+                <value>tannery</value>
+                <value>printing</value>
+              </choice>
+            </list>
         </element>
         <element name="country">
           <text/>

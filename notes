@@ -1,0 +1,32 @@
+
+field notes
+      sku
+        optional and all that
+      gtin/sgtin
+        optional, if exists
+    season
+        not relevant for this t shirt
+    instructions
+        instructions for dissasembly
+
+assembly
+    name
+        the name is the thing, such as T-shirt, hoodie, etc, shell lining
+        inner jacket
+
+todo:
+- schema only allow step.type of choices/ other
+- organize construction choices by knit/non knit
+
+components
+    source_raw_material
+        for example: eucalyptus -- in case it's a manmade
+        fiber, what is the source of it
+        cotton would be nothomg
+        rayon made of bamboo
+        viscose made of wood pulp
+        leather alternatives - mushroom
+    source_recled_input
+        plastic bottles, etc
+    percentage
+        how much of this material is this component
