@@ -77,10 +77,10 @@
     <element name="assembly">
       <interleave>
         <element name="name">
-    <text/>
+          <text/>
         </element>
         <oneOrMore>
-    <ref name="MATERIAL"/>
+          <ref name="MATERIAL"/>
         </oneOrMore>
       </interleave>
     </element>
@@ -89,79 +89,79 @@
   <define name="MATERIAL">
     <element name="material">
          <interleave>
-        <ref name="MATERIAL_TYPE"/>
-        <element name="name">
-    <text/>
-        </element>
-        <optional>
-    <ref name="CONSTRUCTION"/>
-        </optional>
-        <oneOrMore>
-    <ref name="COMPONENT"/>
-        </oneOrMore>
-        <optional>
-    <ref name="WEIGHT" />
-        </optional>
-        <optional>
-    <element name="consumption">
-      <data type="decimal"/>
-      <attribute name="unit">
-        <list>
-          <choice>
-    	<value>sqm</value>
-          </choice>
-        </list>
-      </attribute>
-    </element>
-        </optional>
-        <zeroOrMore>
-    <ref name="STEP"/>
-        </zeroOrMore>
-        <ref name="COLOUR"/>
-        <optional>
-    <ref name="PATTERN"/>
-        </optional>
-        <ref name="DYEING_METHOD"/>
-        <optional>
-    <element name="dyestuff">
-      <text/>
-    </element>
-        </optional>
-        <ref name="PRINTING_METHOD"/>
-        <optional>
-    <element name="print_dyestuff">
-      <text/>
-    </element>
-        </optional>
-        <zeroOrMore>
-    <ref name="FINISHING" />
-        </zeroOrMore>
-        <zeroOrMore>
-    <ref name="CHEMICAL_COMPLIANCE"/>
-        </zeroOrMore>
-        <zeroOrMore>
-    <ref name="BIODEGRADABILITY_CERTIFICATION"/>
-        </zeroOrMore>
-        <zeroOrMore>
-    <ref name="MATERIAL_CERTIFICATION"/>
-        </zeroOrMore>
-        <optional>
-    <ref name="TANNING_METHOD"/>
-        </optional>
-        <optional>
-    <element name="tanning_agent">
-      <text/>
-    </element>
-        </optional>
-        <optional>
-    <ref name="PRETANNING_METHOD"/>
-        </optional>
-        <optional>
-    <element name="pretanning_agent">
-      <text/>
-    </element>
-        </optional>
-       </interleave>
+           <ref name="MATERIAL_TYPE"/>
+           <element name="name">
+             <text/>
+           </element>
+           <optional>
+             <ref name="CONSTRUCTION"/>
+           </optional>
+           <oneOrMore>
+             <ref name="COMPONENT"/>
+           </oneOrMore>
+           <optional>
+             <ref name="WEIGHT" />
+           </optional>
+           <optional>
+             <element name="consumption">
+               <data type="decimal"/>
+               <attribute name="unit">
+                 <list>
+                   <choice>
+                     <value>sqm</value>
+                   </choice>
+                 </list>
+               </attribute>
+             </element>
+           </optional>
+           <zeroOrMore>
+             <ref name="STEP"/>
+           </zeroOrMore>
+           <ref name="COLOUR"/>
+           <optional>
+             <ref name="PATTERN"/>
+           </optional>
+           <ref name="DYEING_METHOD"/>
+           <optional>
+             <element name="dyestuff">
+               <text/>
+             </element>
+           </optional>
+           <ref name="PRINTING_METHOD"/>
+           <optional>
+             <element name="print_dyestuff">
+               <text/>
+             </element>
+           </optional>
+           <zeroOrMore>
+             <ref name="FINISHING" />
+           </zeroOrMore>
+           <zeroOrMore>
+             <ref name="CHEMICAL_COMPLIANCE"/>
+           </zeroOrMore>
+           <zeroOrMore>
+             <ref name="BIODEGRADABILITY_CERTIFICATION"/>
+           </zeroOrMore>
+           <zeroOrMore>
+             <ref name="MATERIAL_CERTIFICATION"/>
+           </zeroOrMore>
+           <optional>
+             <ref name="TANNING_METHOD"/>
+           </optional>
+           <optional>
+             <element name="tanning_agent">
+               <text/>
+             </element>
+           </optional>
+           <optional>
+             <ref name="PRETANNING_METHOD"/>
+           </optional>
+           <optional>
+             <element name="pretanning_agent">
+               <text/>
+             </element>
+           </optional>
+         </interleave>
     </element>
   </define>
 
