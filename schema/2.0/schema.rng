@@ -698,7 +698,6 @@
             <value>DIN_EN_ISO_9408</value>
             <value>OECD_301_F</value>
             <value>OECD_302_A</value>
-            <value>OECD_302B</value>
             <value>CEC-L-103-12</value>
             <value>OECD_311</value>
             <value>DIN_EN_ISO_11734</value>
@@ -716,18 +715,16 @@
             <value>C2C_gold</value>
             <value>C2C_platin</value>
             <value>GOTS</value>
-            <value>IVN_best</value>
-            <value>GRS_global_recycling_standard</value>
             <value>EU_ecolabel</value>
             <value>BSCI</value>
             <value>fairtrade</value>
+            <value>REACH</value>
             <value>SA8000</value>
             <value>C2C_silver</value>
             <value>C2C_gold</value>
             <value>C2C_platin</value>
             <value>GRS</value>
             <value>GOTS</value>
-            <value>IVN</value>
             <value>ILO</value>
             <value>global_compact</value>
             <value>naturleder</value>
@@ -736,7 +733,24 @@
             <value>LWG_silver</value>
             <value>LWG_bronze</value>
             <value>ecopelle</value>
+            <value>bluesign</value>
             <value>ICEC</value>
+            <value>OEKO-TEX_STeP</value>
+            <value>OEKO-TEX_Standard_100</value>
+            <value>MSDS_raw_material_origin</value>
+            <value>MSDS_spinning</value>
+            <value>MSDS_dyeing</value>
+            <value>MSDS_finishing</value>
+            <value>ICEC_chemicals_management_system</value>
+            <value>ICEC_eco-leathers</value>
+            <value>ICEC_environmental_management_system</value>
+            <value>ICEC_leather_traceability</value>
+            <value>ICEC_occupational_health_and_safety_management_system</value>
+            <value>ICEC_product_certification_for_finished_leathers</value>
+            <value>ICEC_quality_management_system</value>
+            <value>UNIC</value>
+            <value>RCS</value>
+            <value>OEKO-TEX_leather_standard</value>
           </choice>
         </list>
     </element>
