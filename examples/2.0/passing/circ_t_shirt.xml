@@ -1,29 +1,29 @@
-
 <product>
 	<assembly>
+		<name>t-shirt</name>
 		<material>
 			<name>Woven Care Label</name>
 			<colour>purple</colour>
 			<colour>white</colour>
-			<type>Trim</type>
-			<construction>Twill</construction>
+			<type>trim</type>
 			<component>
-				<content>Cotton</content>
+				<content>cotton</content>
 				<is_recycled>false</is_recycled>
 				<percentage>100.00</percentage>
 				<source_raw_material></source_raw_material>
 				<source_recycled_input></source_recycled_input>
 				<step>
-					<type>Production of raw material</type>
+					<type>production_of_raw_material</type>
 					<country>Egypt</country>
 				</step>
 			</component>
-			<dyeing_method>Yarn Dyed</dyeing_method>
-			<dyestuff>Reactive</dyestuff>
+			<construction>twill</construction>
+			<dyeing_method>yarn_dyed</dyeing_method>
+			<dyestuff>reactive</dyestuff>
 			<print_dyestuff></print_dyestuff>
-			<printing_method>None</printing_method>
+			<printing_method>none</printing_method>
 			<step>
-				<type>Production</type>
+				<type>production</type>
 				<country>Germany</country>
 				<city>Dortmund</city>
 				<company_name>Dortex mbH</company_name>
@@ -33,19 +33,19 @@
 		</material>
 		<material>
 			<name>Recycled Cotton Embroidery Backing | White</name>
-			<colour>white</colour>
-			<type>Trim</type>
-			<construction>Non Woven</construction>
+			<type>trim</type>
+			<construction>non_woven</construction>
 			<component>
-				<content>Cotton</content>
+				<content>cotton</content>
 				<is_recycled>true</is_recycled>
 				<percentage>100.00</percentage>
 				<!-- test comments should be allowed -->
 			</component>
-			<dyeing_method>None</dyeing_method>
+			<colour>white</colour>
+			<dyeing_method>none</dyeing_method>
 			<dyestuff></dyestuff>
 			<print_dyestuff></print_dyestuff>
-			<printing_method>None</printing_method>
+			<printing_method>none</printing_method>
 			<step>
 				<city>Freiburg</city>
 				<company_name>MADEIRA Garnfabrik</company_name>
@@ -53,65 +53,65 @@
 				<oar></oar>
 				<postal>D-79108</postal>
 				<street>Zinkmattenstrasse 38</street>
-				<type>Production</type>
+				<type>production</type>
 			</step>
 		</material>
 		<material>
 			<name>C2C Tencel Embroidery Thread | Beige</name>
 			<colour>beige</colour>
-			<material_certification>C2C Gold</material_certification>
+			<material_certification>C2C_gold</material_certification>
 			<component>
-				<content>Tencel</content>
+				<content>tencel</content>
 				<is_recycled>false</is_recycled>
 				<percentage>100.00</percentage>
-				<source_raw_material>Eucalyptus</source_raw_material>
+				<source_raw_material>eucalyptus</source_raw_material>
 				<source_recycled_input></source_recycled_input>
 				<step>
 					<country>Austria</country>
-					<type>Production</type>
+					<type>production</type>
 				</step>
 			</component>
-			<dyeing_method>Yarn Dyed</dyeing_method>
-			<dyestuff>Reactive</dyestuff>
+			<dyeing_method>yarn_dyed</dyeing_method>
+			<dyestuff>reactive</dyestuff>
 			<print_dyestuff></print_dyestuff>
-			<printing_method>None</printing_method>
+			<printing_method>none</printing_method>
 			<step>
-				<type>Production</type>
+				<type>production</type>
 				<city>Strengelbach</city>
 				<company_name>Johann Müller AG</company_name>
 				<postal>CH-4802</postal>
 				<country>Switzerland</country>
 				<street>Brittnauerstrasse 58</street>
 			</step>
-			<type>Yarn</type>
+			<type>yarn</type>
 		</material>
 		<material>
 			<name>Organic Cotton Interlock Jersey | White</name>
 			<colour>white</colour>
 			<component>
-				<content>Organic Cotton</content>
+				<content>organic_cotton</content>
 				<is_recycled>false</is_recycled>
 				<percentage>100.00</percentage>
 				<step>
 					<country>Turkey</country>
-					<type>Production of raw material</type>
+					<type>production_of_raw_material</type>
 				</step>
 			</component>
-			<construction>Interlock</construction>
-			<dyeing_method>None</dyeing_method>
+			<construction>interlock</construction>
+			<dyeing_method>none</dyeing_method>
 			<dyestuff></dyestuff>
 			<material_certification>GOTS</material_certification>
 			<print_dyestuff></print_dyestuff>
-			<printing_method>None</printing_method>
+			<printing_method>none</printing_method>
 			<step>
 				<company_name>Zeynar Tekstil</company_name>
 				<city>Ergene/Tekirdağ</city>
 				<country>Turkey</country>
-				<type>Production</type>
+				<type>production</type>
 				<postal>CH-4802</postal>
 				<street>VELİMEŞE OSB MAH. 220 SK. 10/1</street>
 			</step>
-			<type>Fabric</type>
+			<type>fabric</type>
 			<weight unit="gsm">215</weight>
 		</material>
 		<material>
@@ -119,60 +119,60 @@
 			<colour>black</colour>
 			<colour>white</colour>
 			<component>
-				<content>Polyester</content>
+				<content>polyester</content>
 				<is_recycled>true</is_recycled>
 				<percentage>100.00</percentage>
 				<source_recycled_input>PET bottles</source_recycled_input>
 				<step>
 					<country>Italy</country>
-					<type>Production of raw material</type>
+					<type>production_of_raw_material</type>
 				</step>
 			</component>
-			<dyeing_method>Yarn Dyed</dyeing_method>
-			<dyestuff>Disperse</dyestuff>
+			<dyeing_method>yarn_dyed</dyeing_method>
+			<dyestuff>disperse</dyestuff>
+			<printing_method>none</printing_method>
 			<step>
 				<country>Netherlands</country>
-				<type>Production</type>
+				<type>production</type>
 			</step>
-			<type>Trim</type>
+			<type>trim</type>
 		</material>
 		<material>
 			<name>C2C Tencel Sewing Thread | Optical White</name>
 			<colour>white</colour>
-			<material_certification>C2C Gold</material_certification>
+			<material_certification>C2C_gold</material_certification>
 			<component>
-				<content>Tencel</content>
+				<content>tencel</content>
 				<is_recycled>false</is_recycled>
 				<percentage>100.00</percentage>
-				<source_raw_material>Eucalyptus</source_raw_material>
+				<source_raw_material>eucalyptus</source_raw_material>
 				<step>
 					<country>Austria</country>
-					<type>Production</type>
+					<type>production</type>
 				</step>
 			</component>
-			<dyeing_method>None</dyeing_method>
+			<dyeing_method>none</dyeing_method>
 			<dyestuff></dyestuff>
 			<print_dyestuff></print_dyestuff>
-			<printing_method>None</printing_method>
+			<printing_method>none</printing_method>
 			<step>
-				<type>Production</type>
+				<type>production</type>
 				<city>Strengelbach</city>
 				<company_name>Johann Müller AG</company_name>
 				<postal>CH-4802</postal>
 				<country>Switzerland</country>
 				<street>Brittnauerstrasse 58</street>
 			</step>
-			<type>Yarn</type>
+			<type>yarn</type>
 		</material>
-		<name>T-shirt</name>
 	</assembly>
 	<brand>circular.fashion</brand>
 	<colourway>White/Beige</colourway>
 	<company>circular.fashion</company>
 	<instructions></instructions>
 	<name>Circular T-shirt</name>
-	<product_category>Clothing</product_category>
-	<product_type>T-shirt</product_type>
+	<product_category>clothing</product_category>
+	<product_type>t-shirt</product_type>
 	<season>SS2019</season>
 	<sgtin></sgtin>
 	<gtin></gtin>
