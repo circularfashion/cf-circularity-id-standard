@@ -11,64 +11,64 @@
   <define name="PRODUCT">
     <element name="product">
       <interleave>
-	      <optional>
-		<element name="sku">
-		  <data type="token" />
-		</element>
-	      </optional>
-	      <optional>
-		<element name="sgtin">
-		  <data type="token" />
-		</element>
-	      </optional>
-	      <optional>
-		<element name="gtin">
-		  <data type="token" />
-		</element>
-	      </optional>
-	      <element name="name">
-		<ref name="NOTEMPTY" />
-	      </element>
-	      <element name="brand">
-		<text/>
-	      </element>
-	      <optional>
-		<element name="company">
-		  <text/>
-		</element>
-	      </optional>
-	      <optional>
-		<element name="season">
-		  <text/>
-		</element>
-	      </optional>
-	      <element name="colourway">
-		<ref name="NOTEMPTY" />
-	      </element>
-	      <ref name="PRODUCT_CATEGORY" />
-	      <optional>
-		<ref name="PRODUCT_TYPE" />
-	      </optional>
+        <optional>
+    <element name="sku">
+      <data type="token" />
+    </element>
+        </optional>
+        <optional>
+    <element name="sgtin">
+      <data type="token" />
+    </element>
+        </optional>
+        <optional>
+    <element name="gtin">
+      <data type="token" />
+    </element>
+        </optional>
+        <element name="name">
+    <ref name="NOTEMPTY" />
+        </element>
+        <element name="brand">
+    <text/>
+        </element>
+        <optional>
+    <element name="company">
+      <text/>
+    </element>
+        </optional>
+        <optional>
+    <element name="season">
+      <text/>
+    </element>
+        </optional>
+        <element name="colourway">
+    <ref name="NOTEMPTY" />
+        </element>
+        <ref name="PRODUCT_CATEGORY" />
+        <optional>
+    <ref name="PRODUCT_TYPE" />
+        </optional>
               <optional>
-	      	<ref name="PRODUCT_WEIGHT" />
+          <ref name="PRODUCT_WEIGHT" />
               </optional>
-	      <oneOrMore>
-		<ref name="ASSEMBLY"/>
-	      </oneOrMore>
-	      <zeroOrMore>
-		<ref name="STEP"/>
-	      </zeroOrMore>
-	      <zeroOrMore>
-		<ref name="CERTIFICATION"/>
-	      </zeroOrMore>
-	      <zeroOrMore>
-		<ref name="FINISHING"/>
-	      </zeroOrMore>
-	      <optional>
-		<element name="instructions">
-		  <text/>
-		</element>
-	      </optional>
+        <oneOrMore>
+    <ref name="ASSEMBLY"/>
+        </oneOrMore>
+        <zeroOrMore>
+    <ref name="STEP"/>
+        </zeroOrMore>
+        <zeroOrMore>
+    <ref name="CERTIFICATION"/>
+        </zeroOrMore>
+        <zeroOrMore>
+    <ref name="FINISHING"/>
+        </zeroOrMore>
+        <optional>
+    <element name="instructions">
+      <text/>
+    </element>
+        </optional>
        </interleave>
     </element>
   </define>
@@ -76,12 +76,12 @@
   <define name="ASSEMBLY">
     <element name="assembly">
       <interleave>
-	      <element name="name">
-		<text/>
-	      </element>
-	      <oneOrMore>
-		<ref name="MATERIAL"/>
-	      </oneOrMore>
+        <element name="name">
+    <text/>
+        </element>
+        <oneOrMore>
+    <ref name="MATERIAL"/>
+        </oneOrMore>
       </interleave>
     </element>
   </define>
@@ -89,78 +89,78 @@
   <define name="MATERIAL">
     <element name="material">
          <interleave>
-	      <ref name="MATERIAL_TYPE"/>
-	      <element name="name">
-		<text/>
-	      </element>
-	      <optional>
-		<ref name="CONSTRUCTION"/>
-	      </optional>
-	      <oneOrMore>
-		<ref name="COMPONENT"/>
-	      </oneOrMore>
-	      <optional>
-		<ref name="WEIGHT" />
-	      </optional>
-	      <optional>
-		<element name="consumption">
-		  <data type="decimal"/>
-		  <attribute name="unit">
-		    <list>
-		      <choice>
-			<value>sqm</value>
-		      </choice>
-		    </list>
-		  </attribute>
-		</element>
-	      </optional>
-	      <zeroOrMore>
-		<ref name="STEP"/>
-	      </zeroOrMore>
-	      <ref name="COLOUR"/>
-	      <optional>
-		<ref name="PATTERN"/>
-	      </optional>
-	      <ref name="DYEING_METHOD"/>
-	      <optional>
-		<element name="dyestuff">
-		  <text/>
-		</element>
-	      </optional>
-	      <ref name="PRINTING_METHOD"/>
-	      <optional>
-		<element name="print_dyestuff">
-		  <text/>
-		</element>
-	      </optional>
-	      <zeroOrMore>
-		<ref name="FINISHING" />
-	      </zeroOrMore>
-	      <zeroOrMore>
-		<ref name="CHEMICAL_COMPLIANCE"/>
-	      </zeroOrMore>
-	      <zeroOrMore>
-		<ref name="BIODEGRADABILITY_CERTIFICATION"/>
-	      </zeroOrMore>
-	      <zeroOrMore>
-		<ref name="MATERIAL_CERTIFICATION"/>
-	      </zeroOrMore>
-	      <optional>
-		<ref name="TANNING_METHOD"/>
-	      </optional>
-	      <optional>
-		<element name="tanning_agent">
-		  <text/>
-		</element>
-	      </optional>
-	      <optional>
-		<ref name="PRETANNING_METHOD"/>
-	      </optional>
-	      <optional>
-		<element name="pretanning_agent">
-		  <text/>
-		</element>
-	      </optional>
+        <ref name="MATERIAL_TYPE"/>
+        <element name="name">
+    <text/>
+        </element>
+        <optional>
+    <ref name="CONSTRUCTION"/>
+        </optional>
+        <oneOrMore>
+    <ref name="COMPONENT"/>
+        </oneOrMore>
+        <optional>
+    <ref name="WEIGHT" />
+        </optional>
+        <optional>
+    <element name="consumption">
+      <data type="decimal"/>
+      <attribute name="unit">
+        <list>
+          <choice>
+    	<value>sqm</value>
+          </choice>
+        </list>
+      </attribute>
+    </element>
+        </optional>
+        <zeroOrMore>
+    <ref name="STEP"/>
+        </zeroOrMore>
+        <ref name="COLOUR"/>
+        <optional>
+    <ref name="PATTERN"/>
+        </optional>
+        <ref name="DYEING_METHOD"/>
+        <optional>
+    <element name="dyestuff">
+      <text/>
+    </element>
+        </optional>
+        <ref name="PRINTING_METHOD"/>
+        <optional>
+    <element name="print_dyestuff">
+      <text/>
+    </element>
+        </optional>
+        <zeroOrMore>
+    <ref name="FINISHING" />
+        </zeroOrMore>
+        <zeroOrMore>
+    <ref name="CHEMICAL_COMPLIANCE"/>
+        </zeroOrMore>
+        <zeroOrMore>
+    <ref name="BIODEGRADABILITY_CERTIFICATION"/>
+        </zeroOrMore>
+        <zeroOrMore>
+    <ref name="MATERIAL_CERTIFICATION"/>
+        </zeroOrMore>
+        <optional>
+    <ref name="TANNING_METHOD"/>
+        </optional>
+        <optional>
+    <element name="tanning_agent">
+      <text/>
+    </element>
+        </optional>
+        <optional>
+    <ref name="PRETANNING_METHOD"/>
+        </optional>
+        <optional>
+    <element name="pretanning_agent">
+      <text/>
+    </element>
+        </optional>
        </interleave>
     </element>
   </define>
@@ -168,27 +168,27 @@
   <define name="COMPONENT">
     <element name="component">
       <interleave>
-	      <ref name="CONTENT"/>
-	      <element name="percentage">
-		<data type="decimal"/>
-		<!-- percentage total should be 100 -->
-	      </element>
-	      <element name="is_recycled">
-		<data type="boolean"/>
-	      </element>
-	      <optional>
-		<element name="source_recycled_input">
-		  <text/>
-		</element>
-	      </optional>
-	      <optional>
-		<element name="source_raw_material">
-		  <text/>
-		</element>
-	      </optional>
-	      <zeroOrMore>
-		<ref name="STEP"/>
-	      </zeroOrMore>
+        <ref name="CONTENT"/>
+        <element name="percentage">
+          <data type="decimal"/>
+          <!-- percentage total should be 100 -->
+        </element>
+        <element name="is_recycled">
+          <data type="boolean"/>
+        </element>
+        <optional>
+          <element name="source_recycled_input">
+            <text/>
+          </element>
+        </optional>
+        <optional>
+          <element name="source_raw_material">
+            <text/>
+          </element>
+        </optional>
+        <zeroOrMore>
+          <ref name="STEP"/>
+        </zeroOrMore>
       </interleave>
     </element>
   </define>
@@ -196,37 +196,37 @@
   <define name="STEP">
     <element name="step">
       <interleave>
-	      <element name="type">
-		<text/>
-	      </element>
-	      <element name="country">
-		<text/>
-	      </element>
-	      <optional>
-		<element name="company_name">
-		  <text/>
-		</element>
-	      </optional>
-	      <optional>
-		<element name="street">
-		  <text/>
-		</element>
-	      </optional>
-	      <optional>
-		<element name="postal">
-		  <text/>
-		</element>
-	      </optional>
-	      <optional>
-		<element name="city">
-		  <text/>
-		</element>
-	      </optional>
-	      <optional>
-		<element name="oar">
-		  <text/>
-		</element>
-	      </optional>
+        <element name="type">
+          <text/>
+        </element>
+        <element name="country">
+          <text/>
+        </element>
+        <optional>
+          <element name="company_name">
+            <text/>
+          </element>
+        </optional>
+        <optional>
+          <element name="street">
+            <text/>
+          </element>
+        </optional>
+        <optional>
+          <element name="postal">
+            <text/>
+          </element>
+        </optional>
+        <optional>
+          <element name="city">
+            <text/>
+          </element>
+        </optional>
+        <optional>
+          <element name="oar">
+            <text/>
+          </element>
+        </optional>
       </interleave>
     </element>
   </define>
@@ -248,9 +248,10 @@
     <element name="product_type">
       <text />
       <!-- in development: adding choices
+           i am keeping track of the used xml categories here
         <list>
             <choice>
-              <value>tshirt</value>
+              <value>T-Shirt</value>
             </choice>
         </list>
         -->
