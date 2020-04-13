@@ -121,6 +121,21 @@
              <ref name="COLOUR"/>
            </oneOrMore>
            <optional>
+             <element name="colour_description">
+               <text/>
+             </element>
+           </optional>
+           <optional>
+             <element name="description">
+               <text/>
+             </element>
+           </optional>
+           <optional>
+             <element name="image">
+               <text/>
+             </element>
+           </optional>
+           <optional>
              <ref name="PATTERN"/>
            </optional>
            <ref name="DYEING_METHOD"/>
@@ -170,6 +185,11 @@
   <define name="COMPONENT">
     <element name="component">
       <interleave>
+        <optional>
+          <element name="name">
+            <text/>
+          </element>
+        </optional>
         <ref name="CONTENT"/>
         <element name="percentage">
           <data type="decimal"/>
@@ -216,6 +236,11 @@
         <element name="country">
           <text/>
         </element>
+        <optional>
+          <element name="description">
+            <text/>
+          </element>
+        </optional>
         <optional>
           <element name="company_name">
             <text/>
@@ -351,6 +376,8 @@
           <value>cashmere</value>
           <value>merino_wool</value>
           <value>mohair</value>
+          <value>micro_modal</value>
+
           <value>organic_wool</value>
           <value>organic_silk</value>
           <value>peace_silk</value>
@@ -389,6 +416,8 @@
           <value>aluminium</value>
           <value>brass</value>
           <value>bronze</value>
+          <value>metal</value>
+          <value>ivory_nut</value>
           <value>copper</value>
           <value>nickel</value>
           <value>stainless_steel</value>
@@ -397,6 +426,8 @@
           <value>zinc_alloy</value>
           <value>water-based_adhesive</value>
           <value>solvent-free_adhesive</value>
+          <value>biodegradable_polymer</value>
+          <value>lycra</value>
         </choice>
       </list>
     </element>
@@ -543,6 +574,9 @@
           <value>dyed_through</value>
           <value>pigmented</value>
           <value>top_coat</value>
+          <value>piece_dyed</value>
+          <value>reactive_dyed</value>
+
         </choice>
       </list>
     </element>
@@ -559,6 +593,7 @@
           <value>inkjet_printed</value>
           <value>roller_printed</value>
           <value>screen_printed</value>
+          <value>rotary_printed</value>
         </choice>
       </list>
     </element>
@@ -622,6 +657,8 @@
           <value>rachel</value>
           <value>rib_knit</value>
           <value>single_jersey</value>
+          <value>jersey</value>
+          <value>sweater</value>
           <value>sliver_knit</value>
           <value>tricot</value>
           <value>velour</value>
@@ -641,6 +678,7 @@
           <value>georgette</value>
           <value>jacquard</value>
           <value>khadi</value>
+          <value>boucle</value>
           <value>pique</value>
           <value>poplin</value>
           <value>satin</value>
@@ -648,6 +686,8 @@
           <value>taffeta</value>
           <value>twill</value>
           <value>non_woven</value>
+          <value>woven</value>
+
           <!-- from alternative leather: -->
           <value>non_woven_dry_laid</value>
           <value>non_woven_wet_laid</value>
@@ -661,6 +701,7 @@
           <!-- from trim type: -->
           <value>beads</value>
           <value>braid</value>
+          <value>metal</value>
           <value>buckle</value>
           <value>button</value>
           <value>care_label</value>
