@@ -4,7 +4,9 @@
 
 [view the website](https://circularity.id) | [development guidelines](develop.md)
 
-__current version__: [2.0 as xml](https://github.com/circularfashion/cf-circularity-id-standard/blob/master/schema/2.0/schema.rng) | [as pdf](https://github.com/circularfashion/cf-circularity-id-standard/blob/master/docs/circularity.ID-Standard-Specification-v2.pdf)
+__current version of immutable data__: [2.0 as xml](https://github.com/circularfashion/cf-circularity-id-standard/blob/master/schema/2.0/schema.rng) | [as pdf](https://github.com/circularfashion/cf-circularity-id-standard/blob/master/docs/circularity.ID-Standard-Specification-v2.pdf)
+
+__current version of mutable data__: [2.0 as json](https://github.com/circularfashion/cf-circularity-id-standard/blob/master/schema/2.0/schema_mutable.json)
 
 __[all versions](https://github.com/circularfashion/cf-circularity-id-standard/tree/master/schema)__
 
@@ -22,7 +24,7 @@ In short, the circularity.ID can ensure that:
 
 ## Format
 
-circularity.ID ODS is split into an XML component that contains immutable product data including material and chemical components, and a mutable set of data that contains product information such as product images, description, sustainability consumer information and service offers.
+circularity.ID ODS is split into an XML component that contains immutable product data including material and chemical components, and a mutable set of data that contains product information such as product images, description, sustainability consumer information and service offers in json format.
 
 ## Contact
 
@@ -33,7 +35,7 @@ Contact: [https://circular.fashion/about/](https://circular.fashion/about/)
 ## Guidelines for Use
 
 ### Use of circularity.ID Open Data Standard
-The circularity.ID  Open Data Standard can be used according to the License GNU General Public License v3.0. and always needs to be referenced when using or modifying the standard. Using the circularity.ID Open Data Standard does not imply that a product was tested for recyclability by circular.fashion, but the use of the standard data format enables circular.fashion to conduct Circular Product Checks, and supports connected services and applications. The circularity.ID Open Data Standard does not imply that data created according to the standard must be made public.
+The circularity.ID Open Data Standard can be used according to the License GNU General Public License v3.0. and always needs to be referenced when using or modifying the standard. Using the circularity.ID Open Data Standard does not imply that a product was tested for recyclability by circular.fashion, but the use of the standard data format enables circular.fashion to conduct Circular Product Checks, and supports connected services and applications. The circularity.ID Open Data Standard does not imply that data created according to the standard must be made public.
 
 ### Use of circularity.ID Trademark
 circularity.ID is a registered trademark. Using the the circularity.ID Open Data Standard does not include allowance for using the circularity.ID  trademark. circular.fashion is the only issuing body of the circularity.ID and will provide a unique identifying number as a proof. Only when circular.fashion issued an ID as  circularity.ID the trademark is allowed to be used following separate guidelines stated in a different document. 
