@@ -100,8 +100,8 @@
     "sustainability_statement": {
       "type": "string"
     },
-    "sustainability_statement": {
-      "type": "sustainability_image"
+    "sustainability_image": {
+      "type": "string"
     }
   },
   "required": [
