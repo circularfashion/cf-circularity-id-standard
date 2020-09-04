@@ -175,6 +175,7 @@
         <postal>Company Postal</postal>
         <city>Company City</city>
         <additional_information>Company additional infos</additional_information>
+        <image>https://upload.wikimedia.org/wikipedia/commons/a/a9/Example.jpg</image>
     </step>
 	<brand>circular.fashion</brand>
 	<colourway>White/Beige</colourway>
