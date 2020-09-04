@@ -2,6 +2,9 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
+    "template_name": {
+      "type": "string"
+    },
     "materials": {
       "type": "array",
       "items": [
