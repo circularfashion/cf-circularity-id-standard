@@ -1,0 +1,128 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "template_name": {
+      "type": "string"
+    },
+    "materials": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "colour_description": {
+              "type": "string"
+            },
+            "image": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "description",
+            "colour_description",
+            "image"
+          ]
+        }
+      ]
+    },
+    "product_images": {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "logo": {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "colour": {
+      "type": "string"
+    },
+    "size": {
+      "type": "string"
+    },
+    "segment": {
+      "type": "string"
+    },
+    "price": {
+      "type": "string"
+    },
+    "strategy": {
+      "type": "string"
+    },
+    "strategy_description": {
+      "type": "string"
+    },
+    "service": {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "service_description": {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "care_guide": {
+      "type": "string"
+    },
+    "care_image": {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "brand_description": {
+      "type": "string"
+    },
+    "sustainability_statement": {
+      "type": "string"
+    },
+    "sustainability_image": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "materials",
+    "product_images",
+    "logo",
+    "description",
+    "colour",
+    "size",
+    "segment",
+    "price",
+    "strategy",
+    "strategy_description",
+    "service",
+    "service_description",
+    "care_guide",
+    "care_image",
+    "brand_description",
+    "sustainability_statement"
+  ]
+}
