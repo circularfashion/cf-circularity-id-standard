@@ -2,5 +2,5 @@
 xmldiff==2.4
 xmltodict==0.12.0
 fnc==0.4.0 # utility library that allows for function composition
-lxml==4.4.1 # validates and reads xml
+lxml==4.6.2 # validates and reads xml
 jingtrang==0.1.2 # converts .rnc to .rng files and vica versa
