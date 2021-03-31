@@ -14,7 +14,7 @@ setup(
         'xmldiff==2.4',
         'xmltodict==0.12.0',
         'fnc==0.4.0',
-        'lxml==4.4.1',
+        'lxml==4.6.3',
         'jingtrang==0.1.2',
     ],
     zip_safe=False
