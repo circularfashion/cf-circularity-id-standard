@@ -3,7 +3,7 @@
 
 # Developing circularity.ID
 
-This document is targeted at developers and who want to contribute to the
+This document is targeted at developers and those who want to contribute to the
 _circularity.ID_ standard.
 
 ## Developing the Data Format (Schema)
@@ -21,7 +21,7 @@ Version numbering should adhere to the conventions of
 > - MINOR version when you add functionality in a backwards compatible manner, and
 > - PATCH version when you make backwards compatible bug fixes.
 
-This means any change in the schema that would affect an incompatible change in
+This means any change in the schema that would create an incompatible change in
 data of the previous schema should warrant it's own MAJOR version number. Every
 MAJOR and MINOR version must supply examples of failing and passing xml files.
 
@@ -46,18 +46,18 @@ This conversion script is still in development.
 ### Schema Rules
 
 We have a few things we like to lean on and some standards that we adhere to
-with the relaxng schema definitions.
+with the RELAX NG schema definitions.
 
 - refs should be `IN_ALL_UPPERCASE` to distinguish them from regular elements
 - element names should use snake case (underscores (`_`) and not dashes (`-`))
 - refs should be the same name as the element they include, just in uppercase
 - two space indent ;)
 
-Additionally, we have developed a few `refs` to use for validation
+Additionally, we have developed a few `refs` to use for validation.
 
 ##### NOTEMPTY (string)
 
-this ref is a string data that disallows empty strings in an element, but
+This ref is a string data that disallows empty strings in an element, but
 allows newlines.
 
 ```html
@@ -93,11 +93,11 @@ Development uses `pylint` with the supplied pylintrc file.
 
 ## Testing the Data Format and Validations
 
-for each version of the schema, example xml files should be created.  These exammple files should account for product xml files that are valid according to the schema version as well as those that are not.
+For each version of the schema, example xml files should be created.  These example files should include product xml files that are valid according to the schema version as well as those that are not.
 
-correct examples should go into `examples/[VERSION]/passing`, and failing into `examples/[VERSION]/failing`
+Correct examples should go into `examples/[VERSION]/passing`, and failing into `examples/[VERSION]/failing`.
 
-you can use the command line script `python tools/test.py` to do fun things with testing these files. Additionally, it will make sure that the schema stands the test of time and can always be validated off of it's examples.
+You can use the command line script `python tools/test.py` to do fun things with testing these files. Additionally, it will make sure that the schema stands the test of time and can always be validated off of its examples.
 
 ##### Script Options
 
@@ -153,7 +153,7 @@ validate_on_version('0.01', xml_invalid)
 
 ##### Merge
 
-merges two or more xml strings, data left takes precedence.  for merging disparate datasetos
+Merges two or more xml strings.  Data on the left takes precedence.  For merging disparate datasets.
 
 ```python
 from circularity_id_standards.utils.xml import (
@@ -170,7 +170,7 @@ merge(xml1, xml2, xml3)
 
 ##### Equals
 
-tests the equality of xml strings disregarding whitespace, docstrings, order, or other inconsistincies.  'is the data the same?'
+Tests the equality of xml strings disregarding whitespace, docstrings, order, or other inconsistencies.  'Is the data the same?'
 
 ```python
 from circularity_id_standards.utils.xml import (
