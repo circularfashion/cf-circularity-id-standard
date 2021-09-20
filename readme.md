@@ -1,8 +1,8 @@
 ![circularity id logo](logo.jpg)
 
-# circularity.ID Open Data Standard
+# circularity.ID® Open Data Standard
 
-[view the website](https://circularity.id) | [development guidelines](develop.md)
+[View the website](https://circularity.id)
 
 __current version of immutable data__: [2.0 as xml](https://github.com/circularfashion/cf-circularity-id-standard/blob/master/schema/2.0/schema.rng) | [as pdf](https://github.com/circularfashion/cf-circularity-id-standard/blob/master/docs/circularity.ID-Standard-Specification-v2.pdf)
 
@@ -24,13 +24,13 @@ In short, the circularity.ID can ensure that:
 
 ## Format
 
-circularity.ID ODS is split into an XML component that contains immutable product data including material and chemical components, and a mutable set of data that contains product information such as product images, description, sustainability consumer information and service offers in json format.
+circularity.ID ODS is split into immutable product data including material and chemical components, and a mutable set of data that contains product information such as product images, description, sustainability consumer information and service offers in json format.
 
 ## Contact
 
 The circularity.ID is initiated and administered by circular.fashion UG (haftungsbeschränkt).
 
-Contact: [https://circular.fashion/about/](https://circular.fashion/about/)
+Contact: [https://circular.fashion/en/about/contact.html](https://circular.fashion/en/about/contact.html)
 
 ## Guidelines for Use
 
