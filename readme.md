@@ -3,12 +3,11 @@
 # circularity.ID® Open Data Standard
 
 [View the website](https://circularity.id)
+[Download the Whitepaper](https://circularity.id/static/circular.fashion_circularityID_white_paper_2021.pdf)
 
-__current version of immutable data__: [2.0 as xml](https://github.com/circularfashion/cf-circularity-id-standard/blob/master/schema/2.0/schema.rng) | [as pdf](https://github.com/circularfashion/cf-circularity-id-standard/blob/master/docs/circularity.ID-Standard-Specification-v2.pdf)
+__current version of schema__: [3.0](https://circularity.id/open-data-standard.html)
 
-__current version of mutable data__: [2.0 as json](https://github.com/circularfashion/cf-circularity-id-standard/blob/master/schema/2.0/schema_mutable.json)
-
-__[all versions](https://github.com/circularfashion/cf-circularity-id-standard/tree/master/schema)__
+__[older versions](https://github.com/circularfashion/cf-circularity-id-standard/tree/master/schema)__
 
 ## Description
 The circularity.ID Open Data Standard describes essential digital product data for clothing and textiles to enable circular economy and recyclability in the fashion industry. Products identifiable with the circularity.ID Open Data Standard make the entire story of a product and its material components accessible and enable circular use and end-of-life phase on the data level.
