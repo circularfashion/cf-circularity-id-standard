@@ -1,0 +1,593 @@
+{
+    "name": "product_name",
+    "company": "product_company",
+    "product_name": "p1_product_name",
+    "product_category": "clothing",
+    "product_type": "shirt",
+    "size_country_code": [
+        "eu"
+    ],
+    "disassembly_instructions_sorters": "p1_disassembly_instructions_sorters",
+    "disassembly_instructions_user": "p1_disassembly_instructions_user",
+    "water_properties": "no_water_properties",
+    "brand_name": "p1_brand_name",
+    "sub_brand_name": "p1_sub_brand_name",
+    "brand_description": "p1_brand_description",
+    "parent_organization": "p1_parent_organization",
+    "brand_logo": <base64_image_file>,
+    "brand_image": <base64_image_file>,
+    "market_segment": "mass_market",
+    "price_currency": "eur",
+    "sustainability_info": "p1_sustainability_info",
+    "production_description": "p1_production_description",
+    "production_image": <base64_image_file>,
+    "circular_design_strategy": [
+        "material_cyclability"
+    ],
+    "strategy_description": "p1_strategy_description",
+    "services": [
+        {
+            "name": "s1",
+            "service_type": "resell",
+            "description": "description_You give us your stuff and we recycle it",
+            "with_nested": true
+        }
+    ],
+    "variations": [
+        {
+            "name": "v1",
+            "product_description": "p1v1_product_description",
+            "sku": "10000001",
+            "purchase_order_number": "PO000001",
+            "gender": "unisex",
+            "template": "templates/base.html",
+            "make_immutable": false,
+            "age_group": [
+                "adult"
+            ],
+            "season_of_sale": "p1v1_sos",
+            "year_of_sale": 2018,
+            "net_weight": 1.0,
+            "colourway": "p1v1_colourway",
+            "assigned_colour_category": [
+                "black_light"
+            ],
+            "size": "1",
+            "price": 1.0,
+            "material_composition": "p1v1_material_composition",
+            "care_guide": "p1v1_care_guide",
+            "country_of_origin": "AFG",
+            "reach_compliant": "yes",
+            "afirm_compliant": "yes",
+            "zdhc_mrsl_compliant": "yes",
+            "assemblies": [
+                {
+                    "name": "a1",
+                    "materials": [
+                        {
+                            "name": "mf1",
+                            "article_number": "article_number",
+                            "description": "description",
+                            "pattern_type": "heathered",
+                            "assigned_colour_category": [
+                                "black"
+                            ],
+                            "thumbnail": <base64_image_file>,
+                            "material_percentage": 100,
+                            "water_properties": "no_water_properties",
+                            "properties_other": "properties_other",
+                            "reach_compliant": "yes",
+                            "afirm_compliant": "yes",
+                            "zdhc_mrsl_compliant": "yes",
+                            "steps": [
+                                {
+                                    "step_type": "production",
+                                    "organization_name": "orga-printing",
+                                    "street_address": "adr Straße 123",
+                                    "city": "SuperCity",
+                                    "country": "DEU",
+                                    "postal_code": "105467",
+                                    "gln": "gln"
+                                },
+                                {
+                                    "step_type": "printing",
+                                    "printing_process": "digital_printed",
+                                    "print_stuff": "This is stuff",
+                                    "organization_name": "orga-printing",
+                                    "street_address": "adr Straße 123",
+                                    "city": "SuperCity",
+                                    "country": "DEU",
+                                    "postal_code": "105467",
+                                    "gln": "gln"
+                                }
+                            ],
+                            "components": [
+                                {
+                                    "component_name": "compo_name",
+                                    "content": "organic_hemp",
+                                    "percentage": "58",
+                                    "source_raw_material": "raw_compo_source",
+                                    "is_recycled": "post_consumer",
+                                    "source_recycled_input": "Super source",
+                                    "part": "This is nice part.",
+                                    "steps": [
+                                        {
+                                            "organization_name": "step1"
+                                        },
+                                        {
+                                            "organization_name": "step2"
+                                        }
+                                    ],
+                                    "name": "c1"
+                                },
+                                {
+                                    "component_name": "compo_name",
+                                    "content": "organic_hemp",
+                                    "percentage": "58",
+                                    "source_raw_material": "raw_compo_source",
+                                    "is_recycled": "post_consumer",
+                                    "source_recycled_input": "Super source",
+                                    "part": "This is nice part.",
+                                    "steps": [
+                                        {
+                                            "organization_name": "step1"
+                                        },
+                                        {
+                                            "organization_name": "step2"
+                                        }
+                                    ],
+                                    "name": "c2"
+                                }
+                            ],
+                            "certifications": [
+                                {
+                                    "certification_standard": "bci",
+                                    "file": <base64_pdf_file>
+                                },
+                                {
+                                    "certification_standard": "bci",
+                                    "file": <base64_pdf_file>
+                                }
+                            ],
+                            "category": "fabric",
+                            "material_type": "thermo_bonded",
+                            "properties": [
+                                "cooling"
+                            ],
+                            "material_weight": 10,
+                            "staple_fibre_length": 11
+                        },
+                        {
+                            "name": "my2",
+                            "article_number": "article_number",
+                            "description": "description",
+                            "pattern_type": "heathered",
+                            "assigned_colour_category": [
+                                "black"
+                            ],
+                            "thumbnail": <base64_image_file>,
+                            "material_percentage": 100,
+                            "water_properties": "no_water_properties",
+                            "properties_other": "properties_other",
+                            "reach_compliant": "yes",
+                            "afirm_compliant": "yes",
+                            "zdhc_mrsl_compliant": "yes",
+                            "steps": [
+                                {
+                                    "step_type": "production",
+                                    "organization_name": "orga-printing",
+                                    "street_address": "adr Straße 123",
+                                    "city": "SuperCity",
+                                    "country": "DEU",
+                                    "postal_code": "105467",
+                                    "gln": "gln"
+                                },
+                                {
+                                    "step_type": "printing",
+                                    "printing_process": "digital_printed",
+                                    "print_stuff": "This is stuff",
+                                    "organization_name": "orga-printing",
+                                    "street_address": "adr Straße 123",
+                                    "city": "SuperCity",
+                                    "country": "DEU",
+                                    "postal_code": "105467",
+                                    "gln": "gln"
+                                }
+                            ],
+                            "components": [
+                                {
+                                    "component_name": "compo_name",
+                                    "content": "organic_hemp",
+                                    "percentage": "58",
+                                    "source_raw_material": "raw_compo_source",
+                                    "is_recycled": "post_consumer",
+                                    "source_recycled_input": "Super source",
+                                    "part": "This is nice part.",
+                                    "steps": [
+                                        {
+                                            "organization_name": "step1"
+                                        },
+                                        {
+                                            "organization_name": "step2"
+                                        }
+                                    ],
+                                    "name": "c1"
+                                },
+                                {
+                                    "component_name": "compo_name",
+                                    "content": "organic_hemp",
+                                    "percentage": "58",
+                                    "source_raw_material": "raw_compo_source",
+                                    "is_recycled": "post_consumer",
+                                    "source_recycled_input": "Super source",
+                                    "part": "This is nice part.",
+                                    "steps": [
+                                        {
+                                            "organization_name": "step1"
+                                        },
+                                        {
+                                            "organization_name": "step2"
+                                        }
+                                    ],
+                                    "name": "c2"
+                                }
+                            ],
+                            "certifications": [
+                                {
+                                    "certification_standard": "bci",
+                                    "file": <base64_pdf_file>
+                                },
+                                {
+                                    "certification_standard": "bci",
+                                    "file": <base64_pdf_file>
+                                }
+                            ],
+                            "category": "yarn",
+                            "material_type": "boucle",
+                            "properties": [
+                                "cooling"
+                            ],
+                            "staple_fibre_length": 11,
+                            "applications": [
+                                "embroidery_thread"
+                            ],
+                            "applications_other": "applications_other"
+                        },
+                        {
+                            "name": "mt3",
+                            "article_number": "article_number",
+                            "description": "description",
+                            "pattern_type": "heathered",
+                            "assigned_colour_category": [
+                                "black"
+                            ],
+                            "thumbnail": <base64_image_file>,
+                            "material_percentage": 100,
+                            "water_properties": "no_water_properties",
+                            "properties_other": "properties_other",
+                            "reach_compliant": "yes",
+                            "afirm_compliant": "yes",
+                            "zdhc_mrsl_compliant": "yes",
+                            "steps": [
+                                {
+                                    "step_type": "production",
+                                    "organization_name": "orga-printing",
+                                    "street_address": "adr Straße 123",
+                                    "city": "SuperCity",
+                                    "country": "DEU",
+                                    "postal_code": "105467",
+                                    "gln": "gln"
+                                },
+                                {
+                                    "step_type": "printing",
+                                    "printing_process": "digital_printed",
+                                    "print_stuff": "This is stuff",
+                                    "organization_name": "orga-printing",
+                                    "street_address": "adr Straße 123",
+                                    "city": "SuperCity",
+                                    "country": "DEU",
+                                    "postal_code": "105467",
+                                    "gln": "gln"
+                                }
+                            ],
+                            "components": [
+                                {
+                                    "component_name": "compo_name",
+                                    "content": "organic_hemp",
+                                    "percentage": "58",
+                                    "source_raw_material": "raw_compo_source",
+                                    "is_recycled": "post_consumer",
+                                    "source_recycled_input": "Super source",
+                                    "part": "This is nice part.",
+                                    "steps": [
+                                        {
+                                            "organization_name": "step1"
+                                        },
+                                        {
+                                            "organization_name": "step2"
+                                        }
+                                    ],
+                                    "name": "c1"
+                                },
+                                {
+                                    "component_name": "compo_name",
+                                    "content": "organic_hemp",
+                                    "percentage": "58",
+                                    "source_raw_material": "raw_compo_source",
+                                    "is_recycled": "post_consumer",
+                                    "source_recycled_input": "Super source",
+                                    "part": "This is nice part.",
+                                    "steps": [
+                                        {
+                                            "organization_name": "step1"
+                                        },
+                                        {
+                                            "organization_name": "step2"
+                                        }
+                                    ],
+                                    "name": "c2"
+                                }
+                            ],
+                            "certifications": [
+                                {
+                                    "certification_standard": "bci",
+                                    "file": <base64_pdf_file>
+                                },
+                                {
+                                    "certification_standard": "bci",
+                                    "file": <base64_pdf_file>
+                                }
+                            ],
+                            "category": "trim",
+                            "material_type": "beads",
+                            "properties": [
+                                "sporty"
+                            ],
+                            "material_weight": 10
+                        },
+                        {
+                            "name": "ml4",
+                            "article_number": "article_number",
+                            "description": "description",
+                            "pattern_type": "heathered",
+                            "assigned_colour_category": [
+                                "black"
+                            ],
+                            "thumbnail": <base64_image_file>,
+                            "material_percentage": 100,
+                            "water_properties": "no_water_properties",
+                            "properties_other": "properties_other",
+                            "reach_compliant": "yes",
+                            "afirm_compliant": "yes",
+                            "zdhc_mrsl_compliant": "yes",
+                            "steps": [
+                                {
+                                    "step_type": "production",
+                                    "organization_name": "orga-printing",
+                                    "street_address": "adr Straße 123",
+                                    "city": "SuperCity",
+                                    "country": "DEU",
+                                    "postal_code": "105467",
+                                    "gln": "gln"
+                                },
+                                {
+                                    "step_type": "printing",
+                                    "printing_process": "digital_printed",
+                                    "print_stuff": "This is stuff",
+                                    "organization_name": "orga-printing",
+                                    "street_address": "adr Straße 123",
+                                    "city": "SuperCity",
+                                    "country": "DEU",
+                                    "postal_code": "105467",
+                                    "gln": "gln"
+                                }
+                            ],
+                            "components": [
+                                {
+                                    "component_name": "compo_name",
+                                    "content": "organic_hemp",
+                                    "percentage": "58",
+                                    "source_raw_material": "raw_compo_source",
+                                    "is_recycled": "post_consumer",
+                                    "source_recycled_input": "Super source",
+                                    "part": "This is nice part.",
+                                    "steps": [
+                                        {
+                                            "organization_name": "step1"
+                                        },
+                                        {
+                                            "organization_name": "step2"
+                                        }
+                                    ],
+                                    "name": "c1"
+                                },
+                                {
+                                    "component_name": "compo_name",
+                                    "content": "organic_hemp",
+                                    "percentage": "58",
+                                    "source_raw_material": "raw_compo_source",
+                                    "is_recycled": "post_consumer",
+                                    "source_recycled_input": "Super source",
+                                    "part": "This is nice part.",
+                                    "steps": [
+                                        {
+                                            "organization_name": "step1"
+                                        },
+                                        {
+                                            "organization_name": "step2"
+                                        }
+                                    ],
+                                    "name": "c2"
+                                }
+                            ],
+                            "certifications": [
+                                {
+                                    "certification_standard": "bci",
+                                    "file": <base64_pdf_file>
+                                },
+                                {
+                                    "certification_standard": "bci",
+                                    "file": <base64_pdf_file>
+                                }
+                            ],
+                            "category": "leather",
+                            "properties": [
+                                "antique"
+                            ],
+                            "grade": "bonded",
+                            "thickness_min": 1,
+                            "thickness_max": 2,
+                            "species": "bovine",
+                            "species_other": "species_other",
+                            "pattern_application": "half"
+                        },
+                        {
+                            "name": "mla5",
+                            "article_number": "article_number",
+                            "description": "description",
+                            "pattern_type": "heathered",
+                            "assigned_colour_category": [
+                                "black"
+                            ],
+                            "thumbnail": <base64_image_file>,
+                            "material_percentage": 100,
+                            "water_properties": "no_water_properties",
+                            "properties_other": "properties_other",
+                            "reach_compliant": "yes",
+                            "afirm_compliant": "yes",
+                            "zdhc_mrsl_compliant": "yes",
+                            "steps": [
+                                {
+                                    "step_type": "production",
+                                    "organization_name": "orga-printing",
+                                    "street_address": "adr Straße 123",
+                                    "city": "SuperCity",
+                                    "country": "DEU",
+                                    "postal_code": "105467",
+                                    "gln": "gln"
+                                },
+                                {
+                                    "step_type": "printing",
+                                    "printing_process": "digital_printed",
+                                    "print_stuff": "This is stuff",
+                                    "organization_name": "orga-printing",
+                                    "street_address": "adr Straße 123",
+                                    "city": "SuperCity",
+                                    "country": "DEU",
+                                    "postal_code": "105467",
+                                    "gln": "gln"
+                                }
+                            ],
+                            "components": [
+                                {
+                                    "component_name": "compo_name",
+                                    "content": "organic_hemp",
+                                    "percentage": "58",
+                                    "source_raw_material": "raw_compo_source",
+                                    "is_recycled": "post_consumer",
+                                    "source_recycled_input": "Super source",
+                                    "part": "This is nice part.",
+                                    "steps": [
+                                        {
+                                            "organization_name": "step1"
+                                        },
+                                        {
+                                            "organization_name": "step2"
+                                        }
+                                    ],
+                                    "name": "c1"
+                                },
+                                {
+                                    "component_name": "compo_name",
+                                    "content": "organic_hemp",
+                                    "percentage": "58",
+                                    "source_raw_material": "raw_compo_source",
+                                    "is_recycled": "post_consumer",
+                                    "source_recycled_input": "Super source",
+                                    "part": "This is nice part.",
+                                    "steps": [
+                                        {
+                                            "organization_name": "step1"
+                                        },
+                                        {
+                                            "organization_name": "step2"
+                                        }
+                                    ],
+                                    "name": "c2"
+                                }
+                            ],
+                            "certifications": [
+                                {
+                                    "certification_standard": "bci",
+                                    "file": <base64_pdf_file>
+                                },
+                                {
+                                    "certification_standard": "bci",
+                                    "file": <base64_pdf_file>
+                                }
+                            ],
+                            "category": "leather_alternative",
+                            "material_type": "non_woven",
+                            "thickness": 10,
+                            "properties": [
+                                "elastic"
+                            ],
+                            "material_weight": 11
+                        }
+                    ]
+                }
+            ],
+            "steps": [
+                {
+                    "organization_name": "organization_name",
+                    "street_address": "street_address",
+                    "city": "city",
+                    "country": "AFG",
+                    "postal_code": "postal_code",
+                    "oar": "oar",
+                    "gln": "gln",
+                    "step_type": "dyeing",
+                    "dyeing_process": "undyed",
+                    "dye_stuff": "no_dye_stuff"
+                },
+                {
+                    "organization_name": "organization_name",
+                    "street_address": "street_address",
+                    "city": "city",
+                    "country": "AFG",
+                    "postal_code": "postal_code",
+                    "oar": "oar",
+                    "gln": "gln",
+                    "step_type": "finishing",
+                    "product_finishing": "unknown"
+                },
+                {
+                    "organization_name": "organization_name",
+                    "street_address": "street_address",
+                    "city": "city",
+                    "country": "AFG",
+                    "postal_code": "postal_code",
+                    "oar": "oar",
+                    "gln": "gln",
+                    "step_type": "full_garment_supply"
+                }
+            ],
+            "care_images": [
+                {
+                    "image": <base64_image_file>
+                }
+            ],
+            "product_images": [
+                {
+                    "image": <base64_image_file>
+                }
+            ],
+            "sustainability_images": [
+                {
+                    "image": <base64_image_file>
+                }
+            ],
+            "gtin": "72821529232482"
+        }
+    ]
+}
