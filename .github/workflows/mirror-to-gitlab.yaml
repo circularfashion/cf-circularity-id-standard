@@ -6,7 +6,7 @@ on:
 
 jobs:
   mirror:
-    runs-on: [self-hosted, cf-hetzner]
+    runs-on: ubuntu-latest
     steps:
       - name: Mirror GitHub repo into GitLab
         env:
