@@ -1,0 +1,26 @@
+name: Mirror to GitLab
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mirror GitHub repo into GitLab
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GL_TOKEN: ${{ secrets.GITLAB_MIRROR_TOKEN }}
+          SRC: github.com/${{ github.repository }}
+          DEST: gitlab.circular.fashion/cf-mirrors/cf-circularity-id-standard
+        run: |
+          set -euo pipefail
+          rm -rf repo.git
+          git clone --mirror "https://x-access-token:${GH_TOKEN}@${SRC}.git" repo.git
+          cd repo.git
+          git remote add gitlab "https://oauth2:${GL_TOKEN}@${DEST}.git"
+          git for-each-ref --format="delete %(refname)" refs/pull/ | git update-ref --stdin || true
+          git lfs fetch --all origin
+          git lfs push --all gitlab
+          git push --mirror gitlab
