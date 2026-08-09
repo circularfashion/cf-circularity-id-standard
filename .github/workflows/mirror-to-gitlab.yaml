@@ -1,0 +1,13 @@
+name: Mirror to GitLab
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  mirror:
+    uses: circularfashion/cf-config-mgmt-hetzner/.github/workflows/mirror-to-gitlab.yaml@main
+    with:
+      gitlab_repo_path: cf-mirrors/cf-circularity-id-standard
+    secrets:
+      GITLAB_MIRROR_TOKEN: ${{ secrets.GITLAB_MIRROR_TOKEN }}
